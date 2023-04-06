@@ -1,7 +1,7 @@
 import cv2
 import argparse
 import time
-
+œ
 # construct the argument parser and parse the arguments
 # ap = argparse.ArgumentParser()
 # ap.add_argument("-dual_camera", default=False, help="Use dual camera")
