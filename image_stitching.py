@@ -224,5 +224,5 @@ class ObjectDetection:
         
         
     
-detector = ObjectDetection(capture_index=0)
+detector = ObjectDetection(capture_index=1)
 detector()
