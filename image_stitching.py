@@ -138,7 +138,8 @@ class ObjectDetection:
 
     def load_model(self):
        
-        model = YOLO("yolov8m.pt")  # load a pretrained YOLOv8n model
+        # model = YOLO("yolov8m.pt")  # load a pretrained YOLOv8n model
+        model = YOLO("yolov8n.pt")
         model.fuse()
     
         return model
@@ -226,3 +227,5 @@ class ObjectDetection:
     
 detector = ObjectDetection(capture_index=1)
 detector()
+
+
