@@ -281,8 +281,17 @@ def main():
             if ret == False or ret1 == False:
                 print("No camera")
                 break
-            side_by_side = cv2.hconcat([frame, frame1])
-            cv2.imshow('frame', side_by_side)
+            else:
+                stitching=cv2.Stitcher.create()
+                status,frame2=stitching.stitch((frame,frame1))
+                if status==0:
+                    cv2.imshow('frame',frame2)
+                else:
+                    print("Error")
+                    break
+            # Display the resulting frame
+            # side_by_side = cv2.hconcat([frame, frame1])
+            # cv2.imshow('frame', side_by_side)
 
             # key: 'ESC'
             key = cv2.waitKey(20)
