@@ -7,37 +7,20 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def generate_signed_post_policy_v4(bucket_name, blob_name):
-    """Generates a v4 POST Policy and prints an HTML form."""
-    bucket_name = 'tubes-klasifikasi-batik'
-    # blob_name = 'your-object-name'
+def upload():
+    
+    uploaded_file = flask.request.files.get('file')
 
-    storage_client = storage.Client()
+    filename = flask.request.form.get('filename')
 
-    policy = storage_client.generate_signed_post_policy_v4(
-        bucket_name,
-        blob_name,
-        expiration=datetime.timedelta(minutes=10),
-        fields={
-          'x-goog-meta-test': 'data'
-        }
-    )
+    gcs_client = storage.Client()
+    storage_bucket = gcs_client.get_bucket('tubes-klasifikasi-batik')
+    blob = storage_bucket.blob(uploaded_file.filename)
 
-    # Create an HTML form with the provided policy
-    header = "<form action='{}' method='POST' enctype='multipart/form-data'>\n"
-    form = header.format(policy["url"])
+    c_type = uploaded_file.content_type
+    blob.upload_from_string(uploaded_file.read(), content_type=c_type)
 
-    # Include all fields returned in the HTML form as they're required
-    for key, value in policy["fields"].items():
-        form += f"  <input name='{key}' value='{value}' type='hidden'/>\n"
-
-    form += "  <input type='file' name='file'/><br />\n"
-    form += "  <input type='submit' value='Upload File' /><br />\n"
-    form += "</form>"
-
-    print(form)
-
-    return form
+    return 
     
 
 
