@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def generate_signed_post_policy_v4(bucket_name, blob_name):
     """Generates a v4 POST Policy and prints an HTML form."""
-    # bucket_name = 'your-bucket-name'
+    bucket_name = 'tubes-klasifikasi-batik'
     # blob_name = 'your-object-name'
 
     storage_client = storage.Client()
