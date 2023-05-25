@@ -5,6 +5,11 @@ import time
 import platform
 import sys
 
+parser = argparse.ArgumentParser(description='Image Stitching')
+parser.add_argument('--image', help='image stitching on image files')
+parser.add_argument('--webcam', default=0, type=int, help='image stitching on live video from webcam')
+
+
 if platform.system() == 'Windows':
     import device
 
