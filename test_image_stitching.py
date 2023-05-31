@@ -1,4 +1,5 @@
-
+import cv2
+import time
 def open_camera(index):
     cap = cv2.VideoCapture(index)
     return cap
@@ -34,29 +35,30 @@ def main():
         height = cap.get(4) # Frame Height
         print('Default width: ' + str(width) + ', height: ' + str(height))
 
-        while True:
+        # while True:
             
-            ret, frame = cap.read()
-            ret1, frame1 = cap1.read()
-            if ret == False or ret1 == False:
-                print("No camera")
-                break
-            # else:
-            #     stitching=cv2.Stitcher.create()
-            #     status,frame2=stitching.stitch((frame,frame1))
-            #     if status==0:
-            #         cv2.imshow('frame',frame2)
-            #     else:
-            #         print("Error")
-            #         break
-            # Display the resulting frame
-            side_by_side = cv2.hconcat([frame, frame1])
-            cv2.imshow('frame', side_by_side)
+        ret, frame = cap.read()
+        ret1, frame1 = cap1.read()
+        if ret == False or ret1 == False:
+            print("No camera")
+        else:
+            
+            cv2.save('frame.jpg',frame)
+            cv2.save('frame1.jpg',frame1)
+            stitching=cv2.Stitcher.create()
+            status,frame2=stitching.stitch((frame.jpg,frame1.jpg))
+            if status==0:
+                cv2.imshow('frame',frame2)
+            else:
+                print("Error")
+        # Display the resulting frame
+            # side_by_side = cv2.hconcat([frame, frame1])
+            # cv2.imshow('frame', side_by_side)
 
             # key: 'ESC'
-            key = cv2.waitKey(20)
-            if key == 27:
-                break
+            # key = cv2.waitKey(20)
+            # if key == 27:
+            #     break
 
         cap.release()
         cap1.release() 
