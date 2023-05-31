@@ -8,19 +8,19 @@ def main():
     print("OpenCV version: " + cv2.__version__)
 
     # Get camera list
-    device_list = device.getDeviceList()
-    index = 0
+    # device_list = device.getDeviceList()
+    # index = 0
 
-    for camera in device_list:
-        print(str(index) + ': ' + camera[0])
+    # for camera in device_list:
+    #     print(str(index) + ': ' + camera[0])
         
-        index += 1
+    #     index += 1
 
-    last_index = index - 1
+    # last_index = index - 1
 
-    if last_index < 0:
-        print("No device is connected")
-        return
+    # if last_index < 0:
+    #     print("No device is connected")
+    #     return
 
     # Select a camera
     # camera_number = select_camera(last_index)
@@ -50,8 +50,8 @@ def main():
             #         print("Error")
             #         break
             # Display the resulting frame
-            # side_by_side = cv2.hconcat([frame, frame1])
-            # cv2.imshow('frame', side_by_side)
+            side_by_side = cv2.hconcat([frame, frame1])
+            cv2.imshow('frame', side_by_side)
 
             # key: 'ESC'
             key = cv2.waitKey(20)
