@@ -43,10 +43,10 @@ def main():
                 print("No camera")
             else:
                 
-                # cv2.save('frame.jpg',frame)
-                # cv2.save('frame1.jpg',frame1)
+                cv2.imwrite('frame.jpg',frame)
+                cv2.imwrite('frame1.jpg',frame1)
                 stitching=cv2.Stitcher.create()
-                status,frame2=stitching.stitch((frame,frame1))
+                status,frame2=stitching.stitch((frame.jpg,frame1.jpg))
                 if status==0:
                     cv2.imshow('frame',frame2)
                 else:
