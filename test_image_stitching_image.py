@@ -39,7 +39,7 @@ def main():
                 cv2.imwrite(filename1,frame1)
                 cv2.imwrite(filename2,frame2)
                 stitching=cv2.Stitcher.create()
-                status,stitched_frame=stitching.stitch((frame1.jpg,frame2.jpg))
+                status,stitched_frame=stitching.stitch((filename1,filename2))
 
                 if status==0:
                     cv2.imshow('stitched_frame',stitched_frame)
