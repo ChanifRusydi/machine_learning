@@ -34,8 +34,8 @@ def main():
                 print("No camera")
             else:
                 timestamp = time.time()
-                filename1 = 'frame1' + str(timestamp) + '.jpg'
-                filename2 = 'frame2' + str(timestamp) + '.jpg'
+                filename1 = 'frame1' + '.jpg'
+                filename2 = 'frame2' + '.jpg'
                 cv2.imwrite(filename1,frame1)
                 cv2.imwrite(filename2,frame2)
                 stitching=cv2.Stitcher.create()
