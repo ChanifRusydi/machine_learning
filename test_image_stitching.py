@@ -27,35 +27,40 @@ def main():
     # camera_number = select_camera(last_index)
     
     # Open camera
-    cap = open_camera(0)
-    cap1 = open_camera(1)
+    cap1 = open_camera(0)
+    cap2= open_camera(1)
+    print("1st webcam opened" if cap1.isOpened() else "1st webcam failed to open")
+    print("2nd webcam opened" if cap2.isOpened() else "2nd webcam failed to open")
 
-    if cap.isOpened():
-        width = cap.get(3) # Frame Width
-        height = cap.get(4) # Frame Height
-        print('Default width: ' + str(width) + ', height: ' + str(height))
+    if cap1.isOpened() or cap2.isOpened():
+        width1 = cap1.get(3) # Frame Width
+        height1 = cap1.get(4) # Frame Height
+        print('Default width: ' + str(width1) + ', height: ' + str(height1))
+        # cap1.set(cv2.CAP_PROP_FRAME_WIDTH(640))
+        # cap2.set(cv2.CAP_PROP_FRAME_HEIGHT(480))
 
         while True:
-            
-            ret, frame = cap.read()
             ret1, frame1 = cap1.read()
-            if ret == False or ret1 == False:
+            ret2, frame2 = cap2.read()
+            if ret1 == False or ret2 == False:
                 print("No camera")
             else:
                 
                 # cv2.save('frame.jpg',frame)
                 # cv2.save('frame1.jpg',frame1)
                 stitching=cv2.Stitcher.create()
-                status,frame2=stitching.stitch((frame,frame1))
+                status,stitched=stitching.stitch((frame1,frame2))
                 if status==0:
-                    cv2.imshow('frame',frame2)
+                    print("Success stitching at" + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+                    cv2.imshow('stitched',stitched)
                 else:
-                    print("Error")
+                    current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+                    print("Error at " + current_time)
             # Display the resulting frame
-                side_by_side = cv2.hconcat([frame, frame1])
-                cv2.imshow('frame', side_by_side)
+                side_by_side = cv2.hconcat([frame1, frame2])
+                cv2.imshow('side_by_side', side_by_side)
 
-                key: 'ESC'
+                # key: 'ESC'
                 key = cv2.waitKey(20)
                 if key == 27:
                     break
