@@ -36,8 +36,8 @@ def main():
         width1 = cap1.get(3) # Frame Width
         height1 = cap1.get(4) # Frame Height
         print('Default width: ' + str(width1) + ', height: ' + str(height1))
-        cap1.set(cv2.CAP_PROP_FRAME_WIDTH(640))
-        cap2.set(cv2.CAP_PROP_FRAME_HEIGHT(480))
+        # cap1.set(cv2.CAP_PROP_FRAME_WIDTH(640))
+        # cap2.set(cv2.CAP_PROP_FRAME_HEIGHT(480))
 
         while True:
             ret1, frame1 = cap1.read()
@@ -49,16 +49,18 @@ def main():
                 # cv2.save('frame.jpg',frame)
                 # cv2.save('frame1.jpg',frame1)
                 stitching=cv2.Stitcher.create()
-                status,stitched=stitching.stitch((frame1,frame1))
+                status,stitched=stitching.stitch((frame1,frame2))
                 if status==0:
+                    print("Success stitching at" + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
                     cv2.imshow('stitched',stitched)
                 else:
-                    print("Error")
+                    current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+                    print("Error at " + current_time)
             # Display the resulting frame
                 side_by_side = cv2.hconcat([frame1, frame2])
                 cv2.imshow('side_by_side', side_by_side)
 
-                key: 'ESC'
+                # key: 'ESC'
                 key = cv2.waitKey(20)
                 if key == 27:
                     break
