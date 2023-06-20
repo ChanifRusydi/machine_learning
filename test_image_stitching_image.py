@@ -21,41 +21,51 @@ def main():
     # Select a camera
     # camera_number = select_camera(last_index)
     # Open camera
-    cap1 = open_camera(0)
-    cap2 = open_camera(1)
-    if cap1.isOpened() or cap2.isOpened():
-        width1 = cap1.get(3) # Frame Width
-        height1 = cap1.get(4) # Frame Height
-        print('Default width: ' + str(width1) + ', height: ' + str(height1))
-        while True:
-            ret1, frame1 = cap1.read()
-            ret2, frame2 = cap2.read()
-            if ret1 == False or ret2 == False:
-                print("No camera")
-            else:
-                timestamp = time.time()
-                filename1 = 'frame1' + '.jpg'
-                filename2 = 'frame2' + '.jpg'
-                cv2.imwrite(filename1,frame1)
-                cv2.imwrite(filename2,frame2)
-                stitching=cv2.Stitcher.create()
-                status,stitched_frame=stitching.stitch((filename1,filename2))
+    # cap1 = open_camera(0)
+    # cap2 = open_camera(1)
+    # if cap1.isOpened() or cap2.isOpened():
+    #     width1 = cap1.get(3) # Frame Width
+    #     print('Default width: ' + str(width1) + ', height: ' + str(height1))
+    #     while True:
+    #         ret1, frame1 = cap1.read()
+    #         ret2, frame2 = cap2.read()
+    #         if ret1 == False or ret2 == False:
+    #             print("No camera")
+    #             break
+    #         else:
+    #             timestamp = time.time()
+    #             filename1 = 'frame1' + '.jpg'
+    #             filename2 = 'frame2' + '.jpg'
+    #             cv2.imwrite(filename1,frame1)
+    #             cv2.imwrite(filename2,frame2)
+    #             stitching=cv2.Stitcher.create()
+    #             status,stitched_frame=stitching.stitch((filename1,filename2))
 
-                if status==0:
-                    cv2.imshow('stitched_frame',stitched_frame)
-                else:
-                    print("Error")
+    #             if status==0:
+    #                 cv2.imshow('stitched_frame',stitched_frame)
+    #             else:
+    #                 print("Error")
 
-            # Display the resulting frame
-                side_by_side = cv2.hconcat([frame, frame1])
-                cv2.imshow('frame', side_by_side)
-                # key: 'ESC'
-            key = cv2.waitKey(20)
-            if key == 27:
-                break
-        cap1.release()
-        cap2.release() 
-        cv2.destroyAllWindows() 
+    #         # Display the resulting frame
+    #             side_by_side = cv2.hconcat([frame, frame1])
+    #             cv2.imshow('frame', side_by_side)
+    #             # key: 'ESC'
+    #         key = cv2.waitKey(20)
+    #         if key == 27:
+    #             break
+    #     cap1.release()
+    #     cap2.release() 
+    #     cv2.destroyAllWindows()
+    image1=cv2.imread('frame.jpg')
+    image2=cv2.imread('frame1.jpg')
+    stitching=cv2.Stitcher.create(cv2.Stitcher_PANORAMA)
+    status,stitched_frame=stitching.stitch((image1,image2))
+    
+    if status==0:
+        cv2.imshow('stitched_frame',stitched_frame)
+    else:
+        print("Error")
+    
 
 if __name__ == "__main__":
     main()
