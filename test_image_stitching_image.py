@@ -32,6 +32,7 @@ def main():
             ret2, frame2 = cap2.read()
             if ret1 == False or ret2 == False:
                 print("No camera")
+                break
             else:
                 timestamp = time.time()
                 filename1 = 'frame1' + '.jpg'
@@ -39,10 +40,11 @@ def main():
                 cv2.imwrite(filename1,frame1)
                 cv2.imwrite(filename2,frame2)
                 stitching=cv2.Stitcher.create()
-                status,stitched_frame=stitching.stitch((filename1,filename2))
+                status,stitched_frame=stitching.stitch((frame1,frame2))
 
                 if status==0:
                     cv2.imshow('stitched_frame',stitched_frame)
+                    time.sleep(50) # 50ms
                 else:
                     print("Error")
 
@@ -55,7 +57,8 @@ def main():
                 break
         cap1.release()
         cap2.release() 
-        cv2.destroyAllWindows() 
+        cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     main()
