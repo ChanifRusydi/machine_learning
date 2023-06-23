@@ -41,33 +41,41 @@ def copy_images(source,destination):
     except FileNotFoundError:
         return source + " not found"
         print("File not found")
-
-
-filename='000000425481.txt'
-with open(os.path.join(label_base_path,filename)) as f:
-    file_number = filename.split('.')[0]
-    print(file_number)
-    lines = f.readlines()
-    for line_index,line in enumerate(lines):
-        print("\n")
-        single_lines=line.split(' ')
-        print(single_lines[0])
-        print(True if single_lines[0] in list_index else False)
+# filename='000000425481.txt'
+# file_number = filename.split('.')[0]
+# jpg_file=file_number+'.jpg'
+# print(os.path.join(image_base_path,jpg_file))
+# copy_labels(os.path.join(label_base_path,filename), os.path.join(label_destination_path,filename))
+# copy_images(os.path.join(image_base_path,jpg_file), os.path.join(image_destination_path,jpg_file))
+# print(os.listdir(label_base_path))
+# filename='000000425481.txt'
+# with open(os.path.join(label_base_path,filename)) as f:
+#     file_number = filename.split('.')[0]
+#     print(file_number)
+#     lines = f.readlines()
+#     for line_index,line in enumerate(lines):
+#         print("\n")
+#         single_lines=line.split(' ')
+#         print(single_lines[0])
+#         print(True if single_lines[0] in list_index else False)
 
 file_in_list_index=[]
-for file in os.listdir(label_base_path):
-    print(file)
+for file_index,file in enumerate(os.listdir(label_base_path)):
+    print('\n',file)
     with open(os.path.join(label_base_path,file)) as f:
         file_number = file.split('.')[0]
         lines = f.readlines()
         for line_index,line in enumerate(lines):
             single_lines=line.split(' ')
             # print(single_lines[0])
-            # print(True if single_lines[0] in list_index else False)
+            print(single_lines[0],True if single_lines[0] in list_index else False)
             file_in_list_index.append(True if single_lines[0] in list_index else False)
-    if 'True' in file_in_list_index:
-        if os.path.exists(os.path.join(image_base_path,file,'.jpg')):
+    jpg_file=file_number+'.jpg'   
+    if True in file_in_list_index:
+        if os.path.exists(os.path.join(image_base_path,jpg_file)):
             copy_labels(os.path.join(label_base_path,file), os.path.join(label_destination_path,file))
-            copy_images(os.path.join(image_base_path,file_number,'.jpg'), os.path.join(image_destination_path,file_number,'.jpg'))
+            jpg_file=file_number+'.jpg'
+            copy_images(os.path.join(image_base_path,jpg_file), os.path.join(image_destination_path,jpg_file))
     file_in_list_index.clear()
+ 
                     
