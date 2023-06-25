@@ -1,14 +1,7 @@
 from shutil import copy
 import os
 
-
-
-coco_names= [ 'person', 'bicycle',
- 'car', 'motorcycle', 
- 'airplane', 'bus', 
- 'train', 'truck',
-  'boat', 'traffic light',
-
+coco_names= [ 'person', 'bicycle','car', 'motorcycle', 'airplane', 'bus', 'train', 'truck','boat', 'traffic light',
          'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 
          'horse', 'sheep', 'cow',
          'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
@@ -18,6 +11,7 @@ coco_names= [ 'person', 'bicycle',
          'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone',
          'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear',
          'hair drier', 'toothbrush' ]
+
 # traffic_names=[ 'traffic light', 'car', 'truck', 'bus', 'motorcycle', 'bicycle', 'person', 'dog', 'cat', 'stop sign', 'fire hydrant', 'train' ]
 traffic_names=['person', 'bicycle', 'car', 'motorcycle', 'bus','train', 'truck', 'traffic light','fire hydrant','stop sign','cat', 'dog']
 print(len(traffic_names))
@@ -109,59 +103,57 @@ def copy_images(source,destination):
 
 
 
-
-
 # test_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\test'
-for file_index,file in enumerate(os.listdir(label_destination_path)):
-    print('\n',file)
-    with open(os.path.join(label_destination_path,file),'r') as f:
-        file_number = file.split('.')[0]
-        lines = f.readlines()
-        print(lines)
-    with open(os.path.join(label_destination_path,file),'w') as file_write:
-        for line_index,line in enumerate(lines):
-            print(line)
-            single_lines=line.split(' ')
-            print(single_lines[0])
-            if single_lines[0]=="11":
-                single_lines[0]="9"
-                new_line=" ".join(single_lines)
-                print(new_line)
-                file_write.write(new_line)
-            elif single_lines[0]=="5":
-                single_lines[0]="4"
-                new_line=" ".join(single_lines)
-                print(new_line)
-                file_write.write(new_line)
-            elif single_lines[0]=="6":
-                single_lines[0]="5"
-                new_line=" ".join(single_lines)
-                print(new_line)
-                file_write.write(new_line)
-            elif single_lines[0]=="7":
-                single_lines[0]="6"
-                new_line=" ".join(single_lines)
-                print(new_line)
-                file_write.write(new_line)
-            elif single_lines[0]=="9":
-                single_lines[0]="7"
-                new_line=" ".join(single_lines)
-                print(new_line)
-                file_write.write(new_line)
-            elif single_lines[0]=="10":
-                single_lines[0]="8"
-                new_line=" ".join(single_lines)
-                print(new_line)
-                file_write.write(new_line)
-            elif single_lines[0]=="15":
-                single_lines[0]="10"
-                new_line=" ".join(single_lines)
-                print(new_line)
-                file_write.write(new_line)
-            elif single_lines[0]=="16":
-                single_lines[0]="11"
-                new_line=" ".join(single_lines)
-                print(new_line)
-                file_write.write(new_line)
-            else:
-                file_write.write(line)        
+# for file_index,file in enumerate(os.listdir(label_destination_path)):
+#     print('\n',file)
+#     with open(os.path.join(label_destination_path,file),'r') as f:
+#         file_number = file.split('.')[0]
+#         lines = f.readlines()
+#         print(lines)
+#     with open(os.path.join(label_destination_path,file),'w') as file_write:
+#         for line_index,line in enumerate(lines):
+#             print(line)
+#             single_lines=line.split(' ')
+#             print(single_lines[0])
+#             if single_lines[0]=="11":
+#                 single_lines[0]="9"
+#                 new_line=" ".join(single_lines)
+#                 print(new_line)
+#                 file_write.write(new_line)
+#             elif single_lines[0]=="5":
+#                 single_lines[0]="4"
+#                 new_line=" ".join(single_lines)
+#                 print(new_line)
+#                 file_write.write(new_line)
+#             elif single_lines[0]=="6":
+#                 single_lines[0]="5"
+#                 new_line=" ".join(single_lines)
+#                 print(new_line)
+#                 file_write.write(new_line)
+#             elif single_lines[0]=="7":
+#                 single_lines[0]="6"
+#                 new_line=" ".join(single_lines)
+#                 print(new_line)
+#                 file_write.write(new_line)
+#             elif single_lines[0]=="9":
+#                 single_lines[0]="7"
+#                 new_line=" ".join(single_lines)
+#                 print(new_line)
+#                 file_write.write(new_line)
+#             elif single_lines[0]=="10":
+#                 single_lines[0]="8"
+#                 new_line=" ".join(single_lines)
+#                 print(new_line)
+#                 file_write.write(new_line)
+#             elif single_lines[0]=="15":
+#                 single_lines[0]="10"
+#                 new_line=" ".join(single_lines)
+#                 print(new_line)
+#                 file_write.write(new_line)
+#             elif single_lines[0]=="16":
+#                 single_lines[0]="11"
+#                 new_line=" ".join(single_lines)
+#                 print(new_line)
+#                 file_write.write(new_line)
+#             else:
+#                 file_write.write(line)        
