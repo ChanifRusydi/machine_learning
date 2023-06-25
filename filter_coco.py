@@ -3,8 +3,7 @@ import os
 
 coco_names= [ 'person', 'bicycle','car', 'motorcycle', 'airplane', 'bus', 'train', 'truck','boat', 'traffic light',
          'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 
-         'horse', 'sheep', 'cow',
-         'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
+         'horse', 'sheep', 'cow','elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
          'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard',
          'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple',
          'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch',
@@ -21,6 +20,11 @@ for index, names in enumerate(coco_names):
         print(index, names)
         index_list.append(index)
 
+#convert index to string
+list_index=[]
+for index in index_list:
+    list_index.append(str(index))
+    
 # list_index=[0,1,2,3,5,6,7,9,10,11,15,16]
 list_index=["0","1","2","3","5","6","7","9","10","11","15","16"]
 
