@@ -1,3 +1,5 @@
 jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0 --NotebookApp.password=''
 python .\train_custom.py --weights runs\train\exp7\weights\best.pt --name exp9 --workers 2
 python .\train_custom_coco.py --name exp2 --device 0  --epoch 8 --weights 'C:\Users\User\Documents\machine_learning\yolov7\runs\train\YOLOv7 Traffic\exp1\weights\last.pt'
+yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=1 imgsz=640 device=0 batch-size=32
+'C:\Users\User\AppData\Roaming\Python\Python39\site-packages\ultralytics\yolo\cfg\default.yaml'
