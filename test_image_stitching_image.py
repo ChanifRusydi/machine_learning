@@ -1,5 +1,6 @@
 import cv2
 import time
+import platform
 def open_camera(index):
     cap = cv2.VideoCapture(index)
     return cap
@@ -7,17 +8,21 @@ def open_camera(index):
 def main():
     # print OpenCV version
     print("OpenCV version: " + cv2.__version__)
-    # Get camera list
-    # device_list = device.getDeviceList()
-    # index = 0
-    # for camera in device_list:
-    #     print(str(index) + ': ' + camera[0])
-    #     index += 1
-    # last_index = index - 1
+    if platform.system() == 'Windows':
+        try:
+            import device
+            # Get camera list
+            device_list = device.getDeviceList()
+            index = 0
+            for camera in device_list:
+                print(str(index) + ': ' + camera[0])
+                index += 1
+            last_index = index - 1
 
-    # if last_index < 0:
-    #     print("No device is connected")
-    #     return
+            if last_index < 0:
+                print("No device is connected")
+        except:
+            print("Not in Windows")
     # Select a camera
     # camera_number = select_camera(last_index)
     # Open camera
@@ -49,8 +54,11 @@ def main():
                     print("Error")
 
             # Display the resulting frame
-                side_by_side = cv2.hconcat([frame, frame1])
-                cv2.imshow('frame', side_by_side)
+                if cap1.isOpened() and cap2.isOpened():
+                    side_by_side = cv2.hconcat([frame1, frame2])
+                    cv2.imshow('frame', side_by_side)
+                else:
+                    cv2.imshow('frame', frame1)
                 # key: 'ESC'
             key = cv2.waitKey(20)
             if key == 27:

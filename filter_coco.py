@@ -28,17 +28,17 @@ for index in index_list:
 # list_index=[0,1,2,3,5,6,7,9,10,11,15,16]
 list_index=["0","1","2","3","5","6","7","9","10","11","15","16"]
 
-label_base_path = r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\labels\train2017'
-label_destination_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\train\labels'
+# label_base_path = r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\labels\train2017'
+# label_destination_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\train\labels'
 
-image_base_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\images\train2017'
-image_destination_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\train\images'
+# image_base_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\images\train2017'
+# image_destination_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\train\images'
 
-# label_base_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\labels\val2017'
-# label_destination_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\val\labels'
+label_base_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\labels\val2017'
+label_destination_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\val\labels'
 
-# image_base_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\images\val2017'
-# image_destination_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\val\images'
+image_base_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\images\val2017'
+image_destination_path=r'C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\val\images'
 
 def copy_labels(source,destination):
     try:
@@ -51,6 +51,7 @@ def copy_images(source,destination):
     except FileNotFoundError:
         return source + " not found"
         print("File not found")
+
 # filename='000000425481.txt'
 # file_number = filename.split('.')[0]
 # jpg_file=file_number+'.jpg'
@@ -160,4 +161,4 @@ def copy_images(source,destination):
 #                 print(new_line)
 #                 file_write.write(new_line)
 #             else:
-#                 file_write.write(line)        
+#                 file_write.write(line)
