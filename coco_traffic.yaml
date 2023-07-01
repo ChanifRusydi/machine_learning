@@ -1,0 +1,9 @@
+train: C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\train # 118287 images
+val: C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic\val # 5000 images
+test: ./coco/test-dev2017.txt  # 20288 of 40670 images, submit to https://competitions.codalab.org/competitions/20794
+
+# number of classes
+nc: 12
+
+# class names
+names: [ 'person', 'bicycle', 'car', 'motorcycle', 'bus','train', 'truck', 'traffic light','fire hydrant','stop sign','cat', 'dog' ]

@@ -40,8 +40,8 @@ def main():
                 break
             else:
                 timestamp = time.time()
-                filename1 = 'frame1' + '.jpg'
-                filename2 = 'frame2' + '.jpg'
+                filename1 = 'frame1' + str(timestamp) + '.jpg'
+                filename2 = 'frame2' + str(timestamp) + '.jpg'
                 cv2.imwrite(filename1,frame1)
                 cv2.imwrite(filename2,frame2)
                 stitching=cv2.Stitcher.create()
@@ -52,6 +52,8 @@ def main():
                     time.sleep(50) # 50ms
                 else:
                     print("Error")
+                # put a delay of 100ms between every frame
+               
 
             # Display the resulting frame
                 if cap1.isOpened() and cap2.isOpened():
@@ -59,6 +61,7 @@ def main():
                     cv2.imshow('frame', side_by_side)
                 else:
                     cv2.imshow('frame', frame1)
+                time.sleep(100) # 100ms
                 # key: 'ESC'
             key = cv2.waitKey(20)
             if key == 27:
