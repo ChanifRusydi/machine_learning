@@ -7,110 +7,35 @@ from ultralytics import YOLO
 import supervision as sv
 
 
-class ObjectDetection:
+def detect_objects():
 
-    def __init__(self, capture_index):
-       
-        self.capture_index = capture_index
-        
-        self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        print("Using Device: ", self.device)
-        
-        self.model = self.load_model()
-        
-        self.CLASS_NAMES_DICT = self.model.model.names
+    camera = cv2.VideoCapture(0)
+    camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+    camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+    assert camera.isOpened()
     
-        self.box_annotator = sv.BoxAnnotator(sv.ColorPalette.default(), thickness=3, text_thickness=3, text_scale=1.5)
-    
-
-    def load_model(self):
-       
-        # model = YOLO("yolov8m.pt")  # load a pretrained YOLOv8n model
-        model = YOLO("yolov8n.pt")
-        model.fuse()
-    
-        return model
+    model = YOLO('yolov8n.pt')
+    model.fuse()
+    box_annotator = sv.BoxAnnotator(thickness=2)
 
 
-    def predict(self, frame):
-       
-        results = self.model(frame)
-        
-        return results
-    
+    while True:
+        ret, frame = camera.read()
+        # cv2.imshow('frame', frame)
+        results = model(frame)
+        print(results)
+        # for detection in results[0]:
+        #     class_id = detection.cls
+        #     confidence = detection.conf
+        #     xyxy = detection.xyxy
+        #     if class_id == 0.0:
+        #         print(f"{class_id} {confidence:0.2f}")
+        #         print(xyxy)
+        #     print(class_id, confidence, xyxy)
+        # detections = sv.Detections.from_yolov8(results[0].boxes)
+        # frame= box_annotator.annotate(scene=frame, detections=detections)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
-    def plot_bboxes(self, results, frame):
-        
-        xyxys = []
-        confidences = []
-        class_ids = []
-        
-         # Extract detections for person class
-        for result in results:
-            boxes = result.boxes.cpu().numpy()
-            # class_id = boxes.cls[0]
-            # conf = boxes.conf[0]
-            # xyxy = boxes.xyxy[0]
-
-            if class_ids == 0.0:
-          
-              xyxys.append(result.boxes.xyxy.cpu().numpy())
-              confidences.append(result.boxes.conf.cpu().numpy())
-              class_ids.append(result.boxes.cls.cpu().numpy().astype(int))
-            
-        
-        # Setup detections for visualization
-        detections = sv.Detections(
-                    xyxy=results[0].boxes.xyxy.cpu().numpy(),
-                    confidence=results[0].boxes.conf.cpu().numpy(),
-                    class_id=results[0].boxes.cls.cpu().numpy().astype(int),
-                    )
-        
-    
-        # Format custom labels
-        self.labels = [f"{self.CLASS_NAMES_DICT[class_id]} {confidence:0.2f}"
-        for _, confidence, class_id, tracker_id
-        in detections]
-        
-        # Annotate and display frame
-        frame = self.box_annotator.annotate(scene=frame, detections=detections, labels=self.labels)
-        
-        return frame
-    
-    
-    
-    def __call__(self):
-
-        cap = cv2.VideoCapture(self.capture_index)
-        assert cap.isOpened()
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-      
-        while True:
-          
-            start_time = time()
-            
-            ret, frame = cap.read()
-            assert ret
-            
-            results = self.predict(frame)
-            frame = self.plot_bboxes(results, frame)
-            
-            end_time = time()
-            fps = 1/np.round(end_time - start_time, 2)
-             
-            cv2.putText(frame, f'FPS: {int(fps)}', (20,70), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,255,0), 2)
-            
-            cv2.imshow('YOLOv8 Detection', frame)
- 
-            if cv2.waitKey(5) & 0xFF == 27:
-                
-                break
-        
-        cap.release()
-        cv2.destroyAllWindows()
-        
-        
-    
-detector = ObjectDetection(capture_index=0)
-detector()
+if __name__ == '__main__':
+    detect_objects()
