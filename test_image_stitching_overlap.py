@@ -13,7 +13,7 @@ def plot_images(imgs, figsize_in_inches=(5,5)):
     for col, img in enumerate(imgs):
         axs[col].imshow(cv.cvtColor(img, cv.COLOR_BGR2RGB))
     plt.show()
-image_file1 = 'yolov7/IMG_1982.jpeg'
+image_file1 = 'yolov7/stop_sign.jpg'
 image1=cv2.imread(image_file1)
 print(image1.shape)
 height, width, channels = image1.shape

@@ -211,8 +211,8 @@ parser.add_argument(
     type=float, dest='conf_thresh'
 )
 parser.add_argument(
-    '--ba', action='store', default=list(BA_COST_CHOICES.keys())[1],
-    help="Bundle adjustment cost function. The default is '%s'." % list(BA_COST_CHOICES.keys())[1],
+    '--ba', action='store', default=list(BA_COST_CHOICES.keys())[0],
+    help="Bundle adjustment cost function. The default is '%s'." % list(BA_COST_CHOICES.keys())[0],
     choices=BA_COST_CHOICES.keys(),
     type=str, dest='ba'
 )
