@@ -26,7 +26,7 @@ def main():
     # Select a camera
     # camera_number = select_camera(last_index)
     # Open camera
-    cap1 = open_camera(0)
+    cap1 = open_camerwa(0)
     cap2 = open_camera(1)
     if cap1.isOpened() or cap2.isOpened():
         width1 = cap1.get(3) # Frame Width

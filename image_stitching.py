@@ -80,6 +80,7 @@ def main():
             # cv2.imshow('frame', side_by_side)
 
             # key: 'ESC'
+            cv2.imwrite('camera1.jpg',frame)
             key = cv2.waitKey(20)
             if key == 27:
                 break
