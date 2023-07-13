@@ -1,80 +1,3 @@
-# import argparse
-
-# if __name__ == "__main__":
-#     # create the top-level parser
-#     my_parser = argparse.ArgumentParser(
-#         prog="PROG",
-#         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-#     )
-
-#     # create sub-parser
-#     sub_parsers = my_parser.add_subparsers(
-#         title="Operating modes",
-#         description="Select the operating mode",
-#         dest="mode",
-#         required=True,
-#     )
-
-#     # create the parser for the "agent" sub-command
-#     parser_agent = sub_parsers.add_parser("agent", help="Agent mode")
-#     parser_agent.add_argument(
-#         "--db_server", type=str, help="DB server name", default="localhost"
-#     )
-#     parser_agent.add_argument(
-#         "--update_interval",
-#         type=int,
-#         help="Interval of updating policy parameters",
-#         default=64,
-#     )
-
-#     # create the parse for the "learner" sub-command
-#     parser_learner = sub_parsers.add_parser("learner", help="Learner mode")
-#     parser_learner.add_argument(
-#         "-e",
-#         "--environment",
-#         type=str,
-#         help="Only OpenAI Gym/PyBullet environments are available!",
-#         required=True,
-#     )
-#     parser_learner.add_argument(
-#         "-t",
-#         "--max_steps",
-#         type=int,
-#         help="Number of agent's steps",
-#         default=int(1e6),
-#     )
-    
-#     # create the parse for the "tester" sub-command
-#     parser_tester = sub_parsers.add_parser("tester", help="Tester mode")
-#     parser_tester.add_argument(
-#         "-t",
-#         "--max_steps",
-#         type=int,
-#         help="Number of agent's steps",
-#         default=int(1e6),
-#     )
-#     parser_tester.add_argument(
-#         "--render", action="store_true", help="Render the environment"
-#     )
-#     parser_tester.add_argument(
-#         "-f", "--model_path", type=str, help="Path to saved model"
-#     )
-
-#     args = my_parser.parse_args()
-
-#     print(args)
-
-#     if args.mode == "agent":
-#         print('mode 1')  
-#     elif args.mode == "learner":  
-#         print('mode 2')  
-#     elif args.mode == "tester":
-#         print('mode 3')    
-# from pycocotools.coco import COCO
-
-# coco = COCO('./yolov7/data/coco/annotations/instances_val2017.json')
-# print(coco)
-
 """
 Stitching sample (advanced)
 ===========================
@@ -178,13 +101,13 @@ parser.add_argument(
     type=bool, dest='try_cuda'
 )
 parser.add_argument(
-    '--work_megapix', action='store', default=0.6,
+    '--work_megapix', action='store', default=1,
     help="Resolution for image registration step. The default is 0.6 Mpx",
     type=float, dest='work_megapix'
 )
 parser.add_argument(
-    '--features', action='store', default=list(FEATURES_FIND_CHOICES.keys())[1],
-    help="Type of features used for images matching. The default is '%s'." % list(FEATURES_FIND_CHOICES.keys())[1],
+    '--features', action='store', default=list(FEATURES_FIND_CHOICES.keys())[0],
+    help="Type of features used for images matching. The default is '%s'." % list(FEATURES_FIND_CHOICES.keys())[0],
     choices=FEATURES_FIND_CHOICES.keys(),
     type=str, dest='features'
 )
@@ -195,8 +118,8 @@ parser.add_argument(
     type=str, dest='matcher'
 )
 parser.add_argument(
-    '--estimator', action='store', default=list(ESTIMATOR_CHOICES.keys())[1],
-    help="Type of estimator used for transformation estimation. The default is '%s'." % list(ESTIMATOR_CHOICES.keys())[1],
+    '--estimator', action='store', default=list(ESTIMATOR_CHOICES.keys())[0],
+    help="Type of estimator used for transformation estimation. The default is '%s'." % list(ESTIMATOR_CHOICES.keys())[0],
     choices=ESTIMATOR_CHOICES.keys(),
     type=str, dest='estimator'
 )
@@ -238,8 +161,8 @@ parser.add_argument(
     type=str, dest='save_graph'
 )
 parser.add_argument(
-    '--warp', action='store', default=WARP_CHOICES[1],
-    help="Warp surface type. The default is '%s'." % WARP_CHOICES[1],
+    '--warp', action='store', default=WARP_CHOICES[0],
+    help="Warp surface type. The default is '%s'." % WARP_CHOICES[0],
     choices=WARP_CHOICES,
     type=str, dest='warp'
 )
@@ -352,14 +275,14 @@ def get_compensator(args):
 
 def main():
     args = parser.parse_args()
-    img_names = ['image1_60_left.jpg', 'image1_60_right.jpg']
+    # img_names = args.img_names
+    img_names=['image1_60_left.jpg','image1_60_right.jpg']
     print(img_names)
     work_megapix = args.work_megapix
     seam_megapix = args.seam_megapix
     compose_megapix = args.compose_megapix
     conf_thresh = args.conf_thresh
-    # ba_refine_mask = args.ba_refine_mask
-    ba_refine_mask='_____'
+    ba_refine_mask = args.ba_refine_mask
     wave_correct = WAVE_CORRECT_CHOICES[args.wave_correct]
     if args.save_graph is None:
         save_graph = False
@@ -385,14 +308,11 @@ def main():
     full_img_sizes = []
     features = []
     images = []
-    # image1=cv.imread('image1_60_left.jpg')
-    # image2=cv.imread('image1_60_right.jpg')
-    # images=[image1,image2]
     is_work_scale_set = False
     is_seam_scale_set = False
     is_compose_scale_set = False
     for name in img_names:
-        full_img = cv.imread(name)
+        full_img = cv.imread(cv.samples.findFile(name))
         if full_img is None:
             print("Cannot read image ", name)
             exit()
@@ -438,9 +358,9 @@ def main():
     img_names = img_names_subset
     full_img_sizes = full_img_sizes_subset
     num_images = len(img_names)
-    # if num_images < 2:
-    #     print("Need more images")
-    #     exit()
+    if num_images < 2:
+        print("Need more images")
+        exit()
 
     estimator = ESTIMATOR_CHOICES[args.estimator]()
     b, cameras = estimator.apply(features, p, None)
