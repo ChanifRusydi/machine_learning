@@ -2,7 +2,7 @@ import streamlit as st
 import cv2
 
 def main():
-    column1, column2 = st.columns
+    column1, column2 = st.columns()
     st.set_page_config(layout="wide")
     st.title("OpenCV and Streamlit")
     
