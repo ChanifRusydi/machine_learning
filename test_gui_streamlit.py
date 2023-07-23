@@ -24,7 +24,8 @@ def main():
         frame_placeholder2.image(frame2, channels="BGR")
         if cv2.waitKey(1) & 0xFF == ord('q') or stop_button:
             break
-    cap.release()
+    cap1.release()
+    cap2.release()
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
