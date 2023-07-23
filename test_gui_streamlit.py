@@ -15,7 +15,7 @@ def main():
     # frame_placeholder1 = st.empty()
     # frame_placeholder2 = st.empty()
     stop_button = st.button("Stop")
-    while cap.isOpened() and not stop_button:
+    while cap1.isOpened() and not stop_button:
         ret, frame1 = cap1.read()
         ret, frame2 = cap2.read()
         if not ret:
