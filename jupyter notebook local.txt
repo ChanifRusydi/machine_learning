@@ -1,12 +1,16 @@
 jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0 --NotebookApp.password=''
 python .\train_custom.py --weights runs\train\exp7\weights\best.pt --name exp9 --workers 2
 python .\train_custom_coco.py --name exp9 --device 0  --epoch 8 --weights 'C:\Users\User\Documents\machine_learning\yolov7\runs\train\YOLOv7 Traffic\exp8\weights\last.pt' --workers 
-python .\train_custom_coco.py --name exp10_linear_lr --device 0 --weights '' --workers 4  --linear_lr
-python .\train_custom_coco.py --name exp10_batch_size_16 --device 0 --weights '' --workers 4  --batch_size 16
-python .\train_custom_coco.py --name exp10_linear_lr --device 0 --weights '' --workers 4
+python .\train_custom_coco.py --name exp8_linear_lr --device 0  --workers 4  --linear-lr
+python .\train_custom_coco.py --name exp8_batch_size_16 --device 0  --workers 4  --batch-size 16
+python .\train_custom_coco.py --name exp8_adam --device 0  --workers 4 --adam
+python .\train_custom_coco.py --name exp8_linear_lr --device 0  --workers 4 
+
 
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model='' epochs=100 imgsz=640 device=0,1 batch=32 pretrained=False name=exp
 'C:\Users\User\AppData\Roaming\Python\Python39\site-packages\ultralytics\yolo\cfg\default.yaml'
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=1 imgsz=640 device=0 batch=32 pretrained=False name=exp_test exist_ok=True workers=2
 
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=1 imgsz=640 device=0 batch=32 pretrained=False name=exp_test exist_ok=True workers=2
+
+C:/ProgramData/Miniconda3/python.exe c:/Users/User/Documents/machine_learning/image_stitching.py --mode video --video 'Video1.mp4', 'Video2.mp4'

@@ -102,7 +102,7 @@ parser.add_argument(
     type=bool, dest='try_cuda'
 )
 parser.add_argument(
-    '--work_megapix', action='store', default=1,
+    '--work_megapix', action='store', default=0.6,
     help="Resolution for image registration step. The default is 0.6 Mpx",
     type=float, dest='work_megapix'
 )
@@ -130,7 +130,7 @@ parser.add_argument(
     type=float, dest='match_conf'
 )
 parser.add_argument(
-    '--conf_thresh', action='store', default=1.0,
+    '--conf_thresh', action='store', default=0.6,
     help="Threshold for two images are from the same panorama confidence.The default is 1.0.",
     type=float, dest='conf_thresh'
 )
@@ -278,7 +278,7 @@ def main():
     time_start=time.time()
     args = parser.parse_args()
     # img_names = args.img_names
-    img_names=['image1_60_left.jpg','image1_60_right.jpg']
+    img_names=['frame1_kiri.jpg', "frame2_kanan.jpg"]
     print(img_names)
     work_megapix = args.work_megapix
     seam_megapix = args.seam_megapix
