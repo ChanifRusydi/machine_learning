@@ -120,5 +120,5 @@ class ObjectDetection:
         
         
     
-detector = ObjectDetection(capture_index=0)
+detector = ObjectDetection(capture_index=r'C:\Users\User\Documents\machine_learning\2023-07-14 16-47-45.mp4 Render 1.mp4')
 detector()

@@ -13,7 +13,7 @@ def plot_images(imgs, figsize_in_inches=(5,5)):
     for col, img in enumerate(imgs):
         axs[col].imshow(cv.cvtColor(img, cv.COLOR_BGR2RGB))
     plt.show()
-image_file1 = 'yolov7/stop_sign.jpg'
+image_file1 = 'yolov7/IMG_1981.jpeg'
 image1=cv2.imread(image_file1)
 print(image1.shape)
 height, width, channels = image1.shape
@@ -28,28 +28,30 @@ height, width, channels = image1.shape
 # cv2.destroyAllWindows()
 # cv2.imwrite('image1_50_left.jpg',image1_50_left)
 # cv2.imwrite('image1_50_right.jpg',image1_50_right)
-sixty_percent = int(width * 0.6)
-image1_60_left = image1[:, :sixty_percent]
-image1_60_right = image1[:, width-sixty_percent:]
-print(image1_60_left.shape, image1_60_right.shape)
-cv2.imshow('image1_60_left',image1_60_left)
-cv2.imshow('image1_60_right',image1_60_right)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-cv2.imwrite('image1_60_left.jpg',image1_60_left)
-cv2.imwrite('image1_60_right.jpg',image1_60_right)
+# sixty_percent = int(width * 0.6)
+# image1_60_left = image1[:, :sixty_percent]
+# image1_60_right = image1[:, width-sixty_percent:]
+# print(image1_60_left.shape, image1_60_right.shape)
+# cv2.imshow('image1_60_left',image1_60_left)
+# cv2.imshow('image1_60_right',image1_60_right)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
+# cv2.imwrite('image1_60_left.jpg',image1_60_left)
+# cv2.imwrite('image1_60_right.jpg',image1_60_right)
 
 
 left_image = cv2.imread('image1_60_left.jpg')
 right_image = cv2.imread('image1_60_right.jpg')
 stitching_image=cv2.Stitcher_create()
+stitching_image = cv2.Stitcher.setFeatureFinder('AKAZE')
+cv2.Stitcher.setFeaturesMatcher(cv.detail_BestOf2NearestMatcher.create(False,0.3))
 status,stitched_image=stitching_image.stitch((left_image,right_image))
 
 if status==0:
     cv2.imshow('stitched_image',stitched_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    cv2.imwrite('stitched_image.jpg',stitched_image)
+    cv2.imwrite('stitched_image_new.jpg',stitched_image)
     print('image stitched', stitched_image.shape)
 else:
     print("Error")
