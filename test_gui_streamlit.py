@@ -1,5 +1,20 @@
 import streamlit as st
 import cv2
+import logging
+
+logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
+                    datefmt='%d-%b-%y %H:%M:%S',
+                    level=logging.DEBUG)
+logging.info('Start Python Streamlit App')
+logger = logging.getLogger(__name__)
+ 
+
+def show_result_image(image):
+    st.image(image, channels="BGR")
+
+
+def image_stitching(image1, image2):
+    return status, image
 
 def main():
     st.set_page_config(layout="wide")
@@ -22,6 +37,11 @@ def main():
             break
         frame_placeholder1.image(frame1, channels="BGR")
         frame_placeholder2.image(frame2, channels="BGR")
+
+        status, result = image_stitching(frame1, frame2)
+        if status= -1:
+            result = cv.imread('result.jpg')
+        frame_placeholder3.image(result, channels="BGR")
         if cv2.waitKey(1) & 0xFF == ord('q') or stop_button:
             break
     cap1.release()
