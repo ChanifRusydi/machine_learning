@@ -11,3 +11,5 @@ coco2017labels.zip
 train2017
 Video1.mp4
 Video2.mp4
+node_modules
+build

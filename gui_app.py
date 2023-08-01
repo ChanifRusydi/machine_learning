@@ -1,117 +1,52 @@
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from PySide6.QtWidgets import *
-from PySide6 import QtWidgets
-
+import streamlit as st
 import cv2
-import sys
 import logging
 
 logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S',
                     level=logging.DEBUG)
-logging.info('Start PYthon GUI App')
+logging.info('Start Python Streamlit App')
 logger = logging.getLogger(__name__)
-screen_width = QtWidgets.QDesktopWidget().screenGeometry().width()
-screen_height = QtWidgets.QDesktopWidget().screenGeometry().height()
-logging.info('Screen Size: %s x %s', screen_width, screen_height)
+ 
 
-class MyWidget(QtWidgets.QWidget):
-    def __init__(self):
-        super().__init__()
-        # self.video_size = QSize(720,480)
-        self.setup_ui()
-        self.setup_camera()
+def show_result_image(image):
+    st.image(image, channels="BGR")
 
-    def setup_ui(self):
-        """Initialize widgets.
-        """
-        self.image_label = QtWidgets.QLabel()
-        # self.image_label.setFixedSize(self.video_size)
 
-        # self.quit_button = QtWidgets.QPushButton("Quit")
-        # self.quit_button.clicked.connect(self.close)
+def image_stitching(image1, image2):
+    return status, image
 
-        self.main_layout = QtWidgets.QVBoxLayout()
-        self.main_layout.addWidget(self.image_label)
-        # self.main_layout.addWidget(self.quit_button)
+def main():
+    st.set_page_config(layout="wide")
+    column1, column2 = st.columns(2)
+   
+    st.title("OpenCV and Streamlit")
+    
+    st.caption("OpenCV and Streamlit")
+    cap1 = cv2.VideoCapture(0)
+    cap2 = cv2.VideoCapture(1)
+    frame_placeholder1 = column1.empty()
+    frame_placeholder2 = column2.empty()
+    # frame_placeholder1 = st.empty()
+    # frame_placeholder2 = st.empty()
+    stop_button = st.button("Stop")
+    while cap1.isOpened() and not stop_button:
+        ret, frame1 = cap1.read()
+        ret, frame2 = cap2.read()
+        if not ret:
+            break
+        frame_placeholder1.image(frame1, channels="BGR")
+        frame_placeholder2.image(frame2, channels="BGR")
 
-        self.setLayout(self.main_layout)
-
-    def setup_camera(self):
-        """Initialize camera.
-        """
-        self.capture = cv2.VideoCapture(1)
-        # self.capture.set(cv2.CAP_PROP_FRAME_WIDTH, self.video_size.width())
-        # self.capture.set(cv2.CAP_PROP_FRAME_HEIGHT, self.video_size.height())
-
-        self.timer = QTimer()
-        self.timer.timeout.connect(self.display_video_stream)
-        self.timer.start(30)
-
-    def display_video_stream(self):
-        """Read frame from camera and repaint QLabel widget.
-        """
-        _, frame = self.capture.read()
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        frame = cv2.flip(frame, 1)
-        image = QImage(frame, frame.shape[1], frame.shape[0], 
-                       frame.strides[0], QImage.Format_RGB888)
-        self.image_label.setPixmap(QPixmap.fromImage(image))
+        status, result = image_stitching(frame1, frame2)
+        if status= -1:
+            result = cv.imread('result.jpg')
+        frame_placeholder3.image(result, channels="BGR")
+        if cv2.waitKey(1) & 0xFF == ord('q') or stop_button:
+            break
+    cap1.release()
+    cap2.release()
+    cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication([])
-    window = MyWidget()
-    window.showFullScreen()
-    sys.exit(app.exec())
-
-#capture two cameras and display them using different threads
-# class Thread(QThread):
-#     updateFrame = Signal(QImage)
-
-#     def __init__(self, camera_id, parent=None):
-#         QThread.__init__(self, parent)
-#         self.trained_model = None
-#         self.status = True
-#         self.cap = True
-#         self.camera_id = camera_id
-#         self.camera = cv2.VideoCapture(camera_id)
-
-#     def run(self):
-#         while True:
-#             ret, frame = self.camera.read()
-#             if ret:
-#                 h, w, ch = frame.shape
-#                 img = QImage(frame.data, w, h, ch * w, QImage.Format_RGB888)
-#                 pixmap = QPixmap.fromImage(img)
-#                 scaled_img = pixmap.scaled(640, 480, Qt.KeepAspectRatio)
-#                 self.updateFrame.emit(scaled_img)
-
-# class Window(QMainWindow):
-#     def __init__(self):
-#         super().__init__()
-#         self.setup_ui()
-#         self.setup_camera()
-        
-#     def setup_ui(self):
-#         self.setWindowTitle('My Window')
-#         self.setGeometry(0, 0, 800, 600)
-#         self.label1 = QLabel(self)
-#         self.label1.setGeometry(50, 50, 320, 240)
-#         self.label2 = QLabel(self)
-#         self.label2.setGeometry(400, 50, 320, 240)
-
-#     def setup_camera(self):
-#         self.thread1 = Thread(0)
-#         self.thread1.updateFrame.connect(self.label1.setPixmap)
-#         self.thread1.start()
-
-#         self.thread2 = Thread(1)
-#         self.thread2.updateFrame.connect(self.label2.setPixmap)
-#         self.thread2.start()
-    
-# if __name__ == "__main__":
-#     app = QApplication([])
-#     window = Window()
-#     window.showFullScreen()
-#     sys.exit(app.exec())
+    main()

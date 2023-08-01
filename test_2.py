@@ -13,7 +13,6 @@ from collections import OrderedDict
 
 import cv2 as cv
 import numpy as np
-import time
 
 EXPOS_COMP_CHOICES = OrderedDict()
 EXPOS_COMP_CHOICES['gain_blocks'] = cv.detail.ExposureCompensator_GAIN_BLOCKS
@@ -107,7 +106,7 @@ parser.add_argument(
     type=float, dest='work_megapix'
 )
 parser.add_argument(
-    '--features', action='store', default=list(FEATURES_FIND_CHOICES.keys())[1],
+    '--features', action='store', default=list(FEATURES_FIND_CHOICES.keys())[0],
     help="Type of features used for images matching. The default is '%s'." % list(FEATURES_FIND_CHOICES.keys())[0],
     choices=FEATURES_FIND_CHOICES.keys(),
     type=str, dest='features'
@@ -130,7 +129,7 @@ parser.add_argument(
     type=float, dest='match_conf'
 )
 parser.add_argument(
-    '--conf_thresh', action='store', default=0.6,
+    '--conf_thresh', action='store', default=1.0,
     help="Threshold for two images are from the same panorama confidence.The default is 1.0.",
     type=float, dest='conf_thresh'
 )
@@ -275,10 +274,8 @@ def get_compensator(args):
 
 
 def main():
-    time_start=time.time()
     args = parser.parse_args()
-    # img_names = args.img_names
-    img_names=['frame1_kiri.jpg', "frame2_kanan.jpg"]
+    img_names = []
     print(img_names)
     work_megapix = args.work_megapix
     seam_megapix = args.seam_megapix
@@ -313,8 +310,6 @@ def main():
     is_work_scale_set = False
     is_seam_scale_set = False
     is_compose_scale_set = False
-    # for frame in video_frames:
-        
     for name in img_names:
         full_img = cv.imread(cv.samples.findFile(name))
         if full_img is None:
@@ -362,9 +357,9 @@ def main():
     img_names = img_names_subset
     full_img_sizes = full_img_sizes_subset
     num_images = len(img_names)
-    # if num_images < 2:
-    #     print("Need more images")
-    #     exit()
+    if num_images < 2:
+        print("Need more images")
+        exit()
 
     estimator = ESTIMATOR_CHOICES[args.estimator]()
     b, cameras = estimator.apply(features, p, None)
@@ -508,7 +503,6 @@ def main():
             cv.imwrite(fixed_file_name, timelapser.getDst())
         else:
             blender.feed(cv.UMat(image_warped_s), mask_warped, corners[idx])
-    time_finish=time.time()
     if not timelapse:
         result = None
         result_mask = None
@@ -519,9 +513,7 @@ def main():
         dst = cv.resize(dst, dsize=None, fx=zoom_x, fy=zoom_x)
         cv.imshow(result_name, dst)
         cv.waitKey()
-    
-    
-    print(time_finish-time_start)
+
     print("Done")
 
 
