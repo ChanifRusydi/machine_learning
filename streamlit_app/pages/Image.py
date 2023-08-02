@@ -30,7 +30,7 @@ with st.container():
     
     image = cv2.hconcat([image1, image2])
     image_side_by_side_placeholder.image(image, channels="BGR")
-    
+    ''']'p'''
 # image = cv2.hconcat([image1, image2])
 # print(type(image))
 # st.image(image, caption='Side by Side Image')

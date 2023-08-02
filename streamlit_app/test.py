@@ -1,9 +1,26 @@
+from ultralytics import YOLO
+import random
 import cv2
 
-image1 = cv2.imread('../../image1_60_left.jpg')
-image2 = cv2.imread('../../image1_60_right.jpg')
-
-cv2.imshow('image1', image1)
-cv2.imshow('image2', image2)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+def detect(image):
+    model = YOLO("best_yolov8.pt")
+    results = model.predict(image)
+    result = results[0]
+    status = 0
+    box = []
+    if len(result.boxes) > 0:
+        for i in range(len(result.boxes)):
+            box[i]= result.boxes[]
+            cls, xyxy, conf = box[i].cls , box[i].xyxy, box[i].conf
+            coordinates, class_id, conf = box[i].xyxy[0].tolist(), box[i].cls[0].item(), box[i].conf[0].item()
+            x1, y1, x2, y2 = coordinates
+            
+            image = cv2.rectangle(image, (x1, y1), (x2, y2), (random.randint(0,255), random.randint(0,255), random.randint(0,255)), 2)
+            image = cv2.putText(image, result.names[i], (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            status = 1
+    else:
+        status = -1
+    return status, image
+image = cv2.imread('frame2_kanan.jpg')
+status_code, image = detect(image)
+cv2.imshow('image', image)
