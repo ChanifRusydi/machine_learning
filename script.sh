@@ -7,4 +7,4 @@
 # xinit
 
 streamlit run streamlit_app/streamlit_app.py
-firefox --kiosk http://localhost:8501  --server.headless True
+firefox --kiosk http://localhost:8501  --server.headless true
