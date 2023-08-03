@@ -1,3 +1,4 @@
+
 # straight running python script
 # python -m http.server
 # npm run serve
@@ -6,5 +7,5 @@
 # sudo loginctl terminate-seat seat0
 # xinit
 firefox --kiosk http://localhost:8501 
-streamlit run streamlit_app/streamlit_app.py --server.headless true
+streamlit run /home/jetson/streamlit_app/streamlit_app.py --server.headless true
  
