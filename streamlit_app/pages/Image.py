@@ -1,6 +1,10 @@
 import streamlit as st
-import  cv2
+import cv2
 import numpy as np
+from yolov8_detect import detect
+
+image1 = None
+image2 = None
 st.title("Image Page")
 with st.container():
     image1_placeholder, image2_placeholder = st.columns(2)
@@ -20,17 +24,26 @@ with st.container():
     image2_placeholder.header("Image 2")
     if image1 is not None:
         with image1_placeholder:
+            print(type(image1))
             st.image(image1, channels="BGR")
     if image2 is not None:
         with image2_placeholder:
             st.image(image2, channels="BGR")
 st.header("Side by Side Image")
+
 with st.container():
     image_side_by_side_placeholder = st.empty()
-    
+    if image1 is None:
+        print("image1 is None")
+    if image2 is None:
+        print("image2 is None")
+
+    # image = cv2.hconcat([image1, image2])
+    # image_side_by_side_placeholder.image(image, channels="BGR")
     image = cv2.hconcat([image1, image2])
-    image_side_by_side_placeholder.image(image, channels="BGR")
-    ''']'p'''
+    status, image_detect = detect(image)
+    image_side_by_side_placeholder.image(image_detect, channels="BGR")
+    
 # image = cv2.hconcat([image1, image2])
 # print(type(image))
 # st.image(image, caption='Side by Side Image')
