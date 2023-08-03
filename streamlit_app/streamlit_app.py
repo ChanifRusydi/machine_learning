@@ -1,7 +1,17 @@
-import streamlit as st
+try:
+    import streamlit as st
+except ImportError:
+    from pip._internal import main as pip 
+    pip(['install', 'streamlit'])
+    import streamlit as st
 import cv2
 import logging
-from streamlit_extras.switch_page_button import switch_page
+try:
+    from streamlit_extras.switch_page_button import switch_page
+except ImportError:
+    from pip._internal import main as pip 
+    pip(['install', 'streamlit-extras'])
+    from streamlit_extras.switch_page_button import switch_page
 
 logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S',

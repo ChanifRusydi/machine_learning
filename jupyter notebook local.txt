@@ -15,3 +15,10 @@ yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coc
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=1 imgsz=640 device=0 batch=32 pretrained=False name=exp_test exist_ok=True workers=2
 
 C:/ProgramData/Miniconda3/python.exe c:/Users/User/Documents/machine_learning/image_stitching.py --mode video --video 'Video1.mp4', 'Video2.mp4'
+
+yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 batch=32 pretrained=False name=exp8
+
+
+yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 batch=16 pretrained=False name=exp8_batch_size_16_SGD optimizer=SGD
+yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 batch=32 pretrained=False name=exp8_sgd optimizer=SGD
+yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 batch=32 pretrained=False name=exp8_adam optimizer=Adam
