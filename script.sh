@@ -1,4 +1,4 @@
-
+!/bin/bash
 # straight running python script
 # python -m http.server
 # npm run serve
