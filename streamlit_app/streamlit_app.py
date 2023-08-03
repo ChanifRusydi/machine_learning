@@ -1,6 +1,6 @@
 try:
     import streamlit as st
-except ImportError:
+except ModuleNotFoundError:
     from pip._internal import main as pip 
     pip(['install', 'streamlit'])
     import streamlit as st
@@ -8,7 +8,7 @@ import cv2
 import logging
 try:
     from streamlit_extras.switch_page_button import switch_page
-except ImportError:
+except ModuleNotFoundError:
     from pip._internal import main as pip 
     pip(['install', 'streamlit-extras'])
     from streamlit_extras.switch_page_button import switch_page
