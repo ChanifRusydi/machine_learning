@@ -1,0 +1,18 @@
+#!/bin/bash
+# description: My Script
+# processname: myscript
+
+case $1 in
+    start)
+        /bin/bash ~/machine_learning/script.sh &
+        ;;
+    stop)
+        pkill -f ~/machine_learning/script.sh
+        ;;
+    restart)
+        pkill -f ~/machine_learning/script.sh
+        /bin/bash ~/machine_learning/script.sh &
+        ;;
+esac
+
+exit 0
