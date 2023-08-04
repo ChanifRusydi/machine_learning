@@ -32,16 +32,16 @@ Webcam_Page = st.button("Webcam Page")
 if Webcam_Page:
     switch_page("webcam")
 
-camera = cv2.VideoCapture(0)
-ret, frame = camera.read()
-frame_placeholder = st.empty()
-frame_placeholder.header("Camera")
-stop_camera = stateful_button("Stop", key="stop_button")
-while ret:
-    frame_placeholder.image(frame, channels="BGR")
-    if cv2.waitKey(1) & 0xFF == ord("q") or stop_camera:
-        camera.release()
-        break
+# camera = cv2.VideoCapture(0)
+# ret, frame = camera.read()
+# frame_placeholder = st.empty()
+# frame_placeholder.header("Camera")
+# stop_camera = stateful_button("Stop", key="stop_button")
+# while ret:
+#     frame_placeholder.image(frame, channels="BGR")
+#     if cv2.waitKey(1) & 0xFF == ord("q") or stop_camera:
+#         camera.release()
+#         break
 
 
 # def show_result_image(image):
