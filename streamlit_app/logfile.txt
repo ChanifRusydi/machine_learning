@@ -242,3 +242,100 @@
 04-Aug-23 13:16:05 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
 04-Aug-23 13:16:11 - Start Python Streamlit App
 04-Aug-23 13:16:33 - Start Python Streamlit App
+04-Aug-23 14:11:39 - Start Python Streamlit App
+04-Aug-23 14:11:40 - Start Python Streamlit App
+04-Aug-23 14:11:42 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 14:11:42 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 14:11:51 - Start Python Streamlit App
+04-Aug-23 14:11:52 - Start Python Streamlit App
+04-Aug-23 14:11:56 - Enter Video Page
+04-Aug-23 14:11:56 - Uploaded Video Not Found
+04-Aug-23 14:11:59 - Enter Video Page
+04-Aug-23 14:11:59 - Uploaded Video Not Found
+04-Aug-23 14:12:22 - Starting new HTTPS connection (1): www.google-analytics.com:443
+04-Aug-23 14:12:22 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+04-Aug-23 14:12:37 - Enter Video Page
+04-Aug-23 14:12:37 - Uploaded Video Not Found
+04-Aug-23 14:31:52 - Start Python Streamlit App
+04-Aug-23 14:31:55 - Start Python Streamlit App
+04-Aug-23 14:31:56 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 14:31:56 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 14:32:47 - Enter Video Page
+04-Aug-23 14:32:47 - Uploaded Video Not Found
+04-Aug-23 14:32:49 - Start Python Streamlit App
+04-Aug-23 14:32:50 - Enter Video Page
+04-Aug-23 14:32:50 - Uploaded Video Not Found
+04-Aug-23 14:33:57 - Start Python Streamlit App
+04-Aug-23 14:33:58 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 14:33:58 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 14:34:01 - Start Python Streamlit App
+04-Aug-23 14:35:14 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:14 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:14 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:14 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:14 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:14 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 14:35:14 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:17 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:17 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:17 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:17 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:17 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:17 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 14:35:17 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:26 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:26 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:26 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:26 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:26 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:35:26 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 14:35:26 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:36:24 - Start Python Streamlit App
+04-Aug-23 14:36:29 - Start Python Streamlit App
+04-Aug-23 14:36:30 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 14:36:30 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 14:36:41 - Start Python Streamlit App
+04-Aug-23 14:37:09 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:09 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:09 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:09 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:09 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:09 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 14:37:09 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:20 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:20 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:20 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:20 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:20 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:37:20 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 14:37:20 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:39:30 - Start Python Streamlit App
+04-Aug-23 14:39:32 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 14:39:32 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 14:39:34 - Start Python Streamlit App
+04-Aug-23 14:44:17 - Start Python Streamlit App
+04-Aug-23 14:45:56 - Start Python Streamlit App
+04-Aug-23 14:45:58 - Start Python Streamlit App
+04-Aug-23 14:45:59 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 14:45:59 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 14:47:08 - Enter Video Page
+04-Aug-23 14:47:08 - Uploaded Video Not Found
+04-Aug-23 14:49:13 - Starting new HTTPS connection (1): www.google-analytics.com:443
+04-Aug-23 14:49:13 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+04-Aug-23 14:52:37 - Start Python Streamlit App
+04-Aug-23 14:52:38 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 14:52:38 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 14:52:40 - Start Python Streamlit App
+04-Aug-23 14:52:43 - Starting new HTTPS connection (1): www.google-analytics.com:443
+04-Aug-23 14:52:43 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+04-Aug-23 14:53:11 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:53:11 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:53:11 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:53:11 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:53:11 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:53:11 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 14:53:11 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 14:53:39 - Start Python Streamlit App
+04-Aug-23 14:53:40 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 14:53:40 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 14:53:40 - Start Python Streamlit App

@@ -18,8 +18,8 @@ st.title("Webcam Page")
 back_button  = st.button("Back to Home Page")
 if back_button:
     switch_page("streamlit_app")
-camera1 = cv2.VideoCapture(0)
-camera2 = cv2.VideoCapture(1)
+camera1 = cv2.VideoCapture(1)
+camera2 = cv2.VideoCapture(2)
 camera1.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 camera1.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 camera2.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
@@ -32,6 +32,8 @@ stop_button = st.button("Stop")
 with st.container():
     camera1_placeholder, camera2_placeholder = st.columns([0.5, 0.5])
     camera1_placeholder, camera2_placeholder = st.empty(), st.empty()
+    side_by_side_placeholder = st.empty()
+
     camera1_placeholder.header("Camera 1")
     camera2_placeholder.header("Camera 2")
     # ret1, frame1 = camera1.read()
@@ -42,7 +44,21 @@ with st.container():
         if status1 and status2:
             _, frame1 = camera1.retrieve()
             _, frame2 = camera2.retrieve()
-            break
+            # frame1 = cv2.cvtColor(frame1, cv2.COLOR_RGB2BGR)
+            # frame2 = cv2.cvtColor(frame2, cv2.COLOR_RGB2BGR)
+            camera1_placeholder.image(frame1, use_column_width=True, channels="BGR")
+            camera2_placeholder.image(frame2, use_column_width=True, channels="BGR")
+            if frame1 is None or frame2 is None:
+                side_by_side_placeholder.subheader("Please open both camera")
+            else:
+                if frame1.shape != frame2.shape:
+                    side_by_side_placeholder.subheader("Please open camera with same shape")
+                else:
+                    image = cv2.hconcat([frame1, frame2])
+                    status, image_detect = detect(image)
+                    side_by_side_placeholder.image(image_detect, channels="BGR")
+            if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
+                break
         elif status1 and not status2:
             _, frame1 = camera1.retrieve()
             camera1_placeholder.image(frame1, use_column_width=True)
@@ -52,7 +68,7 @@ with st.container():
             continue
         elif status2 and not status1:
             _, frame2 = camera2.retrieve()
-            camera2_placeholder.image(frame2)
+            camera2_placeholder.image(frame2, use_column_width=True)
             if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
                 camera2.release()
                 break
@@ -83,6 +99,17 @@ with st.container():
     #     camera2_placeholder.write("Camera 2 is not available")
     #     if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
     #         break
+        # side_by_side_placeholder = st.empty()
+        # if frame1 is None or frame2 is None:
+        #     side_by_side_placeholder.subheader("Please open both camera")
+        # else:
+        #     if frame1.shape != frame2.shape:
+        #         side_by_side_placeholder.subheader("Please open camera with same shape")
+        #     else:
+        #         image = cv2.hconcat([frame1, frame2])
+        #         status, image_detect = detect(image)
+        #         side_by_side_placeholder.image(image_detect, channels="BGR")
+
 
 # with st.container():
 #     camera_side_by_side_placeholder = st.empty()
