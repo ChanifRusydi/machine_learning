@@ -200,3 +200,45 @@
 04-Aug-23 00:36:47 - Start Python Streamlit App
 04-Aug-23 00:36:49 - Start Python Streamlit App
 04-Aug-23 00:36:50 - Start Python Streamlit App
+04-Aug-23 13:07:44 - Start Python Streamlit App
+04-Aug-23 13:07:45 - Start Python Streamlit App
+04-Aug-23 13:07:47 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 13:07:47 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 13:08:03 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:08:03 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:08:03 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:08:03 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:08:03 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:08:03 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 13:08:03 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:08:25 - Enter Video Page
+04-Aug-23 13:08:25 - Uploaded Video Not Found
+04-Aug-23 13:08:34 - Start Python Streamlit App
+04-Aug-23 13:08:36 - Start Python Streamlit App
+04-Aug-23 13:11:24 - Start Python Streamlit App
+04-Aug-23 13:11:25 - Start Python Streamlit App
+04-Aug-23 13:11:26 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 13:11:26 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 13:12:06 - Start Python Streamlit App
+04-Aug-23 13:12:09 - Start Python Streamlit App
+04-Aug-23 13:12:10 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 13:12:10 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 13:12:15 - Start Python Streamlit App
+04-Aug-23 13:13:26 - Start Python Streamlit App
+04-Aug-23 13:13:29 - Start Python Streamlit App
+04-Aug-23 13:13:30 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 13:13:30 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 13:13:34 - Start Python Streamlit App
+04-Aug-23 13:15:53 - Start Python Streamlit App
+04-Aug-23 13:15:57 - Start Python Streamlit App
+04-Aug-23 13:15:58 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 13:15:58 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 13:16:05 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:16:05 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:16:05 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:16:05 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:16:05 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:16:05 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 13:16:05 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 13:16:11 - Start Python Streamlit App
+04-Aug-23 13:16:33 - Start Python Streamlit App
