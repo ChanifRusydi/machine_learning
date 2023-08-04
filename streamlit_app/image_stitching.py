@@ -122,6 +122,30 @@ images_warped = []
 sizes = []
 masks = []
 
+for i in range(0, num_images):
+    um = cv2.UMat(255 * np.ones(images[i].shape[:2], dtype=np.uint8))
+    masks.append(um)
+
+warper = cv2.PyRotationWarper(warp_type, warped_image_scale * seam_work_aspect)
+for idx in range(0, num_images):
+    K = cameras[idx].K().astype(np.float32)
+    swa = seam_work_aspect
+    K[0][0] *= swa
+    K[0][2] *= swa
+    K[1][1] *= swa
+    K[1][2] *= swa
+    corner, image_wp = warper.warp(images[idx], K, cameras[idx].R, cv.INTER_LINEAR, cv.BORDER_REFLECT)
+    corners.append(corner) 
+    sizes.append((image_wp.shape[1], image_wp.shape[0]))
+    images_warped.append(image_wp)
+    p, mask_wp = warper.warp(masks[idx], K, cameras[idx].R, cv.INTER_NEAREST, cv.BORDER_CONSTANT)
+    masks_warped.append(mask_wp.get())
+
+images_warped_f = []
+for img in images_warped:
+    imgf = img.astype(np.float32)
+    images_warped_f.append(imgf)
+    
 
 
 
