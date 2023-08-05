@@ -81,7 +81,7 @@ def main():
             print("frame2 is None")
             _,frame1 = camera1.retrieve()
             print(type(frame1), frame1)
-            frame1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2RGB)
+            # frame1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2RGB)
             camera1_placeholder.image(frame1, channels="BGR")
         # else:
         #     print("frame1 and frame2 is not None"
@@ -89,8 +89,8 @@ def main():
         #     camera1_placeholder.image(frame1, channels="BGR")
         #     frame2 = cv2.cvtColor(camera2.retrieve(), cv2.COLOR_BGR2RGB)
         #     camera2_placeholder.image(frame2, channels="BGR")
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
+            if cv2.waitKey(1) & 0xFF == ord("q"):
+                break
 
 if __name__ == "__main__":
     main()

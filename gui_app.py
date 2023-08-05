@@ -18,35 +18,45 @@ def image_stitching(image1, image2):
 
 def main():
     st.set_page_config(layout="wide")
-    column1, column2 = st.columns(2)
-   
-    st.title("OpenCV and Streamlit")
-    
-    st.caption("OpenCV and Streamlit")
-    cap1 = cv2.VideoCapture(0)
-    cap2 = cv2.VideoCapture(1)
-    frame_placeholder1 = column1.empty()
-    frame_placeholder2 = column2.empty()
-    # frame_placeholder1 = st.empty()
-    # frame_placeholder2 = st.empty()
-    stop_button = st.button("Stop")
-    while cap1.isOpened() and not stop_button:
-        ret, frame1 = cap1.read()
-        ret, frame2 = cap2.read()
-        if not ret:
-            break
-        frame_placeholder1.image(frame1, channels="BGR")
-        frame_placeholder2.image(frame2, channels="BGR")
-
-        status, result = image_stitching(frame1, frame2)
-        if status= -1:
-            result = cv.imread('result.jpg')
-        frame_placeholder3.image(result, channels="BGR")
-        if cv2.waitKey(1) & 0xFF == ord('q') or stop_button:
-            break
-    cap1.release()
-    cap2.release()
-    cv2.destroyAllWindows()
+    camera1 = cv2.VideoCapture(0)
+    camera2 = cv2.VideoCapture(1)
+    with st.container():
+        camera1_placeholder, camera2_placeholder = st.columns([0.5, 0.5])
+        
+        camera1_placeholder.header("Camera 1")
+        camera2_placeholder.header("Camera 2")
+        # ret1, frame1 = camera1.read()
+        # ret2, frame2 = camera2.read()
+        while True:
+            # if status1 and status2:
+            #     _, frame1 = camera1.retrieve()
+            #     _, frame2 = camera2.retrieve()
+            #     break
+            # elif status1 and not status2:
+            #     _, frame1 = camera1.retrieve()
+            #     camera1_placeholder.image(frame1, use_column_width=True)
+            #     if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
+            #         camera1.release()
+            #         break
+            #     continue
+            # elif status2 and not status1:
+            #     _, frame2 = camera2.retrieve()
+            #     camera2_placeholder.image(frame2)
+            #     if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
+            #         camera2.release()
+            #         break
+            camera1_placeholder, camera2_placeholder = st.empty(), st.empty()
+            ret1, frame1 = camera1.read()
+            ret2, frame2 = camera2.read()
+            if ret1 and ret2:
+                camera1_placeholder.image(frame1, use_column_width=True)
+                camera2_placeholder.image(frame2, use_column_width=True)
+                if cv2.waitKey(1) & 0xFF == ord("q"):
+                    camera1.release()
+                    break
+            else:
+                camera1_placeholder.write("Camera 1 is not available")
+                camera2_placeholder.write("Camera 2 is not available")
 
 if __name__ == "__main__":
     main()
