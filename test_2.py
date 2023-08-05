@@ -129,7 +129,7 @@ parser.add_argument(
     type=float, dest='match_conf'
 )
 parser.add_argument(
-    '--conf_thresh', action='store', default=1.0,
+    '--conf_thresh', action='store', default=1,
     help="Threshold for two images are from the same panorama confidence.The default is 1.0.",
     type=float, dest='conf_thresh'
 )
@@ -140,7 +140,7 @@ parser.add_argument(
     type=str, dest='ba'
 )
 parser.add_argument(
-    '--ba_refine_mask', action='store', default='xxxxx',
+    '--ba_refine_mask', action='store', default='x_xxx',
     help="Set refinement mask for bundle adjustment. It looks like 'x_xxx', "
          "where 'x' means refine respective parameter and '_' means don't refine, "
          "and has the following format:<fx><skew><ppx><aspect><ppy>. "
@@ -210,7 +210,7 @@ parser.add_argument(
     type=str, dest='blend'
 )
 parser.add_argument(
-    '--blend_strength', action='store', default=5,
+    '--blend_strength', action='store', default=10,
     help="Blending strength from [0,100] range. The default is 5",
     type=np.int32, dest='blend_strength'
 )
@@ -275,8 +275,8 @@ def get_compensator(args):
 
 def main():
     args = parser.parse_args()
-    img_names = ['Intersect_kiri.jpg', 'Intersect_kanan.jpg']
-    # img_names = ['image1_60_left.jpg', 'image1_60_right.jpg']
+    # img_names = ['Intersect_kiri.jpg', 'Intersect_kanan.jpg']
+    img_names = ['image1_60_left.jpg', 'image1_60_right.jpg']
     # img_names = ['frame1_kiri.jpg', 'frame2_kanan.jpg']
     print(img_names)
 
@@ -310,7 +310,7 @@ def main():
         timelapse = False
 
     print(args.features)
-    finder = cv.AKAZE_create()
+    finder = cv.ORB_create()
     seam_work_aspect = 1
     full_img_sizes = []
     features = []
@@ -381,6 +381,8 @@ def main():
 
     estimator = ESTIMATOR_CHOICES[args.estimator]()
     b, cameras = estimator.apply(features, p, None)
+    print('b',b)
+    print('cameras',cameras)
     if not b:
         print("Homography estimation failed.")
         exit()
