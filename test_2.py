@@ -161,7 +161,7 @@ parser.add_argument(
     type=str, dest='save_graph'
 )
 parser.add_argument(
-    '--warp', action='store', default=WARP_CHOICES[0],
+    '--warp', action='store', default=WARP_CHOICES[3],
     help="Warp surface type. The default is '%s'." % WARP_CHOICES[0],
     choices=WARP_CHOICES,
     type=str, dest='warp'
@@ -275,7 +275,9 @@ def get_compensator(args):
 
 def main():
     args = parser.parse_args()
-    img_names = []
+    img_names = ['Intersect_kiri.jpg', 'Intersect_kanan.jpg']
+    # img_names = ['image1_60_left.jpg', 'image1_60_right.jpg']
+    # img_names = ['frame1_kiri.jpg', 'frame2_kanan.jpg']
     print(img_names)
     work_megapix = args.work_megapix
     seam_megapix = args.seam_megapix
@@ -302,7 +304,7 @@ def main():
             exit()
     else:
         timelapse = False
-    finder = FEATURES_FIND_CHOICES[args.features]()
+    finder = cv.AKAZE_create()
     seam_work_aspect = 1
     full_img_sizes = []
     features = []
@@ -316,6 +318,7 @@ def main():
             print("Cannot read image ", name)
             exit()
         full_img_sizes.append((full_img.shape[1], full_img.shape[0]))
+        print(full_img_sizes)
         if work_megapix < 0:
             img = full_img
             work_scale = 1
@@ -349,6 +352,7 @@ def main():
     img_subset = []
     img_names_subset = []
     full_img_sizes_subset = []
+    print(len(indices))
     for i in range(len(indices)):
         img_names_subset.append(img_names[indices[i]])
         img_subset.append(images[indices[i]])
@@ -426,10 +430,16 @@ def main():
         p, mask_wp = warper.warp(masks[idx], K, cameras[idx].R, cv.INTER_NEAREST, cv.BORDER_CONSTANT)
         masks_warped.append(mask_wp.get())
 
+
     images_warped_f = []
     for img in images_warped:
         imgf = img.astype(np.float32)
         images_warped_f.append(imgf)
+    print('image warped f ',len(images_warped_f))
+    cv.imshow("image1", images_warped_f[0])
+    cv.imshow("image2", images_warped_f[1])
+    
+    cv.waitKey(0)
 
     compensator = get_compensator(args)
     compensator.feed(corners=corners, images=images_warped, masks=masks_warped)
@@ -503,11 +513,13 @@ def main():
             cv.imwrite(fixed_file_name, timelapser.getDst())
         else:
             blender.feed(cv.UMat(image_warped_s), mask_warped, corners[idx])
+    print('image_warped_s',len(image_warped_s))
     if not timelapse:
         result = None
         result_mask = None
         result, result_mask = blender.blend(result, result_mask)
         cv.imwrite(result_name, result)
+
         zoom_x = 600.0 / result.shape[1]
         dst = cv.normalize(src=result, dst=None, alpha=255., norm_type=cv.NORM_MINMAX, dtype=cv.CV_8U)
         dst = cv.resize(dst, dsize=None, fx=zoom_x, fy=zoom_x)
