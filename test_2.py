@@ -106,7 +106,7 @@ parser.add_argument(
     type=float, dest='work_megapix'
 )
 parser.add_argument(
-    '--features', action='store', default=list(FEATURES_FIND_CHOICES.keys())[0],
+    '--features', action='store', default=list(FEATURES_FIND_CHOICES.keys())[3],
     help="Type of features used for images matching. The default is '%s'." % list(FEATURES_FIND_CHOICES.keys())[0],
     choices=FEATURES_FIND_CHOICES.keys(),
     type=str, dest='features'
@@ -161,7 +161,7 @@ parser.add_argument(
     type=str, dest='save_graph'
 )
 parser.add_argument(
-    '--warp', action='store', default=WARP_CHOICES[3],
+    '--warp', action='store', default=WARP_CHOICES[1],
     help="Warp surface type. The default is '%s'." % WARP_CHOICES[0],
     choices=WARP_CHOICES,
     type=str, dest='warp'
@@ -279,20 +279,24 @@ def main():
     # img_names = ['image1_60_left.jpg', 'image1_60_right.jpg']
     # img_names = ['frame1_kiri.jpg', 'frame2_kanan.jpg']
     print(img_names)
+
     work_megapix = args.work_megapix
     seam_megapix = args.seam_megapix
     compose_megapix = args.compose_megapix
     conf_thresh = args.conf_thresh
     ba_refine_mask = args.ba_refine_mask
     wave_correct = WAVE_CORRECT_CHOICES[args.wave_correct]
+
     if args.save_graph is None:
         save_graph = False
     else:
         save_graph = True
+    
     warp_type = args.warp
     blend_type = args.blend
     blend_strength = args.blend_strength
     result_name = args.output
+
     if args.timelapse is not None:
         timelapse = True
         if args.timelapse == "as_is":
@@ -304,6 +308,8 @@ def main():
             exit()
     else:
         timelapse = False
+
+    print(args.features)
     finder = cv.AKAZE_create()
     seam_work_aspect = 1
     full_img_sizes = []
@@ -314,6 +320,7 @@ def main():
     is_compose_scale_set = False
     for name in img_names:
         full_img = cv.imread(cv.samples.findFile(name))
+        print(type(full_img))
         if full_img is None:
             print("Cannot read image ", name)
             exit()
@@ -328,20 +335,26 @@ def main():
                 work_scale = min(1.0, np.sqrt(work_megapix * 1e6 / (full_img.shape[0] * full_img.shape[1])))
                 is_work_scale_set = True
             img = cv.resize(src=full_img, dsize=None, fx=work_scale, fy=work_scale, interpolation=cv.INTER_LINEAR_EXACT)
+            print(img.shape)
         if is_seam_scale_set is False:
             if seam_megapix > 0:
                 seam_scale = min(1.0, np.sqrt(seam_megapix * 1e6 / (full_img.shape[0] * full_img.shape[1])))
             else:
                 seam_scale = 1.0
             seam_work_aspect = seam_scale / work_scale
+            print(seam_work_aspect)
             is_seam_scale_set = True
         img_feat = cv.detail.computeImageFeatures2(finder, img)
         features.append(img_feat)
+        print(img_feat)
         img = cv.resize(src=full_img, dsize=None, fx=seam_scale, fy=seam_scale, interpolation=cv.INTER_LINEAR_EXACT)
         images.append(img)
+        cv.imshow("image", img)
+        cv.waitKey(0)
 
     matcher = get_matcher(args)
     p = matcher.apply2(features)
+    print('p',type(p),p)
     matcher.collectGarbage()
 
     if save_graph:
@@ -349,6 +362,7 @@ def main():
             fh.write(cv.detail.matchesGraphAsString(img_names, p, conf_thresh))
 
     indices = cv.detail.leaveBiggestComponent(features, p, conf_thresh)
+    print(type(indices), indices)
     img_subset = []
     img_names_subset = []
     full_img_sizes_subset = []
