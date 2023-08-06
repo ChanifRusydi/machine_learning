@@ -97,6 +97,7 @@ def image_stitching(image1, image2):
     num_images = len(img_names_subset)
 
     b,cameras = estimator.apply(features, p, None)
+    print(type(cameras))
     if not b:
         return -1, None
         # print("Homography estimation failed.")
@@ -273,4 +274,9 @@ if __name__ == "__main__":
     status, image_result = image_stitching(image1=image1, image2=image2)
     print('status',status, image_result.shape)
     cv2.imshow('image_result', image_result)
+    desired_size_width = 2*image1.shape[1]
+    desired_size_height = image1.shape[0]
+    # image_result_desired = cv2.resize(src=image_result, dsize=(desired_size_width, desired_size_height), interpolation=cv2.INTER_LINEAR_EXACT)
+    image_result_desired = image_result[0:desired_size_width, 0:desired_size_height]
+    cv2.imshow('image_result_desired', image_result_desired)
     cv2.waitKey(0)
