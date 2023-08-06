@@ -100,3 +100,9 @@
 06-Aug-23 16:40:33 - Start Python Streamlit App
 06-Aug-23 16:40:34 - CACHEDIR=/Users/chanifrusydi/.matplotlib
 06-Aug-23 16:40:34 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+06-Aug-23 17:43:32 - Start Python Streamlit App
+06-Aug-23 17:43:54 - Start Python Streamlit App
+06-Aug-23 17:43:55 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+06-Aug-23 17:43:55 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+06-Aug-23 17:44:15 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 17:44:18 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
