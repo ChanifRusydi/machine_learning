@@ -4,7 +4,7 @@ import numpy as np
 from streamlit_extras.switch_page_button import switch_page
 from streamlit_extras.stateful_button import button as stateful_button
 from yolov8_detect import detect
-import logging
+from image_stitching import image_stitching
 
 logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S',
@@ -53,9 +53,12 @@ with st.container():
                 side_by_side_placeholder.subheader("Please open both camera")
             else:
                 if frame1.shape != frame2.shape:
-                    side_by_side_placeholder.subheader("Please open camera with same shape")
+                    side_by_side_placeholder.subheader("Please open camera with same resolution")
                 else:
-                    image = cv2.hconcat([frame1, frame2])
+                    stitching_status, image = image_stitching(frame1, frame2)
+                    if stitching_status == -1:
+                        image = cv2.hconcat([frame1, frame2])
+
                     status, image_detect = detect(image)
                     side_by_side_placeholder.image(image_detect, channels="BGR")
             if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:

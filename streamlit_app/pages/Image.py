@@ -2,6 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 from yolov8_detect import detect
+from image_stitching import image_stitching
 
 
 image1 = None
@@ -47,7 +48,9 @@ with st.container():
         if image1.shape != image2.shape:
             image_side_by_side_placeholder.subheader("Please upload images with same shape")
         else:
-            image = cv2.hconcat([image1, image2])
+            image_stitching_status, image = image_stitching(image1, image2)
+            if image_stitching_status == -1 and image is None:
+                image = cv2.hconcat([image1, image2])
             status, image_detect = detect(image)
             image_side_by_side_placeholder.image(image_detect, channels="BGR")
     
