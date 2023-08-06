@@ -50,7 +50,7 @@ with st.container():
         else:
             image_stitching_status, image = image_stitching(image1, image2)
             if image_stitching_status == -1 and image is None:
-                image = cv2.hconcat([image1, image2])
+                  image = cv2.hconcat([image1, image2])
             status, image_detect = detect(image)
             image_side_by_side_placeholder.image(image_detect, channels="BGR")
     

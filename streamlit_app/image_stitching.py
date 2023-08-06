@@ -25,7 +25,7 @@ def image_stitching(image1, image2):
     blend_type = 'multiband'
     blend_strength = 10      #overlap
 
-    matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 56)
+    matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 6)
     compensator = cv2.detail.ExposureCompensator_createDefault(expos_comp)
    
     work_megapix = 1
@@ -120,7 +120,16 @@ def image_stitching(image1, image2):
         refine_mask[1][2] = 1
 
     adjuster.setRefinementMask(refine_mask)
-    b, cameras = adjuster.apply(features, p, cameras)
+    print('type of p', type(p))
+    print('type of cameras', type(cameras))
+    print('type of features', type(features))
+    try:
+        b, cameras = adjuster.apply(features, p, cameras)
+    except:
+        
+        return -1, None
+        # print("Camera parameters adjusting failed.")
+        # exit()
     if not b:
         return -1, None
         print("Camera parameters adjusting failed.")
@@ -197,11 +206,10 @@ def image_stitching(image1, image2):
                 K = cameras[i].K().astype(np.float32)
                 roi = warper.warpRoi(sz, K, cameras[i].R)
                 corners.append(roi[0:2])
-                print('corners on compose', corners)
                 sizes.append(roi[2:4])
-                print('sizes on comopse', sizes)
+                
         resize_factor = abs(compose_scale - 1) 
-        print(resize_factor)
+        
         if resize_factor > 1e-1:
             
             img = cv2.resize(src=full_img, dsize=None, fx=compose_scale, fy=compose_scale, interpolation=cv2.INTER_LINEAR_EXACT)
@@ -211,7 +219,7 @@ def image_stitching(image1, image2):
         _img_size = (img.shape[1], img.shape[0])
         K = cameras[idx].K().astype(np.float32)
         corner, image_warped = warper.warp(img, K, cameras[idx].R, cv2.INTER_LINEAR, cv2.BORDER_REFLECT_101)
-        print('corner', corner)
+
         mask = 255 * np.ones((img.shape[0], img.shape[1]), dtype=np.uint8)
         p, mask_warped = warper.warp(mask, K, cameras[idx].R, cv2.INTER_NEAREST, cv2.BORDER_REFLECT_101)
         compensator.apply(idx, corners[idx], image_warped, mask_warped)
@@ -230,10 +238,10 @@ def image_stitching(image1, image2):
             # overlap_sz = cv2.detail.overlapRoi[)
             # print('overlap size', overlap_sz)
             dst_sz = cv2.detail.resultRoi(corners=corners, sizes=sizes)
-            print('destination size', dst_sz)
+            
             blend_width = image1.shape[1] * blend_strength / 100
             # blend_width = np.sqrt(dst_sz[2] * dst_sz[3]) * blend_strength / 100
-            print('blend_width', blend_width)
+            
             if blend_width < 1:
                 blenders = cv2.detail.Blender_createDefault(cv2.detail.Blender_NO)
             elif blend_type == 'multiband':

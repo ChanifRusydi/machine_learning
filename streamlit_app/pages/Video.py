@@ -89,7 +89,7 @@ with st.container():
                 if image_stitching_status == -1 and image is None:
                     image = cv2.hconcat([frame1, frame2])
                 status,image = detect(image)
-                side_by_side_placeholder.image(image, channels="BGR")
+                side_by_side_placeholder.image(image, channels="RGB")
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
         open_video1.release()

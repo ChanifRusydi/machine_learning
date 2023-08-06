@@ -260,7 +260,10 @@ def image_stitching(image1, image2):
 
     result = None
     result_mask = None
-    result, result_mask = blenders.blend(result, result_mask)
+    try :
+        result, result_mask = blenders.blend(result, result_mask)
+    except:
+        return -1, None
     result = result.astype(np.uint8)
     status = 0
     return status, result
@@ -277,6 +280,6 @@ if __name__ == "__main__":
     desired_size_width = 2*image1.shape[1]
     desired_size_height = image1.shape[0]
     # image_result_desired = cv2.resize(src=image_result, dsize=(desired_size_width, desired_size_height), interpolation=cv2.INTER_LINEAR_EXACT)
-    image_result_desired = image_result[0:desired_size_width, 0:desired_size_height]
-    cv2.imshow('image_result_desired', image_result_desired)
+    # image_result_desired = image_result[0:desired_size_height, 0:desired_size_width ]
+    # cv2.imshow('image_result_desired', image_result_desired)
     cv2.waitKey(0)

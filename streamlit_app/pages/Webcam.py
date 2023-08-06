@@ -1,6 +1,7 @@
 import streamlit as st
 import cv2
 import numpy as np
+import logging
 from streamlit_extras.switch_page_button import switch_page
 from streamlit_extras.stateful_button import button as stateful_button
 from yolov8_detect import detect
@@ -48,7 +49,7 @@ with st.container():
             # frame2 = cv2.cvtColor(frame2, cv2.COLOR_RGB2BGR)
             camera1_placeholder.image(frame1, use_column_width=True, channels="BGR")
             camera2_placeholder.image(frame2, use_column_width=True, channels="BGR")
-            print('type of frame', type(frame1), type(frame2))
+            # print('type of frame', type(frame1), type(frame2))
             if frame1 is None or frame2 is None:
                 side_by_side_placeholder.subheader("Please open both camera")
             else:
@@ -66,7 +67,7 @@ with st.container():
         elif status1 and not status2:
             _, frame1 = camera1.retrieve()
             camera1_placeholder.image(frame1, use_column_width=True, channels="BGR")
-            print('type of frame', type(frame1))
+            # print('type of frame', type(frame1))
             if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
                 camera1.release()
                 break
