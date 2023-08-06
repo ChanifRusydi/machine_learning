@@ -1,7 +1,18 @@
-import streamlit as st
+try:
+    import streamlit as st
+except ModuleNotFoundError:
+    from pip._internal import main as pip 
+    pip(['install', 'streamlit'])
+    import streamlit as st
 import cv2
 import logging
-from streamlit_extras.switch_page_button import switch_page
+try:
+    from streamlit_extras.switch_page_button import switch_page
+    from streamlit_extras.stateful_button import button as stateful_button
+except ModuleNotFoundError:
+    from pip._internal import main as pip 
+    pip(['install', 'streamlit-extras'])
+    from streamlit_extras.switch_page_button import switch_page
 
 logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S',
@@ -20,6 +31,18 @@ if Image_Page:
 Webcam_Page = st.button("Webcam Page")
 if Webcam_Page:
     switch_page("webcam")
+
+# camera = cv2.VideoCapture(0)
+# ret, frame = camera.read()
+# frame_placeholder = st.empty()
+# frame_placeholder.header("Camera")
+# stop_camera = stateful_button("Stop", key="stop_button")
+# while ret:
+#     frame_placeholder.image(frame, channels="BGR")
+#     if cv2.waitKey(1) & 0xFF == ord("q") or stop_camera:
+#         camera.release()
+#         break
+
 
 # def show_result_image(image):
 #     st.image(image, channels="BGR")
