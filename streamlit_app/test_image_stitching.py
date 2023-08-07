@@ -21,11 +21,11 @@ def image_stitching(image1, image2):
     seam_finder = cv2.detail.GraphCutSeamFinder('COST_COLOR')
     estimator = cv2.detail_HomographyBasedEstimator()
     warp_type  = 'plane'
-    wave_correct = ''
+    wave_correct = 'horizontal'
     blend_type = 'multiband'
     blend_strength = 10      #overlap
 
-    matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 56)
+    # matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 56)
     compensator = cv2.detail.ExposureCompensator_createDefault(expos_comp)
    
     work_megapix = 1
