@@ -435,3 +435,125 @@
 04-Aug-23 15:29:04 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
 04-Aug-23 15:30:04 - Starting new HTTPS connection (1): www.google-analytics.com:443
 04-Aug-23 15:30:04 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 19:00:59 - Start Python Streamlit App
+06-Aug-23 20:08:28 - Start Python Streamlit App
+06-Aug-23 20:08:30 - Start Python Streamlit App
+06-Aug-23 20:08:31 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+06-Aug-23 20:08:31 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+06-Aug-23 20:08:37 - Enter Video Page
+06-Aug-23 20:08:37 - Uploaded Video Not Found
+06-Aug-23 20:08:44 - Enter Video Page
+06-Aug-23 20:08:49 - Enter Video Page
+06-Aug-23 20:08:52 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:08:53 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:13:33 - Start Python Streamlit App
+06-Aug-23 20:13:34 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+06-Aug-23 20:13:34 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+06-Aug-23 20:13:37 - Start Python Streamlit App
+06-Aug-23 20:14:43 - Start Python Streamlit App
+06-Aug-23 20:14:44 - Start Python Streamlit App
+06-Aug-23 20:14:45 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+06-Aug-23 20:14:45 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+06-Aug-23 20:14:57 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:14:57 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:49:32 - Start Python Streamlit App
+06-Aug-23 20:49:34 - Start Python Streamlit App
+06-Aug-23 20:49:35 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+06-Aug-23 20:49:35 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+06-Aug-23 20:49:36 - Enter Video Page
+06-Aug-23 20:49:36 - Uploaded Video Not Found
+06-Aug-23 20:50:17 - Enter Video Page
+06-Aug-23 20:50:28 - Enter Video Page
+06-Aug-23 20:50:28 - Uploaded Video Not Found
+06-Aug-23 20:50:36 - Enter Video Page
+06-Aug-23 20:50:40 - Enter Video Page
+06-Aug-23 20:50:43 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:50:43 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:51:45 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:51:46 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:52:13 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:52:14 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:52:14 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:52:14 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:52:14 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:52:14 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+06-Aug-23 20:52:14 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:52:18 - Enter Video Page
+06-Aug-23 20:52:18 - Uploaded Video Not Found
+06-Aug-23 20:52:19 - Enter Video Page
+06-Aug-23 20:52:19 - Uploaded Video Not Found
+06-Aug-23 20:52:25 - Enter Video Page
+06-Aug-23 20:52:29 - Enter Video Page
+06-Aug-23 20:52:48 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:52:48 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:53:37 - Enter Video Page
+06-Aug-23 20:53:38 - Uploaded Video Not Found
+06-Aug-23 20:53:40 - Enter Video Page
+06-Aug-23 20:53:40 - Uploaded Video Not Found
+06-Aug-23 20:53:41 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:53:42 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:53:42 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:53:42 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:53:42 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:53:42 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+06-Aug-23 20:53:42 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:54:02 - Enter Video Page
+06-Aug-23 20:54:02 - Uploaded Video Not Found
+06-Aug-23 20:54:11 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:54:11 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:54:11 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:54:11 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:54:11 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:54:11 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+06-Aug-23 20:54:11 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:54:34 - Enter Video Page
+06-Aug-23 20:54:39 - Enter Video Page
+06-Aug-23 20:54:44 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:54:44 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:55:05 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:55:05 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:55:05 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:55:06 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:55:06 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:55:06 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+06-Aug-23 20:55:06 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 20:55:46 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:55:46 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:56:47 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:56:47 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:57:47 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:57:48 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:58:50 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:58:50 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 20:59:51 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 20:59:51 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 21:02:01 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 21:02:01 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 21:02:01 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 21:02:01 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 21:02:01 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 21:02:01 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+06-Aug-23 21:02:01 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+06-Aug-23 21:02:59 - Enter Video Page
+06-Aug-23 21:03:00 - Enter Video Page
+06-Aug-23 21:03:00 - Uploaded Video Not Found
+06-Aug-23 21:17:40 - Start Python Streamlit App
+06-Aug-23 21:17:43 - Start Python Streamlit App
+06-Aug-23 21:17:44 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+06-Aug-23 21:17:44 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+06-Aug-23 21:17:45 - Enter Video Page
+06-Aug-23 21:17:45 - Uploaded Video Not Found
+06-Aug-23 21:17:54 - Enter Video Page
+06-Aug-23 21:18:00 - Enter Video Page
+06-Aug-23 21:18:03 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 21:18:03 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 21:19:05 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 21:19:05 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 21:20:06 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 21:20:06 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 21:21:08 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 21:21:08 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 21:22:09 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 21:22:09 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+06-Aug-23 21:23:10 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 21:23:10 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0

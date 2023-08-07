@@ -226,7 +226,7 @@ parser.add_argument(
     type=str, dest='timelapse'
 )
 parser.add_argument(
-    '--rangewidth', action='store', default=-1,
+    '--rangewidth', action='store', default=2,
     help="uses range_width to limit number of images to match with.",
     type=int, dest='rangewidth'
 )
@@ -495,9 +495,11 @@ def main():
         _img_size = (img.shape[1], img.shape[0])
         K = cameras[idx].K().astype(np.float32)
         corner, image_warped = warper.warp(img, K, cameras[idx].R, cv.INTER_LINEAR, cv.BORDER_REFLECT)
+        print('typeof image warped',type(image_warped))
         mask = 255 * np.ones((img.shape[0], img.shape[1]), np.uint8)
         p, mask_warped = warper.warp(mask, K, cameras[idx].R, cv.INTER_NEAREST, cv.BORDER_CONSTANT)
         compensator.apply(idx, corners[idx], image_warped, mask_warped)
+        print('type of', type(image_warped))
         image_warped_s = image_warped.astype(np.int16)
         dilated_mask = cv.dilate(masks_warped[idx], None)
         seam_mask = cv.resize(dilated_mask, (mask_warped.shape[1], mask_warped.shape[0]), 0, 0, cv.INTER_LINEAR_EXACT)

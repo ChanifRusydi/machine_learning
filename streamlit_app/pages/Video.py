@@ -1,8 +1,9 @@
 import streamlit as st
 import cv2
-from tempfile import NamedTemporaryFile
+
 import logging
 from yolov8_detect import detect
+from image_stitching import image_stitching
 
 logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S',
@@ -84,9 +85,11 @@ with st.container():
             if frame1.shape != frame2.shape:
                 side_by_side_placeholder.subheader("Please open video with same shape")
             else:
-                image = cv2.hconcat([frame1, frame2])
+                image_stitching_status, image = image_stitching(frame1, frame2)
+                if image_stitching_status == -1 and image is None:
+                    image = cv2.hconcat([frame1, frame2])
                 status,image = detect(image)
-                side_by_side_placeholder.image(image, channels="BGR")
+                side_by_side_placeholder.image(image, channels="RGB")
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
         open_video1.release()
