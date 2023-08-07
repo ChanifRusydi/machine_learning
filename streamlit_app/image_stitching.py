@@ -126,7 +126,7 @@ def image_stitching(image1, image2):
     try:
         b, cameras = adjuster.apply(features, p, cameras)
     except:
-        
+
         return -1, None
         # print("Camera parameters adjusting failed.")
         # exit()
@@ -253,16 +253,24 @@ def image_stitching(image1, image2):
             blenders.prepare(dst_sz)
 
         blenders.feed(cv2.UMat(image_warped_s), mask_warped, corners[idx])
+    crop_width = image1.shape[1] + image2.shape[1]
+    crop_height = min(image1.shape[0], image2.shape[0])
+    print('crop width', crop_width)
+    print('crop height', crop_height)
+    mid_x, mid_y = int(crop_width/2), int(crop_height/2)
+
     result = None
     result_mask = None
     result, result_mask = blenders.blend(result, result_mask)
-    result = result.astype(np.uint8)
+    # cropped_result = result[0:crop_height, 0:crop_width]
+    result = result.astype(np.uint16)
     status = 0
+    # return status, cropped_result
     return status, result
 
 if __name__ == "__main__":
-    image1 = cv2.imread('')
-    image2 = cv2.imread('Intersect_kanan.jpg')
+    image1 = cv2.imread('image1_60_left.jpg')
+    image2 = cv2.imread('image1_60_right.jpg')
     cv2.imshow('image1', image1)
     cv2.imshow('image2', image2)
     cv2.waitKey(0)
