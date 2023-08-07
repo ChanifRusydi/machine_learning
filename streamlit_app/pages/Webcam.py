@@ -40,11 +40,13 @@ with st.container():
     # ret1, frame1 = camera1.read()
     # ret2, frame2 = camera2.read()
     while True:
-        status1= camera1.grab()
-        status2 = camera2.grab()
+        # status1= camera1.grab()
+        # status2 = camera2.grab()
+        status1, frame1 = camera1.read()
+        status2, frame2 = camera2.read()
         if status1 and status2:
-            _, frame1 = camera1.retrieve()
-            _, frame2 = camera2.retrieve()
+            # _, frame1 = camera1.retrieve()
+            # _, frame2 = camera2.retrieve()
             # frame1 = cv2.cvtColor(frame1, cv2.COLOR_RGB2BGR)
             # frame2 = cv2.cvtColor(frame2, cv2.COLOR_RGB2BGR)
             # camera1_placeholder.image(frame1, use_column_width=True, channels="BGR")
@@ -71,7 +73,6 @@ with st.container():
             if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
                 camera1.release()
                 break
-            continue
         elif status2 and not status1:
             _, frame2 = camera2.retrieve()
             camera2_placeholder.image(frame2, use_column_width=True)

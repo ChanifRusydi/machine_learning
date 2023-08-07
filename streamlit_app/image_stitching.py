@@ -263,7 +263,7 @@ def image_stitching(image1, image2):
     result_mask = None
     result, result_mask = blenders.blend(result, result_mask)
     # cropped_result = result[0:crop_height, 0:crop_width]
-    result = result.astype(np.uint16)
+    result = result.astype(np.int16)
     status = 0
     # return status, cropped_result
     return status, result
