@@ -21,9 +21,9 @@ if back_button:
     switch_page("streamlit_app")
 camera1 = cv2.VideoCapture(0)
 camera2 = cv2.VideoCapture(1)
-camera1.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+camera1.set(cv2.CAP_PROP_FRAME_WIDTH, 704)
 camera1.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-camera2.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+camera2.set(cv2.CAP_PROP_FRAME_WIDTH, 704)
 camera2.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
 stop_button = st.button("Stop") 
@@ -47,8 +47,8 @@ with st.container():
             _, frame2 = camera2.retrieve()
             # frame1 = cv2.cvtColor(frame1, cv2.COLOR_RGB2BGR)
             # frame2 = cv2.cvtColor(frame2, cv2.COLOR_RGB2BGR)
-            camera1_placeholder.image(frame1, use_column_width=True, channels="BGR")
-            camera2_placeholder.image(frame2, use_column_width=True, channels="BGR")
+            # camera1_placeholder.image(frame1, use_column_width=True, channels="BGR")
+            # camera2_placeholder.image(frame2, use_column_width=True, channels="BGR")
             # print('type of frame', type(frame1), type(frame2))
             if frame1 is None or frame2 is None:
                 side_by_side_placeholder.subheader("Please open both camera")

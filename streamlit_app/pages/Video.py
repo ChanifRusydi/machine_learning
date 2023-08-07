@@ -34,8 +34,8 @@ with st.container():
         with open('video2.mp4', 'wb') as f:
             f.write(video_upload2.getbuffer())
         video_status2 = True   
-    video1_placeholder.video(video_upload1)
-    video2_placeholder.video(video_upload2)
+    # video1_placeholder.video(video_upload1)
+    # video2_placeholder.video(video_upload2)
 
     # open_video1 = cv2.VideoCapture('../../image1_60_left.mp4')   
     # open_video2 = cv2.VideoCapture('../../image1_60_right.mp4')
