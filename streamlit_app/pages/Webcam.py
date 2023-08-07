@@ -21,9 +21,9 @@ if back_button:
     switch_page("streamlit_app")
 camera1 = cv2.VideoCapture(0)
 camera2 = cv2.VideoCapture(1)
-camera1.set(cv2.CAP_PROP_FRAME_WIDTH, 704)
+camera1.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 camera1.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-camera2.set(cv2.CAP_PROP_FRAME_WIDTH, 704)
+camera2.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 camera2.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
 stop_button = st.button("Stop") 
@@ -63,7 +63,7 @@ with st.container():
                         image = cv2.hconcat([frame1, frame2])
 
                     status, image_detect = detect(image)
-                    side_by_side_placeholder.image(image_detect, channels="BGR")
+                    side_by_side_placeholder.image(image_detect,clamp=True, channels="BGR")
             if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
                 break
         elif status1 and not status2:

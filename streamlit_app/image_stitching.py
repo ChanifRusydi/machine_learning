@@ -9,31 +9,31 @@ def image_stitching(image1, image2):
     features_finder_type = 'AKAZE'
     if features_finder_type == 'AKAZE':
         features_finder = cv2.AKAZE_create()
-        match_conf = 0.3
+        match_conf = 0.65
     elif features_finder_type == 'ORB':
         features_finder = cv2.ORB_create()
         match_conf = 0.3
     elif features_finder_type == 'BRISK':
         features_finder = cv2.BRISK_create()
-        match_conf = 0.6
+        match_conf = 0.65
     
     print('features finder', features_finder)
     seam_finder = cv2.detail.GraphCutSeamFinder('COST_COLOR')
-    estimator = cv2.detail_HomographyBasedEstimator()
+    estimator = cv2.detail_AffineBasedEstimator()
     warp_type  = 'plane'
-    wave_correct = ''
+    wave_correct = 'plane'
     blend_type = 'multiband'
-    blend_strength = 10      #overlap
+    blend_strength = 15     #overlap
 
     matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 6)
     compensator = cv2.detail.ExposureCompensator_createDefault(expos_comp)
    
-    work_megapix = 1
-    seam_megapix = 0.1
+    work_megapix = 2
+    seam_megapix = 0.2
     compose_megapix = -1
     conf_thresh = 1.0
     ba_refine_mask = 'xxxxx'
-    wave_correct = cv2.detail.WAVE_CORRECT_AUTO
+    wave_correct = cv2.detail.WAVE_CORRECT_HORIZ
 
     seam_work_aspect = 1
     full_img_sizes = []
@@ -85,6 +85,7 @@ def image_stitching(image1, image2):
     img_subset = []
     img_names_subset = []
     full_img_sizes_subset = []
+    print(len(indices))
 
     for i in range(len(indices)):
         img_names_subset.append(image_names[indices[i]])
@@ -128,7 +129,6 @@ def image_stitching(image1, image2):
     try:
         b, cameras = adjuster.apply(features, p, cameras)
     except:
-
         return -1, None
         # print("Camera parameters adjusting failed.")
         # exit()
@@ -175,7 +175,7 @@ def image_stitching(image1, image2):
         corners.append(corner) 
         sizes.append((image_wp.shape[1], image_wp.shape[0]))
         images_warped.append(image_wp)
-        p, mask_wp = warper.warp(masks[idx], K, cameras[idx].R, cv2.INTER_NEAREST, cv2.BORDER_CONSTANT)
+        p, mask_wp = warper.warp(masks[idx], K, cameras[idx].R, cv2.INTER_NEAREST, cv2.BORDER_REPLICATE)
         masks_warped.append(mask_wp.get())
 
     images_warped_f = []
