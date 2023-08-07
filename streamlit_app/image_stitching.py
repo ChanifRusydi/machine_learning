@@ -75,9 +75,11 @@ def image_stitching(image1, image2):
         # this need to be adjusted
         img = cv2.resize(src=full_img, dsize=None, fx=seam_scale, fy=seam_scale, interpolation=cv2.INTER_LINEAR_EXACT)
         images.append(img)
-
-    p = matcher.apply2(features)
-    matcher.collectGarbage()
+    try:
+        p = matcher.apply2(features)
+        matcher.collectGarbage()
+    except:
+        return -1, None
 
     indices = cv2.detail.leaveBiggestComponent(features, p, 0.3)
     img_subset = []
