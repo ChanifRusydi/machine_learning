@@ -1,5 +1,11 @@
 import cv2
-import numpy as np  
+import numpy as np
+import logging
+
+logging.basicConfig(filename='logfile_test.txt',filemode='a',format='%(asctime)s - %(message)s',
+                    datefmt='%d-%b-%y %H:%M:%S',
+                    level=logging.DEBUG)
+logging.getLogger(__name__)
 
 # if success status = 0 and return image result
 def image_stitching(image1, image2):
@@ -9,7 +15,7 @@ def image_stitching(image1, image2):
     features_finder_type = 'AKAZE'
     if features_finder_type == 'AKAZE':
         features_finder = cv2.AKAZE_create()
-        match_conf = 0.3
+        match_conf = 0.65
     elif features_finder_type == 'ORB':
         features_finder = cv2.ORB_create()
         match_conf = 0.3
@@ -25,11 +31,11 @@ def image_stitching(image1, image2):
     blend_type = 'multiband'
     blend_strength = 10      #overlap
 
-    matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 56)
+    matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 6)
     compensator = cv2.detail.ExposureCompensator_createDefault(expos_comp)
    
     work_megapix = 1
-    seam_megapix = 0.1
+    seam_megapix = 1
     compose_megapix = -1
     conf_thresh = 1.0
     ba_refine_mask = 'xxxxx'
@@ -99,6 +105,7 @@ def image_stitching(image1, image2):
     b,cameras = estimator.apply(features, p, None)
     print(type(cameras))
     if not b:
+        logging.info("Homography estimation failed.")
         return -1, None
         # print("Homography estimation failed.")
         # exit()
@@ -121,11 +128,17 @@ def image_stitching(image1, image2):
         refine_mask[1][2] = 1
 
     adjuster.setRefinementMask(refine_mask)
-    b, cameras = adjuster.apply(features, p, cameras)
-    if not b:
+    try:
+        b, cameras = adjuster.apply(features, p, cameras)
+    except:
+        logging.info("Camera parameters adjusting failed.")
         return -1, None
-        print("Camera parameters adjusting failed.")
-        exit()
+        # print("Camera parameters adjusting failed.")
+        # exit()
+    # if not b:
+    #     return -1, None
+        # print("Camera parameters adjusting failed.")
+        # exit()
 
     focals = []
     for cam in cameras:
@@ -161,6 +174,7 @@ def image_stitching(image1, image2):
         K[0][2] *= swa
         K[1][1] *= swa
         K[1][2] *= swa
+
         corner, image_wp = warper.warp(images[idx], K, cameras[idx].R, cv2.INTER_LINEAR, cv2.BORDER_REFLECT)
         corners.append(corner) 
         sizes.append((image_wp.shape[1], image_wp.shape[0]))
@@ -263,14 +277,16 @@ def image_stitching(image1, image2):
     try :
         result, result_mask = blenders.blend(result, result_mask)
     except:
+        logging.info("Can't blend image")
         return -1, None
     result = result.astype(np.uint8)
     status = 0
+    logging.info("Image stitched")
     return status, result
 
 if __name__ == "__main__":
-    image1 = cv2.imread('Intersect_kiri.jpg')
-    image2 = cv2.imread('Intersect_kanan.jpg')
+    image1 = cv2.imread('image1_60_left.jpg')
+    image2 = cv2.imread('image1_60_right.jpg')
     cv2.imshow('image1', image1)
     cv2.imshow('image2', image2)
     cv2.waitKey(0)

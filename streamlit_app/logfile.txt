@@ -557,3 +557,65 @@
 06-Aug-23 21:22:09 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
 06-Aug-23 21:23:10 - Starting new HTTPS connection (1): www.google-analytics.com:443
 06-Aug-23 21:23:10 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:14:40 - Start Python Streamlit App
+08-Aug-23 09:15:49 - Start Python Streamlit App
+08-Aug-23 09:15:51 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+08-Aug-23 09:15:51 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+08-Aug-23 09:15:53 - Enter Video Page
+08-Aug-23 09:15:53 - Uploaded Video Not Found
+08-Aug-23 09:16:14 - Enter Video Page
+08-Aug-23 09:16:20 - Enter Video Page
+08-Aug-23 09:16:24 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:16:24 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:17:29 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:17:29 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:26:46 - Start Python Streamlit App
+08-Aug-23 09:26:48 - Start Python Streamlit App
+08-Aug-23 09:26:49 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+08-Aug-23 09:26:49 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+08-Aug-23 09:26:50 - Enter Video Page
+08-Aug-23 09:26:50 - Uploaded Video Not Found
+08-Aug-23 09:27:04 - Enter Video Page
+08-Aug-23 09:27:28 - Enter Video Page
+08-Aug-23 09:27:33 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:27:33 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:28:35 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:28:35 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:29:38 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:29:38 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:30:43 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:30:43 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:31:10 - Enter Video Page
+08-Aug-23 09:31:12 - Enter Video Page
+08-Aug-23 09:31:44 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:31:44 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:32:49 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:32:49 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:33:49 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:33:50 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:34:53 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:34:54 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:35:26 - Enter Video Page
+08-Aug-23 09:35:26 - Uploaded Video Not Found
+08-Aug-23 09:35:32 - Enter Video Page
+08-Aug-23 09:35:32 - Uploaded Video Not Found
+08-Aug-23 09:35:34 - Enter Video Page
+08-Aug-23 09:35:34 - Uploaded Video Not Found
+08-Aug-23 09:35:46 - Enter Video Page
+08-Aug-23 09:35:52 - Enter Video Page
+08-Aug-23 09:35:57 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:35:58 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:37:01 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:37:02 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:38:03 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:38:05 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:39:05 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:39:05 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:40:08 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:40:08 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:41:09 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:41:09 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:42:12 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:42:12 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+08-Aug-23 09:43:13 - Starting new HTTPS connection (1): www.google-analytics.com:443
+08-Aug-23 09:43:13 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
