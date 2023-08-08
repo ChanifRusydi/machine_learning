@@ -1,5 +1,6 @@
 import cv2
-import numpy as np  
+import numpy as np
+import platform
 
 # if success status = 0 and return image result
 def image_stitching(image1, image2):
@@ -24,8 +25,11 @@ def image_stitching(image1, image2):
     wave_correct = 'plane'
     blend_type = 'multiband'
     blend_strength = 15     #overlap
-
-    matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 6)
+    if platform.system() == 'Linux':
+        try_cuda = True
+    else:
+        try_cuda = False
+    matcher = cv2.detail.BestOf2NearestMatcher(try_cuda, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 6)
     compensator = cv2.detail.ExposureCompensator_createDefault(expos_comp)
    
     work_megapix = 2
