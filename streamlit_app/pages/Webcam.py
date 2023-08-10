@@ -21,9 +21,9 @@ if back_button:
     switch_page("streamlit_app")
 camera1 = cv2.VideoCapture(0)
 camera2 = cv2.VideoCapture(1)
-camera1.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+camera1.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 camera1.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-camera2.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+camera2.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 camera2.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
 stop_button = st.button("Stop") 
@@ -40,15 +40,17 @@ with st.container():
     # ret1, frame1 = camera1.read()
     # ret2, frame2 = camera2.read()
     while True:
-        status1= camera1.grab()
-        status2 = camera2.grab()
+        # status1= camera1.grab()
+        # status2 = camera2.grab()
+        status1, frame1 = camera1.read()
+        status2, frame2 = camera2.read()
         if status1 and status2:
-            _, frame1 = camera1.retrieve()
-            _, frame2 = camera2.retrieve()
+            # _, frame1 = camera1.retrieve()
+            # _, frame2 = camera2.retrieve()
             # frame1 = cv2.cvtColor(frame1, cv2.COLOR_RGB2BGR)
             # frame2 = cv2.cvtColor(frame2, cv2.COLOR_RGB2BGR)
-            camera1_placeholder.image(frame1, use_column_width=True, channels="BGR")
-            camera2_placeholder.image(frame2, use_column_width=True, channels="BGR")
+            # camera1_placeholder.image(frame1, use_column_width=True, channels="BGR")
+            # camera2_placeholder.image(frame2, use_column_width=True, channels="BGR")
             # print('type of frame', type(frame1), type(frame2))
             if frame1 is None or frame2 is None:
                 side_by_side_placeholder.subheader("Please open both camera")
@@ -61,7 +63,7 @@ with st.container():
                         image = cv2.hconcat([frame1, frame2])
 
                     status, image_detect = detect(image)
-                    side_by_side_placeholder.image(image_detect, channels="BGR")
+                    side_by_side_placeholder.image(image_detect,clamp=True, channels="BGR")
             if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
                 break
         elif status1 and not status2:
@@ -71,7 +73,6 @@ with st.container():
             if cv2.waitKey(1) & 0xFF == ord("q") or stop_button:
                 camera1.release()
                 break
-            continue
         elif status2 and not status1:
             _, frame2 = camera2.retrieve()
             camera2_placeholder.image(frame2, use_column_width=True)
