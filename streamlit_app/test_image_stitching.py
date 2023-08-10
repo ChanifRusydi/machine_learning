@@ -9,7 +9,7 @@ def image_stitching(image1, image2):
     features_finder_type = 'AKAZE'
     if features_finder_type == 'AKAZE':
         features_finder = cv2.AKAZE_create()
-        match_conf = 0.3
+        match_conf = 0.65
     elif features_finder_type == 'ORB':
         features_finder = cv2.ORB_create()
         match_conf = 0.3
@@ -67,6 +67,8 @@ def image_stitching(image1, image2):
                 seam_scale = min(1.0, np.sqrt(seam_megapix * 1e6 / (full_img.shape[0] * full_img.shape[1])))
             else:
                 seam_scale = 1.0
+            print(seam_scale)
+            print(work_scale)
             seam_work_aspect = seam_scale / work_scale
             is_seam_scale_set = True
 
@@ -75,9 +77,11 @@ def image_stitching(image1, image2):
         # this need to be adjusted
         img = cv2.resize(src=full_img, dsize=None, fx=seam_scale, fy=seam_scale, interpolation=cv2.INTER_LINEAR_EXACT)
         images.append(img)
-
-    p = matcher.apply2(features)
-    matcher.collectGarbage()
+    try:
+        p = matcher.apply2(features)
+        matcher.collectGarbage()
+    except:
+        return -1, None
 
     indices = cv2.detail.leaveBiggestComponent(features, p, 0.3)
     img_subset = []
@@ -121,11 +125,11 @@ def image_stitching(image1, image2):
         refine_mask[1][2] = 1
 
     adjuster.setRefinementMask(refine_mask)
-    b, cameras = adjuster.apply(features, p, cameras)
-    if not b:
+    try:
+        b, cameras = adjuster.apply(features, p, cameras)
+    except:
         return -1, None
-        print("Camera parameters adjusting failed.")
-        exit()
+    
 
     focals = []
     for cam in cameras:
@@ -269,17 +273,39 @@ def image_stitching(image1, image2):
     return status, result
 
 if __name__ == "__main__":
-    image1 = cv2.imread('Intersect_kiri.jpg')
-    image2 = cv2.imread('Intersect_kanan.jpg')
-    cv2.imshow('image1', image1)
-    cv2.imshow('image2', image2)
-    cv2.waitKey(0)
-    status, image_result = image_stitching(image1=image1, image2=image2)
-    print('status',status, image_result.shape)
-    cv2.imshow('image_result', image_result)
-    desired_size_width = 2*image1.shape[1]
-    desired_size_height = image1.shape[0]
+    # image1 = cv2.imread('Intersect_kiri.jpg')
+    # image2 = cv2.imread('Intersect_kanan.jpg')
+    # cv2.imshow('image1', image1)
+    # cv2.imshow('image2', image2)
+    # cv2.waitKey(0)
+    # status, image_result = image_stitching(image1=image1, image2=image2)
+    # print('status',status, image_result.shape)
+    # cv2.imshow('image_result', image_result)
+    # desired_size_width = 2*image1.shape[1]
+    # desired_size_height = image1.shape[0]
     # image_result_desired = cv2.resize(src=image_result, dsize=(desired_size_width, desired_size_height), interpolation=cv2.INTER_LINEAR_EXACT)
     # image_result_desired = image_result[0:desired_size_height, 0:desired_size_width ]
     # cv2.imshow('image_result_desired', image_result_desired)
-    cv2.waitKey(0)
+    # cv2.waitKey(0)
+    camera1 = cv2.VideoCapture(0)
+    camera2 = cv2.VideoCapture(1)
+    camera1.set(cv2.CAP_PROP_FRAME_WIDTH, 960)
+    camera1.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+    camera2.set(cv2.CAP_PROP_FRAME_WIDTH, 960)
+    camera2.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+
+    while True:
+        ret1,frame1 = camera1.read()
+        ret2,frame2 = camera2.read()
+        status, result = image_stitching(frame1, frame2)
+        image_side = cv2.hconcat([frame1, frame2])
+        cv2.imshow('image_side', image_side)
+        if status == -1:
+            print('image stitching failed')
+        else:   
+            cv2.imshow('result', result)
+            if cv2.waitKey(0) & 0xFF == ord('q'):
+                break
+    camera1.release()
+    camera2.release()
+    cv2.destroyAllWindows()

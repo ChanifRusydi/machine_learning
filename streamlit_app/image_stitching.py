@@ -1,5 +1,6 @@
 import cv2
-import numpy as np  
+import numpy as np
+import platform
 
 # if success status = 0 and return image result
 def image_stitching(image1, image2):
@@ -9,31 +10,34 @@ def image_stitching(image1, image2):
     features_finder_type = 'AKAZE'
     if features_finder_type == 'AKAZE':
         features_finder = cv2.AKAZE_create()
-        match_conf = 0.3
+        match_conf = 0.65
     elif features_finder_type == 'ORB':
         features_finder = cv2.ORB_create()
         match_conf = 0.3
     elif features_finder_type == 'BRISK':
         features_finder = cv2.BRISK_create()
-        match_conf = 0.6
+        match_conf = 0.65
     
     print('features finder', features_finder)
     seam_finder = cv2.detail.GraphCutSeamFinder('COST_COLOR')
-    estimator = cv2.detail_HomographyBasedEstimator()
+    estimator = cv2.detail_AffineBasedEstimator()
     warp_type  = 'plane'
-    wave_correct = ''
+    wave_correct = 'plane'
     blend_type = 'multiband'
-    blend_strength = 10      #overlap
-
-    matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 6)
+    blend_strength = 15     #overlap
+    if platform.system() == 'Linux':
+        try_cuda = True
+    else:
+        try_cuda = False
+    matcher = cv2.detail.BestOf2NearestMatcher(try_cuda, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 6)
     compensator = cv2.detail.ExposureCompensator_createDefault(expos_comp)
    
-    work_megapix = 1
-    seam_megapix = 0.1
+    work_megapix = 2
+    seam_megapix = 0.2
     compose_megapix = -1
     conf_thresh = 1.0
     ba_refine_mask = 'xxxxx'
-    wave_correct = cv2.detail.WAVE_CORRECT_AUTO
+    wave_correct = cv2.detail.WAVE_CORRECT_HORIZ
 
     seam_work_aspect = 1
     full_img_sizes = []
@@ -75,14 +79,17 @@ def image_stitching(image1, image2):
         # this need to be adjusted
         img = cv2.resize(src=full_img, dsize=None, fx=seam_scale, fy=seam_scale, interpolation=cv2.INTER_LINEAR_EXACT)
         images.append(img)
-
-    p = matcher.apply2(features)
-    matcher.collectGarbage()
+    try:
+        p = matcher.apply2(features)
+        matcher.collectGarbage()
+    except:
+        return -1, None
 
     indices = cv2.detail.leaveBiggestComponent(features, p, 0.3)
     img_subset = []
     img_names_subset = []
     full_img_sizes_subset = []
+    print(len(indices))
 
     for i in range(len(indices)):
         img_names_subset.append(image_names[indices[i]])
@@ -126,7 +133,6 @@ def image_stitching(image1, image2):
     try:
         b, cameras = adjuster.apply(features, p, cameras)
     except:
-        
         return -1, None
         # print("Camera parameters adjusting failed.")
         # exit()
@@ -173,7 +179,7 @@ def image_stitching(image1, image2):
         corners.append(corner) 
         sizes.append((image_wp.shape[1], image_wp.shape[0]))
         images_warped.append(image_wp)
-        p, mask_wp = warper.warp(masks[idx], K, cameras[idx].R, cv2.INTER_NEAREST, cv2.BORDER_CONSTANT)
+        p, mask_wp = warper.warp(masks[idx], K, cameras[idx].R, cv2.INTER_NEAREST, cv2.BORDER_REPLICATE)
         masks_warped.append(mask_wp.get())
 
     images_warped_f = []
@@ -253,16 +259,24 @@ def image_stitching(image1, image2):
             blenders.prepare(dst_sz)
 
         blenders.feed(cv2.UMat(image_warped_s), mask_warped, corners[idx])
+    crop_width = image1.shape[1] + image2.shape[1]
+    crop_height = min(image1.shape[0], image2.shape[0])
+    print('crop width', crop_width)
+    print('crop height', crop_height)
+    mid_x, mid_y = int(crop_width/2), int(crop_height/2)
+
     result = None
     result_mask = None
     result, result_mask = blenders.blend(result, result_mask)
-    result = result.astype(np.uint8)
+    # cropped_result = result[0:crop_height, 0:crop_width]
+    result = result.astype(np.int16)
     status = 0
+    # return status, cropped_result
     return status, result
 
 if __name__ == "__main__":
-    image1 = cv2.imread('')
-    image2 = cv2.imread('Intersect_kanan.jpg')
+    image1 = cv2.imread('image1_60_left.jpg')
+    image2 = cv2.imread('image1_60_right.jpg')
     cv2.imshow('image1', image1)
     cv2.imshow('image2', image2)
     cv2.waitKey(0)
