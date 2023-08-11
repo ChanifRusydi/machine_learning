@@ -149,45 +149,129 @@
 #     video_to_frames(input_loc, output_loc)
 
 # Initiate SIFT detector
-from __future__ import print_function
-import cv2 as cv
-import numpy as np
+# from __future__ import print_function
+# import cv2 as cv
+# import numpy as np
+# import argparse
+
+# parser = argparse.ArgumentParser(description='Code for Feature Matching with FLANN tutorial.')
+# parser.add_argument('--input1', help='Path to input image 1.', default='image1_60_left.jpg')
+# parser.add_argument('--input2', help='Path to input image 2.', default='image1_60_right.jpg')
+# args = parser.parse_args()
+
+# img1 = cv.imread(cv.samples.findFile(args.input1), cv.IMREAD_GRAYSCALE)
+# img2 = cv.imread(cv.samples.findFile(args.input2), cv.IMREAD_GRAYSCALE)
+# if img1 is None or img2 is None:
+#     print('Could not open or find the images!')
+#     exit(0)
+
+# #-- Step 1: Detect the keypoints using SURF Detector, compute the descriptors
+# minHessian = 400
+# detector = cv.ORB_create()
+# keypoints1, descriptors1 = detector.detectAndCompute(img1, None)
+# keypoints2, descriptors2 = detector.detectAndCompute(img2, None)
+
+# #-- Step 2: Matching descriptor vectors with a FLANN based matcher
+# # Since SURF is a floating-point descriptor NORM_L2 is used
+# matcher = cv.DescriptorMatcher_create(cv.DescriptorMatcher_FLANNBASED)
+# knn_matches = matcher.knnMatch(descriptors1, descriptors2, 2)
+
+# #-- Filter matches using the Lowe's ratio test
+# ratio_thresh = 0.7
+# good_matches = []
+# for m,n in knn_matches:
+#     if m.distance < ratio_thresh * n.distance:
+#         good_matches.append(m)
+
+# #-- Draw matches
+# img_matches = np.empty((max(img1.shape[0], img2.shape[0]), img1.shape[1]+img2.shape[1], 3), dtype=np.uint8)
+# cv.drawMatches(img1, keypoints1, img2, keypoints2, good_matches, img_matches, flags=cv.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+
+# #-- Show detected matches
+# cv.imshow('Good Matches', img_matches)
+
+# cv.waitKey()
+
+import os
+import sys
+import random
 import argparse
+import streamlit as st
+import logging
 
-parser = argparse.ArgumentParser(description='Code for Feature Matching with FLANN tutorial.')
-parser.add_argument('--input1', help='Path to input image 1.', default='image1_60_left.jpg')
-parser.add_argument('--input2', help='Path to input image 2.', default='image1_60_right.jpg')
-args = parser.parse_args()
+logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
+                    datefmt='%d-%b-%y %H:%M:%S',
+                    level=logging.INFO)
+logging = logging.getLogger(__name__)
 
-img1 = cv.imread(cv.samples.findFile(args.input1), cv.IMREAD_GRAYSCALE)
-img2 = cv.imread(cv.samples.findFile(args.input2), cv.IMREAD_GRAYSCALE)
-if img1 is None or img2 is None:
-    print('Could not open or find the images!')
-    exit(0)
+parser = argparse.ArgumentParser(description='This app lists animals')
 
-#-- Step 1: Detect the keypoints using SURF Detector, compute the descriptors
-minHessian = 400
-detector = cv.ORB_create()
-keypoints1, descriptors1 = detector.detectAndCompute(img1, None)
-keypoints2, descriptors2 = detector.detectAndCompute(img2, None)
+parser.add_argument('--animal', action='append', default=[],
+                    help="Add one or more animals of your choice")
+sort_order_choices = ('up', 'down', 'random')
+parser.add_argument('--sort', choices=sort_order_choices, default='up',
+                    help='Animal sort order (default: %(default)s)')
+parser.add_argument('--uppercase', action='store_true',
+                    help='Make the animals bigger!')
+try:
+    args = parser.parse_args()
+except SystemExit as e:
+    # This exception will be raised if --help or invalid command line arguments
+    # are used. Currently streamlit prevents the program from exiting normally
+    # so we have to do a hard exit.
+    os._exit(e.code)
 
-#-- Step 2: Matching descriptor vectors with a FLANN based matcher
-# Since SURF is a floating-point descriptor NORM_L2 is used
-matcher = cv.DescriptorMatcher_create(cv.DescriptorMatcher_FLANNBASED)
-knn_matches = matcher.knnMatch(descriptors1, descriptors2, 2)
+st.title("Command line example app")
+st.markdown("""
+Your current command line is:
+```
+{}
+```
+A double dash (`--`) is used to separate streamlit arguments from app arguments.
+As a result
+```
+streamlit run command_line.py --help
+```
+will show the help for streamlit and
+```
+streamlit run command_line.py -- --help
+```
+will show the help for this app. Try
+```
+streamlit run command_line.py -- --animal dog --animal cat --sort down
+```
+to see it in action.
+""".format(sys.argv))
 
-#-- Filter matches using the Lowe's ratio test
-ratio_thresh = 0.7
-good_matches = []
-for m,n in knn_matches:
-    if m.distance < ratio_thresh * n.distance:
-        good_matches.append(m)
+# Built in animals
+animals = ['Albatross', 'Bison', 'Dragonfly', 'Shark', 'Zebra']
 
-#-- Draw matches
-img_matches = np.empty((max(img1.shape[0], img2.shape[0]), img1.shape[1]+img2.shape[1], 3), dtype=np.uint8)
-cv.drawMatches(img1, keypoints1, img2, keypoints2, good_matches, img_matches, flags=cv.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+# Add one or more animals supplied on command line
+animals += args.animal
+logging.info('Animals: %s', animals)
 
-#-- Show detected matches
-cv.imshow('Good Matches', img_matches)
 
-cv.waitKey()
+# Set default sort order from command line option
+sort_order = st.selectbox("Sort order", sort_order_choices,
+                          sort_order_choices.index(args.sort))
+
+logging.info('Sort order: %s', sort_order)
+if sort_order == 'up':
+    animals.sort()
+elif sort_order == 'down':
+    animals.sort(reverse=True)
+elif sort_order == 'random':
+    random.shuffle(animals)
+else:
+    # This can't happen unless you add more values to sort_order_choices
+    raise ValueError("Invalid sort order")
+
+# Set checkbox default from command line
+uppercase_animals = st.checkbox("Uppercase", args.uppercase)
+logging.info('Uppercase: %s', uppercase_animals)
+if uppercase_animals:
+    animals = [animal.upper() for animal in animals]
+
+# Show the results
+st.header("You list of animals")
+st.dataframe(animals)
