@@ -69,8 +69,8 @@ with st.container():
         frame_count2 = int(open_video2.get(cv2.CAP_PROP_FRAME_COUNT))
         image_count=min(frame_count1,frame_count2)//min(int(fps1),int(fps2))
         print(image_count)
-        logging.info('FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2))
-        logging.info('Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2))
+        logging.info("'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)")
+        logging.info("'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)")
         logging.info('Image Count: {}'.format(image_count))
         for i in range(0,image_count,min(int(fps1),int(fps2))):
             open_video1.set(cv2.CAP_PROP_POS_FRAMES, i)
