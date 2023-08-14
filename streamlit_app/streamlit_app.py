@@ -14,10 +14,13 @@ except ModuleNotFoundError:
     pip(['install', 'streamlit-extras'])
     from streamlit_extras.switch_page_button import switch_page
 
+st.set_page_config(layout="wide")
+
 logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S',
                     level=logging.DEBUG)
 logging.info('Start Python Streamlit App')
+
 logger = logging.getLogger(__name__)
  
 st.header("OpenCV and Streamlit")
