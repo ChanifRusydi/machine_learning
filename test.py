@@ -192,86 +192,122 @@
 
 # cv.waitKey()
 
+# import os
+# import sys
+# import random
+# import argparse
+# import streamlit as st
+# import logging
+
+# logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
+#                     datefmt='%d-%b-%y %H:%M:%S',
+#                     level=logging.INFO)
+# logging = logging.getLogger(__name__)
+
+# parser = argparse.ArgumentParser(description='This app lists animals')
+
+# parser.add_argument('--animal', action='append', default=[],
+#                     help="Add one or more animals of your choice")
+# sort_order_choices = ('up', 'down', 'random')
+# parser.add_argument('--sort', choices=sort_order_choices, default='up',
+#                     help='Animal sort order (default: %(default)s)')
+# parser.add_argument('--uppercase', action='store_true',
+#                     help='Make the animals bigger!')
+# try:
+#     args = parser.parse_args()
+# except SystemExit as e:
+#     # This exception will be raised if --help or invalid command line arguments
+#     # are used. Currently streamlit prevents the program from exiting normally
+#     # so we have to do a hard exit.
+#     os._exit(e.code)
+
+# st.title("Command line example app")
+# st.markdown("""
+# Your current command line is:
+# ```
+# {}
+# ```
+# A double dash (`--`) is used to separate streamlit arguments from app arguments.
+# As a result
+# ```
+# streamlit run command_line.py --help
+# ```
+# will show the help for streamlit and
+# ```
+# streamlit run command_line.py -- --help
+# ```
+# will show the help for this app. Try
+# ```
+# streamlit run command_line.py -- --animal dog --animal cat --sort down
+# ```
+# to see it in action.
+# """.format(sys.argv))
+
+# # Built in animals
+# animals = ['Albatross', 'Bison', 'Dragonfly', 'Shark', 'Zebra']
+
+# # Add one or more animals supplied on command line
+# animals += args.animal
+# logging.info('Animals: %s', animals)
+
+
+# # Set default sort order from command line option
+# sort_order = st.selectbox("Sort order", sort_order_choices,
+#                           sort_order_choices.index(args.sort))
+
+# logging.info('Sort order: %s', sort_order)
+# if sort_order == 'up':
+#     animals.sort()
+# elif sort_order == 'down':
+#     animals.sort(reverse=True)
+# elif sort_order == 'random':
+#     random.shuffle(animals)
+# else:
+#     # This can't happen unless you add more values to sort_order_choices
+#     raise ValueError("Invalid sort order")
+
+# # Set checkbox default from command line
+# uppercase_animals = st.checkbox("Uppercase", args.uppercase)
+# logging.info('Uppercase: %s', uppercase_animals)
+# if uppercase_animals:
+#     animals = [animal.upper() for animal in animals]
+
+# # Show the results
+# st.header("You list of animals")
+# st.dataframe(animals)
+
+import cv2
 import os
-import sys
-import random
-import argparse
-import streamlit as st
-import logging
 
-logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
-                    datefmt='%d-%b-%y %H:%M:%S',
-                    level=logging.INFO)
-logging = logging.getLogger(__name__)
+base_dir = './images/'
 
-parser = argparse.ArgumentParser(description='This app lists animals')
+video = cv2.VideoCapture('Video1.mp4')
+fps = video.get(cv2.CAP_PROP_FPS)
+print(fps)
+frame_count = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+print(frame_count)
+durattion = frame_count/fps
+print(durattion)
+image_count = int(frame_count / fps)
+print(image_count)
+# for i in range(0,frame_count,int(fps)):
+#     video.set(1,i)
+#     ret, frame = video.read()
+#     cv2.imshow('frame',frame)
+#     cv2.waitKey(0)
+#     last_index = 20
+#     filename = os.path.join(base_dir + str(i+last_index) + '.jpg')
+#     print(filename)
+    # cv2.imwrite(filename=filename, img=frame)
+import time
+dir_name = './images/pagi'
+def extract_integer(filename):
+    return int(filename.split('.')[0].split('_')[1])
+integer = extract_integer('19.jpg')
+print(integer)
+# file_list = sorted(os.listdir(dir_name), key=extract_integer)
+# for i in file_list:
+#     time.sleep(0.5)
+#     print(i)
 
-parser.add_argument('--animal', action='append', default=[],
-                    help="Add one or more animals of your choice")
-sort_order_choices = ('up', 'down', 'random')
-parser.add_argument('--sort', choices=sort_order_choices, default='up',
-                    help='Animal sort order (default: %(default)s)')
-parser.add_argument('--uppercase', action='store_true',
-                    help='Make the animals bigger!')
-try:
-    args = parser.parse_args()
-except SystemExit as e:
-    # This exception will be raised if --help or invalid command line arguments
-    # are used. Currently streamlit prevents the program from exiting normally
-    # so we have to do a hard exit.
-    os._exit(e.code)
-
-st.title("Command line example app")
-st.markdown("""
-Your current command line is:
-```
-{}
-```
-A double dash (`--`) is used to separate streamlit arguments from app arguments.
-As a result
-```
-streamlit run command_line.py --help
-```
-will show the help for streamlit and
-```
-streamlit run command_line.py -- --help
-```
-will show the help for this app. Try
-```
-streamlit run command_line.py -- --animal dog --animal cat --sort down
-```
-to see it in action.
-""".format(sys.argv))
-
-# Built in animals
-animals = ['Albatross', 'Bison', 'Dragonfly', 'Shark', 'Zebra']
-
-# Add one or more animals supplied on command line
-animals += args.animal
-logging.info('Animals: %s', animals)
-
-
-# Set default sort order from command line option
-sort_order = st.selectbox("Sort order", sort_order_choices,
-                          sort_order_choices.index(args.sort))
-
-logging.info('Sort order: %s', sort_order)
-if sort_order == 'up':
-    animals.sort()
-elif sort_order == 'down':
-    animals.sort(reverse=True)
-elif sort_order == 'random':
-    random.shuffle(animals)
-else:
-    # This can't happen unless you add more values to sort_order_choices
-    raise ValueError("Invalid sort order")
-
-# Set checkbox default from command line
-uppercase_animals = st.checkbox("Uppercase", args.uppercase)
-logging.info('Uppercase: %s', uppercase_animals)
-if uppercase_animals:
-    animals = [animal.upper() for animal in animals]
-
-# Show the results
-st.header("You list of animals")
-st.dataframe(animals)
+# video.release()

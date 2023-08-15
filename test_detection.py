@@ -1,124 +1,151 @@
-from ultralytics import YOLO
-model = YOLO('yolov8n.pt')
-img = r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\images\test2017\000000000108.jpg'
-results = model.predict(source=img,show=True)
-print(results)
-for result in results:
-    boxes=result.boxes
-    print(boxes)
+# from ultralytics import YOLO
+# model = YOLO('yolov8n.pt')
+# img = r'C:\Users\User\Documents\machine_learning\yolov7\data\coco\images\test2017\000000000108.jpg'
+# results = model.predict(source=img,show=True)
+# print(results)
+# for result in results:
+#     boxes=result.boxes
+#     print(boxes)
 
-import torch
-import numpy as np
-import cv2
-from time import time
-from ultralytics import YOLO
+# import torch
+# import numpy as np
+# import cv2
+# from time import time
+# from ultralytics import YOLO
 
-import supervision as sv
+# import supervision as sv
 
 
-class ObjectDetection:
+# class ObjectDetection:
 
-    def __init__(self, capture_index):
+#     def __init__(self, capture_index):
        
-        self.capture_index = capture_index
+#         self.capture_index = capture_index
         
-        self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        print("Using Device: ", self.device)
+#         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+#         print("Using Device: ", self.device)
         
-        self.model = self.load_model()
+#         self.model = self.load_model()
         
-        self.CLASS_NAMES_DICT = self.model.model.names
+#         self.CLASS_NAMES_DICT = self.model.model.names
     
-        self.box_annotator = sv.BoxAnnotator(sv.ColorPalette.default(), thickness=3, text_thickness=3, text_scale=1.5)
+#         self.box_annotator = sv.BoxAnnotator(sv.ColorPalette.default(), thickness=3, text_thickness=3, text_scale=1.5)
     
 
-    def load_model(self):
+#     def load_model(self):
        
-        model = YOLO("yolov8n.pt")  # load a pretrained YOLOv8n model
-        model.fuse()
+#         model = YOLO("yolov8n.pt")  # load a pretrained YOLOv8n model
+#         model.fuse()
     
-        return model
+#         return model
 
 
-    def predict(self, frame):
+#     def predict(self, frame):
        
-        results = self.model(frame)
+#         results = self.model(frame)
         
-        return results
+#         return results
     
 
-    def plot_bboxes(self, results, frame):
+#     def plot_bboxes(self, results, frame):
         
-        xyxys = []
-        confidences = []
-        class_ids = []
+#         xyxys = []
+#         confidences = []
+#         class_ids = []
         
-         # Extract detections for person class
-        for result in results:
-            boxes = result.boxes.cpu().numpy()
-            class_id = boxes.cls[0]
-            conf = boxes.conf[0]
-            xyxy = boxes.xyxy[0]
+#          # Extract detections for person class
+#         for result in results:
+#             boxes = result.boxes.cpu().numpy()
+#             class_id = boxes.cls[0]
+#             conf = boxes.conf[0]
+#             xyxy = boxes.xyxy[0]
 
-            if class_id == 0.0:
+#             if class_id == 0.0:
           
-              xyxys.append(result.boxes.xyxy.cpu().numpy())
-              confidences.append(result.boxes.conf.cpu().numpy())
-              class_ids.append(result.boxes.cls.cpu().numpy().astype(int))
+#               xyxys.append(result.boxes.xyxy.cpu().numpy())
+#               confidences.append(result.boxes.conf.cpu().numpy())
+#               class_ids.append(result.boxes.cls.cpu().numpy().astype(int))
             
         
-        # Setup detections for visualization
-        detections = sv.Detections(
-                    xyxy=results[0].boxes.xyxy.cpu().numpy(),
-                    confidence=results[0].boxes.conf.cpu().numpy(),
-                    class_id=results[0].boxes.cls.cpu().numpy().astype(int),
-                    )
+#         # Setup detections for visualization
+#         detections = sv.Detections(
+#                     xyxy=results[0].boxes.xyxy.cpu().numpy(),
+#                     confidence=results[0].boxes.conf.cpu().numpy(),
+#                     class_id=results[0].boxes.cls.cpu().numpy().astype(int),
+#                     )
         
     
-        # Format custom labels
-        self.labels = [f"{self.CLASS_NAMES_DICT[class_id]} {confidence:0.2f}"
-        for _, confidence, class_id, tracker_id
-        in detections]
+#         # Format custom labels
+#         self.labels = [f"{self.CLASS_NAMES_DICT[class_id]} {confidence:0.2f}"
+#         for _, confidence, class_id, tracker_id
+#         in detections]
         
-        # Annotate and display frame
-        frame = self.box_annotator.annotate(scene=frame, detections=detections, labels=self.labels)
+#         # Annotate and display frame
+#         frame = self.box_annotator.annotate(scene=frame, detections=detections, labels=self.labels)
         
-        return frame
+#         return frame
     
     
     
-    def __call__(self):
+#     def __call__(self):
 
-        cap = cv2.VideoCapture(self.capture_index)
-        assert cap.isOpened()
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+#         cap = cv2.VideoCapture(self.capture_index)
+#         assert cap.isOpened()
+#         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+#         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
       
-        while True:
+#         while True:
           
-            start_time = time()
+#             start_time = time()
             
-            ret, frame = cap.read()
-            assert ret
+#             ret, frame = cap.read()
+#             assert ret
             
-            results = self.predict(frame)
-            frame = self.plot_bboxes(results, frame)
+#             results = self.predict(frame)
+#             frame = self.plot_bboxes(results, frame)
             
-            end_time = time()
-            fps = 1/np.round(end_time - start_time, 2)
+#             end_time = time()
+#             fps = 1/np.round(end_time - start_time, 2)
              
-            cv2.putText(frame, f'FPS: {int(fps)}', (20,70), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,255,0), 2)
+#             cv2.putText(frame, f'FPS: {int(fps)}', (20,70), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,255,0), 2)
             
-            cv2.imshow('YOLOv8 Detection', frame)
+#             cv2.imshow('YOLOv8 Detection', frame)
  
-            if cv2.waitKey(5) & 0xFF == 27:
+#             if cv2.waitKey(5) & 0xFF == 27:
                 
-                break
+#                 break
         
-        cap.release()
-        cv2.destroyAllWindows()
+#         cap.release()
+#         cv2.destroyAllWindows()
         
         
     
-detector = ObjectDetection(capture_index=r'C:\Users\User\Documents\machine_learning\2023-07-14 16-47-45.mp4 Render 1.mp4')
-detector()
+# detector = ObjectDetection(capture_index=r'C:\Users\User\Documents\machine_learning\2023-07-14 16-47-45.mp4 Render 1.mp4')
+# detector()
+import streamlit as st
+import os
+import cv2
+from natsort import natsorted
+from streamlit_app.yolov8_detect import detect
+
+def check_and_create_folder(path):
+    # if os.path.exists(path):
+    #     return 'exist'
+    if not os.path.exists(path):
+        os.makedirs(path)
+        return True
+    else:
+        return False
+time_of_day = st.selectbox("Select time of day ['pagi','siang','sore','malam']",["pagi","siang","sore","malam"])
+directory = os.path.join('./images/'+ time_of_day+ '/')
+list_of_files = natsorted(os.listdir(directory))
+print(list_of_files)
+print(directory)
+detect_dir  = check_and_create_folder('./images/detect/'+ time_of_day+ '/')
+print(detect_dir)
+for i in range(len(list_of_files)):
+    image = cv2.imread(os.path.join(directory+list_of_files[i]))
+    st.image(image,use_column_width=True, channels="BGR")
+    _,image = detect(image)
+    st.image(image,use_column_width=True, channels="BGR")
+    cv2.imwrite(os.path.join('./images/detect/'+ time_of_day+ '/'+list_of_files[i]),image)
