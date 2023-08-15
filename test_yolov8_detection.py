@@ -5,10 +5,15 @@ from streamlit_app.yolov8_detect import detect
 import streamlit as st
 import logging
 
+st.set_page_config(layout="wide")
 logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S',
                     level=logging.INFO)
 logging = logging.getLogger(__name__)
+
+def check_and_create_folder(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
 
 def check_file_name_index(path):
     file_name = os.path.basename(path)
@@ -29,11 +34,14 @@ def check_file_name_index(path):
 #     time_of_day = 'sore'
 # elif args.time == 'malam':
 #     time_of_day = 'malam'
+time_of_day = st.selectbox('Time of the day', ['pagi', 'siang', 'sore', 'malam'])
+
+logging.info('Time of the day: {}'.format(time_of_day))
+
 
 
 video_status1 = False
 video_status2 = False
-st.set_page_config(layout="wide")
 
 with st.container():
     video1_placeholder, video2_placeholder = st.columns(2)
@@ -44,7 +52,6 @@ with st.container():
     if video_upload1 is not None :
             with open('video1.mp4', 'wb') as f:
                 f.write(video_upload1.getbuffer())
-             
             video_status1 = True
     else:
         logging.info('Uploaded Video Not Found')
@@ -128,8 +135,8 @@ with st.container():
        
 
 
-# image_dir = './images'
-# detect_dir = './images/detect'
+image_dir_base = './images'
+detect_dir_base = './images/detect'
 # if 'counter' not in st.session_state:
 #     st.session_state.counter = 0
 
