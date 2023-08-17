@@ -11,25 +11,25 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Dashcam for Object Detection\\
+\title{Dashcam for Traffic Object Detection\\
 {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
 should not be used}
 \thanks{Identify applicable funding agency here. If none, delete this.}
 }
 
-\author{\IEEEauthorblockN{Aura Syafa `Aprilia Radim}
+\author{\IEEEauthorblockN{Aura Syafa Aprilia Radim}
 \IEEEauthorblockA{\textit{School of Electrical Engineering } \\
 \textit{name of organization (of Aff.)}\\
 City, Country \\
 syafaaura@student.telkomuniversity.ac.id }
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+\IEEEauthorblockN{Muchammad ‘Irfan Chanif Rusydi}
+\IEEEauthorblockA{\textit{School of Electrical Engineering } \\
 \textit{name of organization (of Aff.)}\\
 City, Country \\
 email address or ORCID}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
+\IEEEauthorblockN{Surya Michrandi Nasution}
 \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
 \textit{name of organization (of Aff.)}\\
 City, Country \\
@@ -65,20 +65,18 @@ object detection, YOLOv8, dashcam
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
+Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. Smart and effective object detection technology is becoming increasingly important for monitoring traffic [1]. 
 
-\section{Ease of Use}
+Video captures from dashcams usually only show one side according to the camera position. However, this results in a lack of information about nearby objects. To overcome this problem, this study tried a solution by using two cameras or cameras placed at different positions in the vehicle. By using more than one camera, diverse viewing angles can provide more complete information about objects around the vehicle. For example, the camera on the left side helps detect objects on the left, while the camera on the right side helps detect objects on the right. This approach is expected to provide more comprehensive results according to the actual situation in front of the vehicle.
+Therefore, the study of the application of dual cameras to detect objects becomes very relevant and interesting. By optimizing the use of dual cameras, it is hoped that this technology will be able to provide effective solutions in increasing driver awareness and safety on the road. The application of dual cameras for object detection has the potential to reduce accident incidents, reduce the risk of collisions, and improve the safety of all road users. 
 
-\subsection{Maintaining the Integrity of the Specifications}
+\section{Literature Review}
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+\subsection{Object Detection}
+Object Detection is one of the important task in computer vision field, mainly dealing with detecting instances of visual object then categorize them into several classes \cite{b2}.
+With this kind of identification and localization, object detection can be used to count objects in a scene and determine and track their precise locations, all while accurately labeling them.
+Object detection has been widely used for face detection, vehicle detection, pedestrian counting, web images, security systems and driverless cars.
+Within the past twenty years, object detection have been going through a lot of changes and development. Although it is commonly divided into two periods: "traditional object detection" and "deep learning based". In 2012, Krizhevsky et al. \cite{b3} proposed a deep convolutional network trained on a subset ImageNet 
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
@@ -272,8 +270,8 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{00}
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+\bibitem{b2} https://arxiv.org/pdf/1905.05055.pdf
+\bibitem{b3} Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. https://doi.org/10.1145/3065386
 \bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
 \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
 \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].

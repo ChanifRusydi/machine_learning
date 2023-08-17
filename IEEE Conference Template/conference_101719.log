@@ -1,13 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.8.17)  17 AUG 2023 14:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.8.17)  18 AUG 2023 06:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101
-719.tex"
-
-(/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_10171
-9.tex
+**"/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex"
+(/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
 (IEEEtran.cls
@@ -21,11 +18,8 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmpcountB=\count186
 \@IEEEtrantmpcountC=\count187
 \@IEEEtrantmptoksA=\toks17
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
-03.
-
-(/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/psnfss/ot1ptm.fd
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 503.
+(/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -39,52 +33,42 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
 \IEEEquantizedlength=\dimen147
 \IEEEquantizedlengthdiff=\dimen148
 \IEEEquantizedtextheightdiff=\dimen149
@@ -121,37 +105,25 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtranrubishbin=\box52
 )
 ** ATTENTION: Overriding command lockouts (line 2).
-
-(/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/cite/cite.sty
+(/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.s
-ty
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amstext.s
-ty
+(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsgen.st
-y
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
 \ex@=\dimen164
-))
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsbsy.st
-y
+)) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen165
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsopn.st
-y
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count266
@@ -201,29 +173,20 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb.
-sty
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts
-.sty
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/algorithms/algorithmic.sty
+)) (/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.s
-ty
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks23
 )
@@ -233,45 +196,30 @@ Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \c@ALC@depth=\count281
 \ALC@tlm=\skip54
 \algorithmicindent=\skip55
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx
-.sty
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics
-.sty
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/grap
-hics.cfg
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdft
-ex.def
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen173
 \Gin@req@width=\dimen174
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/textcomp.sty
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/colo
-r.cfg
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolo
-r.ltx)
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
 Package xcolor Info: Model `RGB' extended on input line 1369.
@@ -281,9 +229,7 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backe
-nd-pdftex.def
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count282
 \l__pdf_internal_box=\box55
@@ -306,9 +252,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 
 -- Lines per column: 56 (exact).
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-
-pdf.mkii
+(/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count283
 \scratchdimen=\dimen175
@@ -321,96 +265,111 @@ pdf.mkii
 \MPnumerator=\count287
 \makeMPintoPDFobject=\count288
 \everyMPtoPDFconversion=\toks25
-)
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epst
-opdf-base.sty
+) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf
--sys.cfg
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
-
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
-
-(/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Calculating math sizes for size <11> on input line 57.
-[1{/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/fonts/map
-/pdftex/pdftex.map}
+
+
+LaTeX Warning: Citation `b2' on page 1 undefined on input line 76.
+
+
+LaTeX Warning: Citation `b3' on page 1 undefined on input line 79.
+
+
+LaTeX Warning: Reference `AA' on page 1 undefined on input line 84.
+
+
+LaTeX Warning: Reference `SCM' on page 1 undefined on input line 84.
+
+[1{/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}
 
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-25.
 
-(/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/psnfss/ot1pcr.fd
+LaTeX Warning: Reference `eq' on page 2 undefined on input line 118.
+
+
+LaTeX Warning: Reference `eq' on page 2 undefined on input line 118.
+
+
+LaTeX Warning: Reference `eq' on page 2 undefined on input line 118.
+
+
+LaTeX Warning: Reference `eq' on page 2 undefined on input line 119.
+
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 123.
+(/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 130--133
-\OT1/ptm/m/n/10 Use []\OT1/pcr/m/n/10 {align} \OT1/ptm/m/n/10 or []\OT1/pcr/m/n
-/10 {IEEEeqnarray} \OT1/ptm/m/n/10 instead. The
- []
 
-
-Underfull \hbox (badness 1454) in paragraph at lines 164--165
-[]\OT1/ptm/m/n/10 In American English, commas, semicolons, periods,
- []
-
-
-Underfull \hbox (badness 1609) in paragraph at lines 164--165
-\OT1/ptm/m/n/10 question and exclamation marks are located within
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
-[]\OT1/ptm/m/n/10 Do not use the word ``essentially'' to mean
- []
-
-
-Underfull \hbox (badness 4181) in paragraph at lines 172--173
-[]\OT1/ptm/m/n/10 The abbreviation ``i.e.'' means ``that is'', and the
- []
+LaTeX Warning: Citation `b7' on page 2 undefined on input line 172.
 
 [2]
+
+LaTeX Warning: Reference `fig' on page 3 undefined on input line 208.
+
 <fig1.png, id=17, 82.1469pt x 71.5473pt>
 File: fig1.png Graphic file (type png)
 <use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 230.
+Package pdftex.def Info: fig1.png  used on input line 228.
 (pdftex.def)             Requested size: 82.14668pt x 71.5471pt.
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 2
-41.
-
-(/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/late
-x/psnfss/omsptm.fd
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 239.
+(/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 241.
-
-Underfull \hbox (badness 1502) in paragraph at lines 235--244
-\OT1/ptm/m/n/10 labels. Use words rather than symbols or abbreviations
- []
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 239.
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 280--281
-[]\OT1/ptm/m/n/8 M. Young, The Technical Writer's Handbook. Mill Valley, CA:
- []
+LaTeX Warning: Citation `b1' on page 3 undefined on input line 252.
 
 
-Underfull \hbox (badness 5924) in paragraph at lines 284--285
-\OT1/ptm/m/n/10 IEEE conference templates contain guidance text for
- []
+LaTeX Warning: Citation `b2' on page 3 undefined on input line 253.
 
+
+LaTeX Warning: Citation `b3' on page 3 undefined on input line 254.
+
+
+LaTeX Warning: Citation `b3' on page 3 undefined on input line 254.
+
+
+LaTeX Warning: Citation `b3' on page 3 undefined on input line 254.
+
+
+LaTeX Warning: Citation `b3' on page 3 undefined on input line 255.
+
+
+LaTeX Warning: Citation `b4' on page 3 undefined on input line 263.
+
+
+LaTeX Warning: Citation `b5' on page 3 undefined on input line 264.
+
+
+LaTeX Warning: Citation `b6' on page 3 undefined on input line 269.
+
+/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex:274: Misplaced alignment tab character &.
+l.274 ...item{b3} Krizhevsky, A., Sutskever, I., &
+                                                   Hinton, G. E. (2012). Ima...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[3 <./fig1.png (PNG copy)>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -422,37 +381,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3 <./fig1.png (PNG copy)>] (conference_101719.aux)
+[4
+
+] (conference_101719.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 4282 strings out of 477485
- 67760 string characters out of 2813009
- 1935244 words of memory out of 3000000
- 25213 multiletter control sequences out of 15000+600000
+ 4282 strings out of 475551
+ 67760 string characters out of 5759679
+ 1937244 words of memory out of 5000000
+ 25455 multiletter control sequences out of 15000+600000
  606003 words of font info for 129 fonts, out of 8000000 for 9000
- 0 hyphenation exceptions out of 8191
- 57i,11n,65p,1293b,306s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.e
-nc}</Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfo
-nts/cm/cmmi10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></Library/Application Support/MiKTeX/texmfs/ins
-tall/fonts/type1/public/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKT
-eX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Library/Application
- Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Libr
-ary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cm
-sy7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/cou
-rier/ucrr8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1
-/urw/times/utmb8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts
-/type1/urw/times/utmbi8a.pfb></Library/Application Support/MiKTeX/texmfs/instal
-l/fonts/type1/urw/times/utmr8a.pfb></Library/Application Support/MiKTeX/texmfs/
-install/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (3 pages, 144474 bytes).
+ 1141 hyphenation exceptions out of 8191
+ 57i,11n,65p,1293b,306s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc}</Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/courier/ucrr8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmb8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmbi8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmr8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmri8a.pfb>
+Output written on conference_101719.pdf (4 pages, 146959 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

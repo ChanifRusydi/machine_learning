@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1692258576 "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1692258577 0
+["pdflatex"] 1692315915 "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1692315916 2
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc" 1692258382 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/courier/pcrr7t.tfm" 1692258381 960 379cc0019370a9e0208a0a3f949f847a ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/courier/pcrr8r.tfm" 1692258381 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -71,17 +71,17 @@
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty" 1692258383 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def" 1692258385 29940 9473d58112bc8a88f5505b823a053dde ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1692258404 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1692258575 82507 a9eef8696c92627b87e9975edea03b2a ""
-  "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1692258561 20941169 68d5ec74fffe4abe579d59bba2b97612 ""
+  "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1692280362 82507 a9eef8696c92627b87e9975edea03b2a ""
+  "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1692280984 24121714 d5f814cc3e9769b02a120ab517fecaad ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/algorithms/algorithmic.sty" 1692258575 9550 ce01bb529235d2febc14da01b8e452c5 ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cite/cite.sty" 1692258572 26218 19edeff8cdc2bcb704e8051dc55eb5a7 ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/omsptm.fd" 1692258568 595 f29388881172d4508a49ca3cb3d55980 ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1pcr.fd" 1692258568 1025 cfb5a7799d4001859dd60898d37ec67c ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1ptm.fd" 1692258568 1007 39eda417ef5837ce5e38661cfad2cedf ""
-  "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" 1692188997 16269 d2b3cf1802bcada2115bb3cc746b6660 ""
+  "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" 1692315913 17902 7c0cc76e2b16641cf9d4cacf098adc08 ""
   "IEEEtran.cls" 1692188997 281957 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "conference_101719.aux" 1692258577 2374 57adb0e00ec0e0061418537a506c1a33 "pdflatex"
-  "conference_101719.tex" 1692188997 16269 d2b3cf1802bcada2115bb3cc746b6660 ""
+  "conference_101719.aux" 1692315916 2377 d30ac41b1af4887dfddd3ad7c84ec16b "pdflatex"
+  "conference_101719.tex" 1692315913 17902 7c0cc76e2b16641cf9d4cacf098adc08 ""
   "fig1.png" 1692188997 4535 3b4c70b1b9361fad686e8d234c8fe506 ""
   (generated)
   "conference_101719.aux"
