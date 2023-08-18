@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1692343346 "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1692343347 0
+["pdflatex"] 1692356133 "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1692356133 2
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc" 1692329561 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/courier/pcrr7t.tfm" 1692329560 960 379cc0019370a9e0208a0a3f949f847a ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/courier/pcrr8r.tfm" 1692329560 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -74,10 +74,10 @@
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/omsptm.fd" 1692331622 595 f29388881172d4508a49ca3cb3d55980 ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1pcr.fd" 1692331622 1025 cfb5a7799d4001859dd60898d37ec67c ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1ptm.fd" 1692331622 1007 39eda417ef5837ce5e38661cfad2cedf ""
-  "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" 1692343345 18953 bcaed7d88b7da3020cfe80f3c3962fc0 ""
+  "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" 1692356131 19857 b21d2d282cd5ea5316a798c6822615ae ""
   "IEEEtran.cls" 1692188997 281957 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "conference_101719.aux" 1692343347 2549 2aff3be416d9e3e7227994b32efe7aa7 "pdflatex"
-  "conference_101719.tex" 1692343345 18953 bcaed7d88b7da3020cfe80f3c3962fc0 ""
+  "conference_101719.aux" 1692356133 2967 9ea41be8f366217a542f273578a3ee76 "pdflatex"
+  "conference_101719.tex" 1692356131 19857 b21d2d282cd5ea5316a798c6822615ae ""
   "fig1.png" 1692188997 4535 3b4c70b1b9361fad686e8d234c8fe506 ""
   (generated)
   "conference_101719.aux"
