@@ -1,5 +1,11 @@
 import cv2
-import numpy as np  
+import numpy as np
+import logging
+
+logging.basicConfig(filename='logfile_test.txt',filemode='a',format='%(asctime)s - %(message)s',
+                    datefmt='%d-%b-%y %H:%M:%S',
+                    level=logging.DEBUG)
+logging.getLogger(__name__)
 
 # if success status = 0 and return image result
 def image_stitching(image1, image2):
@@ -21,11 +27,11 @@ def image_stitching(image1, image2):
     seam_finder = cv2.detail.GraphCutSeamFinder('COST_COLOR')
     estimator = cv2.detail_HomographyBasedEstimator()
     warp_type  = 'plane'
-    wave_correct = 'horizontal'
+    wave_correct = ''
     blend_type = 'multiband'
     blend_strength = 10      #overlap
 
-    # matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 56)
+    matcher = cv2.detail.BestOf2NearestMatcher(False, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 6)
     compensator = cv2.detail.ExposureCompensator_createDefault(expos_comp)
    
     work_megapix = 1
@@ -103,6 +109,7 @@ def image_stitching(image1, image2):
     b,cameras = estimator.apply(features, p, None)
     print(type(cameras))
     if not b:
+        logging.info("Homography estimation failed.")
         return -1, None
         # print("Homography estimation failed.")
         # exit()
@@ -165,6 +172,7 @@ def image_stitching(image1, image2):
         K[0][2] *= swa
         K[1][1] *= swa
         K[1][2] *= swa
+
         corner, image_wp = warper.warp(images[idx], K, cameras[idx].R, cv2.INTER_LINEAR, cv2.BORDER_REFLECT)
         corners.append(corner) 
         sizes.append((image_wp.shape[1], image_wp.shape[0]))
@@ -267,9 +275,11 @@ def image_stitching(image1, image2):
     try :
         result, result_mask = blenders.blend(result, result_mask)
     except:
+        logging.info("Can't blend image")
         return -1, None
     result = result.astype(np.uint8)
     status = 0
+    logging.info("Image stitched")
     return status, result
 
 if __name__ == "__main__":
