@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.8.18)  19 AUG 2023 05:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.8.18)  19 AUG 2023 15:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -271,42 +271,42 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
- (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
- (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 95.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 91.
  (/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
 []\OT1/ptm/m/n/10 With the born of AlexNet, YOLO
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
 [][]\OT1/pcr/m/n/10 (You Only Look Once) []\OT1/ptm/m/n/10 model was in-tro-duced in
  []
 
 [1{/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}
 
 
-] [2]
+]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 104.
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 104.
+ (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [2]
 <fig1.png, id=17, 82.1469pt x 71.5473pt>
 File: fig1.png Graphic file (type png)
 <use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 247.
+Package pdftex.def Info: fig1.png  used on input line 243.
 (pdftex.def)             Requested size: 82.14668pt x 71.5471pt.
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 258.
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 254.
  (/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 258.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 254.
  [3 <./fig1.png (PNG copy)>]
 
 ** Conference Paper **
@@ -328,15 +328,15 @@ L3 programming layer <2023-06-30>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4260 strings out of 475551
- 67409 string characters out of 5759679
- 1936244 words of memory out of 5000000
- 25434 multiletter control sequences out of 15000+600000
- 601583 words of font info for 115 fonts, out of 8000000 for 9000
+ 4258 strings out of 475551
+ 67390 string characters out of 5759679
+ 1935244 words of memory out of 5000000
+ 25433 multiletter control sequences out of 15000+600000
+ 599998 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,65p,1293b,304s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc}</Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/courier/ucrr8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmb8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmbi8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmr8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (4 pages, 148998 bytes).
+Output written on conference_101719.pdf (4 pages, 148466 bytes).
 PDF statistics:
  72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

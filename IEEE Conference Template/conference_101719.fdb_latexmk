@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1692398211 "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1692398212 0
+["pdflatex"] 1692434319 "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1692434320 0
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc" 1692329561 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/courier/pcrr7t.tfm" 1692329560 960 379cc0019370a9e0208a0a3f949f847a ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/courier/pcrr8r.tfm" 1692329560 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -74,11 +74,11 @@
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/omsptm.fd" 1692331622 595 f29388881172d4508a49ca3cb3d55980 ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1pcr.fd" 1692331622 1025 cfb5a7799d4001859dd60898d37ec67c ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1ptm.fd" 1692331622 1007 39eda417ef5837ce5e38661cfad2cedf ""
-  "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" 1692398210 19673 6996adee4b34dbf1436552efbdeac127 ""
-  "IEEEtran.cls" 1692188997 281957 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "conference_101719.aux" 1692398212 2953 bfd22cefb343f7d39cc55212c199c5ab "pdflatex"
-  "conference_101719.tex" 1692398210 19673 6996adee4b34dbf1436552efbdeac127 ""
-  "fig1.png" 1692188997 4535 3b4c70b1b9361fad686e8d234c8fe506 ""
+  "/Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex" 1692434319 19620 6c8129be7c2693b3499214bbfddb9337 ""
+  "IEEEtran.cls" 1692421790 281957 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
+  "conference_101719.aux" 1692434320 2953 87588847de3f41c1afdc73bd7d842ce8 "pdflatex"
+  "conference_101719.tex" 1692434319 19620 6c8129be7c2693b3499214bbfddb9337 ""
+  "fig1.png" 1692398487 4535 3b4c70b1b9361fad686e8d234c8fe506 ""
   (generated)
   "conference_101719.aux"
   "conference_101719.log"
