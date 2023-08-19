@@ -9,6 +9,7 @@ import logging
 try:
     from streamlit_extras.switch_page_button import switch_page
     from streamlit_extras.stateful_button import button as stateful_button
+    from streamlit.extras.
 except ModuleNotFoundError:
     from pip._internal import main as pip 
     pip(['install', 'streamlit-extras'])
