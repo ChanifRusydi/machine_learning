@@ -9,12 +9,27 @@ import logging
 try:
     from streamlit_extras.switch_page_button import switch_page
     from streamlit_extras.stateful_button import button as stateful_button
+    from streamlit.extras.
 except ModuleNotFoundError:
     from pip._internal import main as pip 
     pip(['install', 'streamlit-extras'])
     from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(layout="wide")
+
+
+
+# Optional -- adds the title and icon to the current page
+add_page_title()
+
+# Specify what pages should be shown in the sidebar, and what their titles 
+# and icons should be
+show_pages(
+    [
+        Page("streamlit_app.py", "Home", "🏠"),
+        Page("other_pages/page2.py", "Page 2", ":books:"),
+    ]
+)
 
 logging.basicConfig(filename='logfile.txt',filemode='a',format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S',
