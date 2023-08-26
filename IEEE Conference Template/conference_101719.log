@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.8.18)  19 AUG 2023 15:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2023.8.18)  26 AUG 2023 10:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,6 +284,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--93
 [][]\OT1/pcr/m/n/10 (You Only Look Once) []\OT1/ptm/m/n/10 model was in-tro-duced in
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+
+ []
+
 [1{/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}
 
 
@@ -299,14 +304,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <fig1.png, id=17, 82.1469pt x 71.5473pt>
 File: fig1.png Graphic file (type png)
 <use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 243.
+Package pdftex.def Info: fig1.png  used on input line 242.
 (pdftex.def)             Requested size: 82.14668pt x 71.5471pt.
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 254.
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 253.
  (/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 254.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 253.
  [3 <./fig1.png (PNG copy)>]
 
 ** Conference Paper **
@@ -336,7 +341,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  57i,11n,65p,1293b,304s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc}</Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/courier/ucrr8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmb8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmbi8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmr8a.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (4 pages, 148466 bytes).
+Output written on conference_101719.pdf (4 pages, 148695 bytes).
 PDF statistics:
  72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
