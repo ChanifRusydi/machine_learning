@@ -108,6 +108,24 @@ for you.
 The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset. For detection dataset it consists of 80 classes, 330K images, 1.5 million object instances, 80 object categories, 91 stuff categories, 5 captions per image, 250,000 people with keypoints. 
 In total, The Microsoft Common Objects in COntext contains 91 common object categories with 82 of them having more than 5,000 labeled instances. In addition, 
 
+\subsection{Dataset Filtering}
+As mention earlier, COCO dataset contains 80 classes. However, we only need traffic related object classess.
+Therefore, we filtered the dataset to only contain 12 classes. The classes are:
+\begin{itemize}
+\item Car
+\item Truck
+\item Bus
+\item Motorcycle
+\item Bicycle
+\item Traffic Light
+\item Stop Sign
+\item Train
+\item Hydrant
+\item Cat
+\item Dog
+\end{itemize}
+
+
 \subsection{Units}
 \begin{itemize}
 \item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
@@ -267,8 +285,7 @@ We are using batch
 
 \section{Conclusion}
 Dashcam has became a popular device for drivers to record the road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as the insurance claim. 
-In this paper, we proposed a dashcam system to detect traffic object. The system is based on the YOLOv8 model. We also proposed a new dataset for dashcam object detection. The dataset contains 78000 images with 12 traffic objects class. 
-The dataset is divided into training set and validation set. 
+In this paper, we proposed a dashcam system to detect traffic object. The object detection system is based on the YOLOv8 model. We also proposed a dataset for dashcam traffic object detection. Our dataset created by filtering MS COCO Dataset. The dataset contains 78000 images with 12 traffic objects class. 
 \section*{Acknowledgment}
 
 The preferred spelling of the word ``acknowledgment'' in America is without 
