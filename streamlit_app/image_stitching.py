@@ -24,7 +24,7 @@ def image_stitching(image1, image2):
     warp_type  = 'plane'
     wave_correct = 'plane'
     blend_type = 'multiband'
-    blend_strength = 15     #overlap
+    blend_strength = 10    #overlap
     if platform.system() == 'Linux':
         try_cuda = True
     else:
@@ -35,7 +35,7 @@ def image_stitching(image1, image2):
     work_megapix = 2
     seam_megapix = 0.2
     compose_megapix = -1
-    conf_thresh = 1.0
+    conf_thresh = 1
     ba_refine_mask = 'xxxxx'
     wave_correct = cv2.detail.WAVE_CORRECT_HORIZ
 
@@ -66,6 +66,7 @@ def image_stitching(image1, image2):
                 work_scale = min(1.0, np.sqrt(work_megapix * 1e6 / (full_img.shape[0] * full_img.shape[1])))
                 is_work_scale_set =    True
             img = cv2.resize(src=full_img, dsize=None, fx=work_scale, fy=work_scale, interpolation=cv2.INTER_LINEAR_EXACT)
+            print(img.shape)
         if is_seam_scale_set is False:
             if seam_megapix > 0:
                 seam_scale = min(1.0, np.sqrt(seam_megapix * 1e6 / (full_img.shape[0] * full_img.shape[1])))
@@ -76,9 +77,11 @@ def image_stitching(image1, image2):
 
         img_feat = cv2.detail.computeImageFeatures2(features_finder, img)
         features.append(img_feat)
+
         # this need to be adjusted
         img = cv2.resize(src=full_img, dsize=None, fx=seam_scale, fy=seam_scale, interpolation=cv2.INTER_LINEAR_EXACT)
         images.append(img)
+        cv2.imshow('img', img)
     try:
         p = matcher.apply2(features)
         matcher.collectGarbage()
@@ -101,7 +104,7 @@ def image_stitching(image1, image2):
     images = img_subset
     image_names = img_names_subset
     full_img_sizes = full_img_sizes_subset
-    num_images = len(img_names_subset)
+    num_images = len(image_names)
 
     b,cameras = estimator.apply(features, p, None)
     if not b:
@@ -133,13 +136,15 @@ def image_stitching(image1, image2):
     try:
         b, cameras = adjuster.apply(features, p, cameras)
     except:
+        print("camera parameters adjusting failed.")
         return -1, None
         # print("Camera parameters adjusting failed.")
         # exit()
     if not b:
-        return -1, None
         print("Camera parameters adjusting failed.")
-        exit()
+        return -1, None
+        # print("Camera parameters adjusting failed.")
+        # exit()
 
     focals = []
     for cam in cameras:
@@ -179,13 +184,18 @@ def image_stitching(image1, image2):
         corners.append(corner) 
         sizes.append((image_wp.shape[1], image_wp.shape[0]))
         images_warped.append(image_wp)
-        p, mask_wp = warper.warp(masks[idx], K, cameras[idx].R, cv2.INTER_NEAREST, cv2.BORDER_REPLICATE)
+        p, mask_wp = warper.warp(masks[idx], K, cameras[idx].R, cv2.INTER_NEAREST, cv2.BORDER_CONSTANT)
         masks_warped.append(mask_wp.get())
 
     images_warped_f = []
     for img in images_warped:
         imgf = img.astype(np.float32)
         images_warped_f.append(imgf)
+
+    print('image warped f', len(images_warped_f))
+    cv2.imshow('image warped f 1', images_warped_f[0])
+    cv2.imshow('image warped f 2', images_warped_f[1])
+    cv2.waitKey(0)
 
     compensator.feed(corners=corners, images=images_warped, masks=masks_warped)
     seam_finder = seam_finder.find(images_warped_f, corners, masks_warped)
@@ -197,10 +207,11 @@ def image_stitching(image1, image2):
 
     for idx, name in enumerate(image_names):
         full_img = name
-        if compose_megapix > 0:
-            compose_scale = min(1.0, np.sqrt(compose_megapix * 1e6 / (full_img.shape[0] * full_img.shape[1])))
-        if is_compose_scale_set is False:
+        if not is_compose_scale_set:
+            if compose_megapix > 0:
+                compose_scale = min(1.0, np.sqrt(compose_megapix * 1e6 / (full_img.shape[0] * full_img.shape[1])))
             is_compose_scale_set = True
+
             compose_work_aspect = compose_scale / work_scale
             warped_image_scale *= compose_work_aspect
             warper = cv2.PyRotationWarper(warp_type, warped_image_scale)
@@ -222,18 +233,22 @@ def image_stitching(image1, image2):
         else:
             print('img is full img')
             img = full_img
+
         _img_size = (img.shape[1], img.shape[0])
+        print(_img_size)
+
         K = cameras[idx].K().astype(np.float32)
-        corner, image_warped = warper.warp(img, K, cameras[idx].R, cv2.INTER_LINEAR, cv2.BORDER_REFLECT_101)
+        corner, image_warped = warper.warp(img, K, cameras[idx].R, cv2.INTER_LINEAR, cv2.BORDER_REFLECT)
 
         mask = 255 * np.ones((img.shape[0], img.shape[1]), dtype=np.uint8)
-        p, mask_warped = warper.warp(mask, K, cameras[idx].R, cv2.INTER_NEAREST, cv2.BORDER_REFLECT_101)
+        p, mask_warped = warper.warp(mask, K, cameras[idx].R, cv2.INTER_NEAREST, cv2.BORDER_CONSTANT)
         compensator.apply(idx, corners[idx], image_warped, mask_warped)
        
         image_warped_s = image_warped.astype(np.int16)
         dilated_mask = cv2.dilate(masks_warped[idx], None)
         seam_mask = cv2.resize(dilated_mask, (mask_warped.shape[1], mask_warped.shape[0]), 0, 0, cv2.INTER_LINEAR_EXACT)
         mask_warped = cv2.bitwise_and(seam_mask, mask_warped)
+
         #blender
         if blenders is None:
             blenders = cv2.detail.Blender_createDefault(cv2.detail.Blender_NO)
@@ -241,11 +256,13 @@ def image_stitching(image1, image2):
             overlap_point2 = [int(image2.shape[0]*100-blend_strength/100), image2.shape[1]]
             overlap_size1 = [image1.shape[0]/ blend_strength, image1.shape[1]]
             overlap_size2 = [image2.shape[0]/blend_strength, image2.shape[1]]
-            # overlap_sz = cv2.detail.overlapRoi[)
+            print(overlap_point1 , overlap_point2)
+            print(overlap_size1 , overlap_size2)
+                        # overlap_sz = cv2.detail.overlapRoi[)
             # print('overlap size', overlap_sz)
             dst_sz = cv2.detail.resultRoi(corners=corners, sizes=sizes)
             
-            blend_width = image1.shape[1] * blend_strength / 100
+            blend_width = np.sqrt(dst_sz[2]*dst_sz[3]) * blend_strength / 100
             # blend_width = np.sqrt(dst_sz[2] * dst_sz[3]) * blend_strength / 100
             
             if blend_width < 1:
@@ -281,6 +298,10 @@ if __name__ == "__main__":
     cv2.imshow('image2', image2)
     cv2.waitKey(0)
     status, image_result = image_stitching(image1=image1, image2=image2)
-    print('status',status, image_result.shape)
-    cv2.imshow('image_result', image_result)
-    cv2.waitKey(0)
+    if status == -1:
+        print('image stitching failed')
+        exit()
+    else:
+        print('status',status, image_result.shape)
+        cv2.imshow('image_result', image_result)
+        cv2.waitKey(0)
