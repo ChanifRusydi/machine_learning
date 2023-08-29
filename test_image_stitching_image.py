@@ -1,75 +1,30 @@
 import cv2
 import time
-import platform
-def open_camera(index):
-    cap = cv2.VideoCapture(index)
-    return cap
+from streamlit_app.image_stitching import image_stitching
 
-def main():
-    # print OpenCV version
-    print("OpenCV version: " + cv2.__version__)
-    if platform.system() == 'Windows':
-        try:
-            import device
-            # Get camera list
-            device_list = device.getDeviceList()
-            index = 0
-            for camera in device_list:
-                print(str(index) + ': ' + camera[0])
-                index += 1
-            last_index = index - 1
+import logging
 
-            if last_index < 0:
-                print("No device is connected")
-        except:
-            print("Not in Windows")
-    # Select a camera
-    # camera_number = select_camera(last_index)
-    # Open camera
-    cap1 = open_camerwa(0)
-    cap2 = open_camera(1)
-    if cap1.isOpened() or cap2.isOpened():
-        width1 = cap1.get(3) # Frame Width
-        height1 = cap1.get(4) # Frame Height
-        print('Default width: ' + str(width1) + ', height: ' + str(height1))
-        while True:
-            ret1, frame1 = cap1.read()
-            ret2, frame2 = cap2.read()
-            if ret1 == False or ret2 == False:
-                print("No camera")
-                break
-            else:
-                timestamp = time.time()
-                filename1 = 'frame1' + str(timestamp) + '.jpg'
-                filename2 = 'frame2' + str(timestamp) + '.jpg'
-                cv2.imwrite(filename1,frame1)
-                cv2.imwrite(filename2,frame2)
-                stitching=cv2.Stitcher.create()
-                status,stitched_frame=stitching.stitch((frame1,frame2))
+logging.basicConfig(level=logging.INFO, filename="logfile.txt", filemode="a", format="%(name)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+image_name1 = "images/image1_60_left.jpg"
+image_name2 = "images/image1_60_right.jpg"
+# Load images
+image1 = cv2.imread(image_name1)
+image2 = cv2.imread(image_name2)
+logger.info(image_name1)
+logger.info(image_name2)
 
-                if status==0:
-                    cv2.imshow('stitched_frame',stitched_frame)
-                    time.sleep(50) # 50ms
-                else:
-                    print("Error")
-                # put a delay of 100ms between every frame
-               
-
-            # Display the resulting frame
-                if cap1.isOpened() and cap2.isOpened():
-                    side_by_side = cv2.hconcat([frame1, frame2])
-                    cv2.imshow('frame', side_by_side)
-                else:
-                    cv2.imshow('frame', frame1)
-                time.sleep(100) # 100ms
-                # key: 'ESC'
-            key = cv2.waitKey(20)
-            if key == 27:
-                break
-        cap1.release()
-        cap2.release() 
-        cv2.destroyAllWindows()
-
-
-if __name__ == "__main__":
-    main()
+# Stitch images
+start_time = time.time()
+status, stitched_image = image_stitching(image1, image2)
+if status == -1:
+    logger.error("Images are not stitched")
+    print("Images are not stitched")
+    stitched_image = cv2.hconcat([image1, image2])
+    cv2.imwrite("images/hconcat_image.jpg", stitched_image)
+elif stitched_image is not None:
+    logger.info("Images are stitched")
+    cv2.imwrite("images/stitched_image.jpg", stitched_image)
+end_time = time.time()
+print("Time taken to stitch images: ", end_time - start_time)
+logger.info("Time taken to stitch images: {}".format(end_time - start_time))
