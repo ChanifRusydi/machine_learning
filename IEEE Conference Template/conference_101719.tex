@@ -7,7 +7,6 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
-
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -22,22 +21,26 @@
 }
 \makeatother
 
+\def\Affiliation{ School of Electrical Engineering }
+\def\Organization{Telkom University, Indonesia}
+\def\CityCountry{Bandung, Indonesia}
+
 \author{\IEEEauthorblockN{Aura Syafa Aprilia Radim}
-\IEEEauthorblockA{\textit{School of Electrical Engineering } \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
+\IEEEauthorblockA{\textit{\Affiliation } \\
+\textit{\Organization}\\
+\CityCountry \\
 syafaaura@student.telkomuniversity.ac.id }
 \and
 \IEEEauthorblockN{Muchammad 'Irfan Chanif Rusydi}
-\IEEEauthorblockA{\textit{School of Electrical Engineering } \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
+\IEEEauthorblockA{\textit{\Affiliation } \\
+\textit{\Organization}\\
+\CityCountry \\
 email address or ORCID}
 \and
 \IEEEauthorblockN{Surya Michrandi Nasution}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
+\IEEEauthorblockA{\textit{\Affiliation} \\
+\textit{\Organization}\\
+\CityCountry \\
 email address or ORCID}
 \linebreakand
 % \IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
@@ -47,9 +50,9 @@ email address or ORCID}
 % email address or ORCID}
 % \and
 \IEEEauthorblockN{Casi Setianingsih}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
+\IEEEauthorblockA{\textit{\Affiliation} \\
+\textit{\Organization}\\
+\CityCountry \\
 email address or ORCID}
 % \and
 % \IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
@@ -89,10 +92,10 @@ Since then, the field of object detection has been rapidly advancing, with new m
 
 \subsection{YOLO (You Only Look Once)}
 With the born of AlexNet, YOLO \verb|(You Only Look Once)| model was introduced in 2015. Base YOLO model can achieve 45 frame per second. While the sameller version, Fast YOLO can achieve 155 frames per second.
-YOLO outperform DPM and R-CNN on Picasso Dataset and People-Art Dataset \cite{b5}. 
+YOLO outperform DPM and R-CNN on Picasso Dataset and People-Art Dataset \cite{b5}.
 
-As January 2023, YOLOv8 was introduced by Ultralytics, the same software company that release YOLOv3 and YOLOv5.
-
+In the early period of making this paper, YOLOv7 was the latest version of YOLO. However,as January 2023, YOLOv8 was introduced by Ultralytics, the same software company that release YOLOv3 and YOLOv5. 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
 \section{System Design}
 Before you begin to format your paper, first write and save the content as a 
@@ -106,7 +109,25 @@ for you.
 
 \subsection{COCO Dataset}\label{AA}
 The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset. For detection dataset it consists of 80 classes, 330K images, 1.5 million object instances, 80 object categories, 91 stuff categories, 5 captions per image, 250,000 people with keypoints. 
+In total, The Microsoft Common Objects in COntext contains 91 common object categories with 82 of them having more than 5,000 labeled instances. In addition, 
 
+\subsection{Dataset Filtering}
+As mention earlier, COCO dataset contains 80 classes. However, we only need traffic related object classess.
+Therefore, we filtered the dataset to only contain 12 classes. The classes are:
+\begin{itemize}
+\item Car
+\item Truck
+\item Bus
+\item Motorcycle
+\item Bicycle
+\item Traffic Light
+\item Stop Sign
+\item Train
+\item Hydrant
+\item Cat
+\item Dog
+\end{itemize}
+The result is 78000 images with 12 classes. This amount of data was reduced by 12000 images from the original dataset. By reducing the dataset, our model expected to be faster in training phase and also faster in inference phase.
 
 
 \subsection{Units}
@@ -239,11 +260,18 @@ copy& More table copy$^{\mathrm{a}}$& &  \\
 \end{center}
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[h]
 \centerline{\includegraphics{fig1.png}}
 \caption{Example of a figure caption.}
 \label{fig}
 \end{figure}
+
+\begin{figure}[h]
+\centerline{\includegraphics[height=150px] {fig2.png}}
+\caption{captions}
+\label{fig2}
+\end{figure}
+
 
 Figure Labels: Use 8 point Times New Roman for Figure labels. Use words 
 rather than symbols or abbreviations when writing Figure axis labels to 
@@ -255,21 +283,26 @@ with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization
 quantities and units. For example, write ``Temperature (K)'', not 
 ``Temperature/K''.
 
-\section{Results and Discussion}
-\subsection[short]{Training Configuration}
-All testing in this section was done in 8 epochs
-\subsubitem{Learning Rate}
-We are using batch 
-\subsubitem{Batch Size}
+\section{Experiments}
 
+\subsection{Experimental Setup}
+In this section, we will discuss about the experimental setup. We are using Pytorch as our deep learning framework in Python  3.
+MNodel training was conducted on Geforce RTX 3090, 24 GB VIdeo RAM, 32GB RAM, Intel Core i3-12100 4 Core 8 Thread, running on Windows 10
+Model inference and testing was performed on Macbook Air M1, and Jetson Nano 4GB. The camera used in this experiment  LifeCam Studio by Microsoft.
 
+\subsection{Dataset}
+As mention earlier, we are using COCO dataset. However, we filtered the dataset to only contain 12 classes. The classes are:
+Car, Truck, Bus, Motorcycle, Bicycle, Traffic Light, Stop Sign, Train, Hydrant, Cat, Dog. The result is 78000 images with 12 classes.
+For inference and real world testing, we gather our own data by recording traffic condition in Bandung, Indonesia. The data was recorded using camera mentioned earlier.
+
+\subsection{Training}
+Before we begin training process of our YOLOv8n-Traffic model with high number of epoch, we want to find the optimal hyperparamater configuration for our use case. We are doing some experimenttion training with 8 epoch.
 
 \subsection{Real World Testing}
 
 \section{Conclusion}
 Dashcam has became a popular device for drivers to record the road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as the insurance claim. 
-In this paper, we proposed a dashcam system to detect traffic object. The system is based on the YOLOv8 model. We also proposed a new dataset for dashcam object detection. The dataset contains 78000 images with 12 traffic objects class. 
-The dataset is divided into training set and validation set. 
+In this paper, we proposed a dashcam system to detect traffic object. The object detection system is based on the YOLOv8n model. We also proposed a dataset for dashcam traffic object detection. Our dataset created by filtering MS COCO Dataset. The dataset contains 78000 images with 12 traffic objects class. 
 \section*{Acknowledgment}
 
 The preferred spelling of the word ``acknowledgment'' in America is without 
@@ -304,8 +337,8 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b3} Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. https://doi.org/10.1145/3065386
 \bibitem{b4} https://arxiv.org/abs/1311.2524
 \bibitem{b5} https://arxiv.org/abs/1506.02640
-\bibitem{b6} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b7} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
+\bibitem{b6} https://arxiv.org/pdf/1405.0312
+\bibitem{b7} b7
 \bibitem{b8} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
 \end{thebibliography}
 \vspace{12pt}

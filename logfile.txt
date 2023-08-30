@@ -410,3 +410,11 @@
 15-Aug-23 20:06:21 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
 15-Aug-23 20:06:21 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
 15-Aug-23 20:06:21 - Image Count: 20
+__main__ - INFO - images/image1_60_right.jpg
+__main__ - INFO - images/image1_60_left.jpg
+__main__ - ERROR - Images are not stitched
+__main__ - INFO - Time taken to stitch images: 0.5470802783966064
+__main__ - INFO - images/image1_60_left.jpg
+__main__ - INFO - images/image1_60_right.jpg
+__main__ - ERROR - Images are not stitched
+__main__ - INFO - Time taken to stitch images: 0.5035381317138672
