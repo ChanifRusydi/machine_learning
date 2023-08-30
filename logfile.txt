@@ -418,9 +418,3 @@ __main__ - INFO - images/image1_60_left.jpg
 __main__ - INFO - images/image1_60_right.jpg
 __main__ - ERROR - Images are not stitched
 __main__ - INFO - Time taken to stitch images: 0.5035381317138672
-__main__ - INFO - images/image1_60_left.jpg
-__main__ - INFO - images/image1_60_right.jpg
-__main__ - INFO - images/image1_60_left.jpg
-__main__ - INFO - images/image1_60_right.jpg
-__main__ - ERROR - Images are not stitched
-__main__ - INFO - Time taken to stitch images: 0.5502669811248779
