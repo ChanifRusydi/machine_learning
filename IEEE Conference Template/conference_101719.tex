@@ -284,16 +284,24 @@ with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization
 quantities and units. For example, write ``Temperature (K)'', not 
 ``Temperature/K''.
 
-\section{Results and Discussion}
-\subsection[short]{Training Configuration}
-All testing in this section was done in 8 epochs
-\subsubitem{Learning Rate}
-We are using batch 
-\subsubitem{Batch Size}
+\section{Experiments}
 
+\subsection{Experimental Setup}
+In this section, we will discuss about the experimental setup. We are using Pytorch as our deep learning framework in Python  3.
+MNodel training was conducted on Geforce RTX 3090, 24 GB VIdeo RAM, 32GB RAM, Intel Core i3-12100 4 Core 8 Thread, running on Windows 10
+Model inference and testing was performed on Macbook Air M1, and Jetson Nano 4GB. The camera used in this experiment  LifeCam Studio by Microsoft.
 
+\subsection{Dataset}
+As mention earlier, we are using COCO dataset. However, we filtered the dataset to only contain 12 classes. The classes are:
+Car, Truck, Bus, Motorcycle, Bicycle, Traffic Light, Stop Sign, Train, Hydrant, Cat, Dog. The result is 78000 images with 12 classes.
+For inference and real world testing, we gather our own data by recording traffic condition in Bandung, Indonesia. The data was recorded using camera mentioned earlier.
+
+\subsection{Training}
+Before we begin training process of our YOLOv8n-Traffic model with high number of epoch, we want to find the optimal hyperparamater configuration for our use case. We are doing some experimenttion training with 8 epoch.
+ 
 
 \subsection{Real World Testing}
+
 
 \section{Conclusion}
 Dashcam has became a popular device for drivers to record the road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as the insurance claim. 
