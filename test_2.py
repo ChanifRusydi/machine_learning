@@ -276,7 +276,7 @@ def get_compensator(args):
 def main():
     args = parser.parse_args()
     # img_names = ['Intersect_kiri.jpg', 'Intersect_kanan.jpg']
-    img_names = ['image1_60_left.jpg', 'image1_60_right.jpg']
+    img_names = ['images\image1_60_left.jpg', 'images\image1_60_right.jpg']
     # img_names = ['frame1_kiri.jpg', 'frame2_kanan.jpg']
     print(img_names)
 
@@ -310,7 +310,7 @@ def main():
         timelapse = False
 
     print(args.features)
-    finder = cv.ORB_create()
+    finder = cv.AKAZE_create()
     seam_work_aspect = 1
     full_img_sizes = []
     features = []
@@ -451,6 +451,7 @@ def main():
     for img in images_warped:
         imgf = img.astype(np.float32)
         images_warped_f.append(imgf)
+
     print('image warped f ',len(images_warped_f))
     cv.imshow("image1", images_warped_f[0])
     cv.imshow("image2", images_warped_f[1])
@@ -492,18 +493,22 @@ def main():
                             interpolation=cv.INTER_LINEAR_EXACT)
         else:
             img = full_img
+
         _img_size = (img.shape[1], img.shape[0])
         K = cameras[idx].K().astype(np.float32)
         corner, image_warped = warper.warp(img, K, cameras[idx].R, cv.INTER_LINEAR, cv.BORDER_REFLECT)
         print('typeof image warped',type(image_warped))
+
         mask = 255 * np.ones((img.shape[0], img.shape[1]), np.uint8)
         p, mask_warped = warper.warp(mask, K, cameras[idx].R, cv.INTER_NEAREST, cv.BORDER_CONSTANT)
         compensator.apply(idx, corners[idx], image_warped, mask_warped)
         print('type of', type(image_warped))
+
         image_warped_s = image_warped.astype(np.int16)
         dilated_mask = cv.dilate(masks_warped[idx], None)
         seam_mask = cv.resize(dilated_mask, (mask_warped.shape[1], mask_warped.shape[0]), 0, 0, cv.INTER_LINEAR_EXACT)
         mask_warped = cv.bitwise_and(seam_mask, mask_warped)
+
         if blender is None and not timelapse:
             blender = cv.detail.Blender_createDefault(cv.detail.Blender_NO)
             dst_sz = cv.detail.resultRoi(corners=corners, sizes=sizes)
@@ -517,6 +522,7 @@ def main():
                 blender = cv.detail_FeatherBlender()
                 blender.setSharpness(1. / blend_width)
             blender.prepare(dst_sz)
+            
         elif timelapser is None and timelapse:
             timelapser = cv.detail.Timelapser_createDefault(timelapse_type)
             timelapser.initialize(corners, sizes)
