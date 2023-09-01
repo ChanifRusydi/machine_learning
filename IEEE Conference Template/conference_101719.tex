@@ -73,10 +73,7 @@ object detection, YOLOv8, dashcam
 \end{IEEEkeywords}
 
 \section{Introduction}
-Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. Smart and effective object detection technology is becoming increasingly important for monitoring traffic [1]. 
-
-Video captures from dashcams usually only show one side according to the camera position. However, this results in a lack of information about nearby objects. To overcome this problem, this study tried a solution by using two cameras or cameras placed at different positions in the vehicle. By using more than one camera, diverse viewing angles can provide more complete information about objects around the vehicle. For example, the camera on the left side helps detect objects on the left, while the camera on the right side helps detect objects on the right. This approach is expected to provide more comprehensive results according to the actual situation in front of the vehicle.
-Therefore, the study of the application of dual cameras to detect objects becomes very relevant and interesting. By optimizing the use of dual cameras, it is hoped that this technology will be able to provide effective solutions in increasing driver awareness and safety on the road. The application of dual cameras for object detection has the potential to reduce accident incidents, reduce the risk of collisions, and improve the safety of all road users. 
+Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. Smart and effective object detection technology is becoming increasingly important for monitoring traffic [1].
 
 \section{Literature Review}
 
@@ -106,6 +103,7 @@ The first release of COCO Dataset was in 2014. In 2014, COCO Dataset has 83,000 
 
 
 \subsection{Dataset Filtering}
+\label{Filtering}
 As mention earlier, COCO dataset contains 80 classes. However, we only need traffic related object classess.
 Therefore, we filtered the dataset to only contain 12 classes. The classes are:
 Car Truck Bus Motorcycle Bicycle Traffic Light Stop Sign Train Hydrant Cat Dog
@@ -122,16 +120,26 @@ Metrics wise, the model trained using filtered dataset showed better result.
 
 \subsection{Metrics}
 For training and validation purposes, we focus on mAP (mean Average Precision), Precision, and recall. mAP is the average of AP (Average Precision) over all classes. AP is the area under the precision-recall curve.
-We compare mAP averaged for IoU (Intersection over Union) thresholds from .50 to .95 with .05 increments (MS COCO standard metric, abbreviated as mAP50-95) and (PASCAL VOC metric, abbreviated as mAP50) \cite{b7}. 
+We compare mAP averaged for IoU (Intersection over Union) thresholds from .50 to .95 with .05 increments (MS COCO standard metric, abbreviated as mAP50-95) and mAP50 (PASCAL VOC metric, abbreviated as mAP50) \cite{b7}. 
 Precision and Recall in  this experiment is a relative measure, because it depends on the threshold value.
 Precision calculated by dividing True Positive by the sum of True Positive and False Positive. 
-
-
+Precision is calculated using \eqref{equation1}.
+\begin{equation}
+Precision = \frac{TP}{TP+FP}
+\label{equation1}
+\end{equation}
 Recall calculated by dividing True Positive by the sum of True Positive and False Negative.
+\[Recall = \frac{True Positive}{TruePositive+FalseNegative}\]
 
+Threshold value determines whether the prediction is Positive or Negative. For example, if the threshold is 0.5, then the prediction is positive if the IoU is greater than 0.5. Otherwise, the prediction is negative.
 
-Threshold value determines whether the prediction is Positive or Negative. For example, if the threshold is 0.5, then the prediction is positive if the probability is greater than 0.5. Otherwise, the prediction is negative.\
-Therefore, both Precision and Recall are relative to the threshold value and usually used in the form of Precision-Recall Curve.
+Both Precision and Recall are relative to the threshold value and usually used in the form of Precision-Recall Curve. We can calculate the area under the curve to get the Average Precision
+To get the value of mAP, we need to calculate Average Precision for each class. Then, we calculate the mean from all Average Precision we calculate earlier.
+\begin{equation}
+AP = \frac{1}{n}\sum_{i=1}^{n}AP_i
+\label{mAP}
+\end{equation}
+If we recall from \ref{Filtering} section, how filtering Dataset would be beneficial in our training process. As we use filtered dataset, the value of n in equation \ref{mAP} is 12 instead of 80.
 
 \section{Experiments}
 
@@ -141,7 +149,7 @@ In this section, we will discuss about the experimental setup. We are using Pyto
 MNodel training was conducted on Geforce RTX 3090, 24 GB VIdeo RAM, 32GB RAM, Intel Core i3-12100 4 Core 8 Thread, running on Windows 10
 Model inference and testing was performed on Macbook Air M1, and Jetson Nano 4GB. The camera used in this experiment  LifeCam Studio by Microsoft.
 
-\subsection{Dataset}
+\subsection{Testing Dataset}
 As mention earlier, we are using COCO dataset. However, we filtered the dataset to only contain 12 classes. The classes are:
 Car, Truck, Bus, Motorcycle, Bicycle, Traffic Light, Stop Sign, Train, Hydrant, Cat, Dog. The result is 78000 images with 12 classes.
 For inference and real world testing, we gather our own data by recording traffic condition in Bandung, Indonesia. The data was recorded using camera mentioned earlier.
@@ -152,24 +160,27 @@ We tried different batch size, learning rate, and optimizer. We use batch size 1
 We also tried using SGD and Adam optimizer.
 
 
+
 \subsection{Real World Testing}
-\begin{figure}[h]
+In this section, we will discuss about the real world testing. We bring our system to 
+\begin{figure}[h]]
     \centering
-    \includegraphics[width=0.25\textwidth]{mounted_camera_front_view.jpg}
+    \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
     \caption{Front View}
     \label{fig:front_view}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.25\textwidth]{mounted_camera_side_view.jpg}
+    \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_side_view.jpg}
     \caption{Side View}
     \label{fig:side_view}
 \end{figure}
+
 \section{Conclusion}
 Dashcam has became a popular device for drivers to record the road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as the insurance claim. 
 In this paper, we proposed a dashcam system to detect traffic object. The object detection system is based on the YOLOv8n model. We also proposed a dataset for dashcam traffic object detection. Our dataset created by filtering MS COCO Dataset. The dataset contains 78000 images with 12 traffic objects class.
-
+Although using jetson nano was sufficient to run the system. Better performance can be achieved by using more powerful edge computer. Such as using newer hardware from Nvidia Jetson Series. Further optimization can be done by making use of full potential of GPU in Nvidia Jetson Series. Rewriting or running inference in C++ might improve the performance of the system.
 \section*{Acknowledgment}
 
 This research is supported by Telkom University, Indonesia.
