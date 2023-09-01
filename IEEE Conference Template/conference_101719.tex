@@ -139,7 +139,9 @@ To get the value of mAP, we need to calculate Average Precision for each class. 
 AP = \frac{1}{n}\sum_{i=1}^{n}AP_i
 \label{mAP}
 \end{equation}
-If we recall from \ref{Filtering} section, how filtering Dataset would be beneficial in our training process. As we use filtered dataset, the value of n in equation \ref{mAP} is 12 instead of 80.
+$\eta$ is the number of classes.
+If we recall from \ref{Filtering} section, filtering Dataset would be beneficial in our training process. As we use filtered dataset, the value of $\eta$ in equation \ref{mAP} is 12 instead of 80.
+Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model using filtered dataset and original dataset. We can see that the filtered dataset has better mAP50 and mAP50-95 than original dataset.
 
 \section{Experiments}
 
