@@ -29,14 +29,15 @@ def image_stitching(image1, image2):
         try_cuda = True
     else:
         try_cuda = False
+
     matcher = cv2.detail.BestOf2NearestMatcher(try_cuda, match_conf=match_conf,num_matches_thresh1= 6,num_matches_thresh2= 6)
     compensator = cv2.detail.ExposureCompensator_createDefault(expos_comp)
    
-    work_megapix = 2
+    work_megapix = 0.6
     seam_megapix = 0.2
     compose_megapix = -1
-    conf_thresh = 1
-    ba_refine_mask = 'xxxxx'
+    conf_thresh = 1.0
+    ba_refine_mask = 'x_xxx'
     wave_correct = cv2.detail.WAVE_CORRECT_HORIZ
 
     seam_work_aspect = 1
@@ -88,7 +89,7 @@ def image_stitching(image1, image2):
     except:
         return -1, None
 
-    indices = cv2.detail.leaveBiggestComponent(features, p, 0.3)
+    indices = cv2.detail.leaveBiggestComponent(features, p, conf_thresh)
     img_subset = []
     img_names_subset = []
     full_img_sizes_subset = []
@@ -119,9 +120,9 @@ def image_stitching(image1, image2):
     adjuster.setConfThresh(conf_thresh)
     refine_mask = np.zeros((3, 3), np.uint8)
     if ba_refine_mask[0] == 'x':
-        refine_mask[0][0] = 1
+        refine_mask[0,0] = 1
     if ba_refine_mask[1] == 'x':
-        refine_mask[0][1] = 1
+        refine_mask[0,1]= 1
     if ba_refine_mask[2] == 'x':
         refine_mask[0][2] = 1
     if ba_refine_mask[3] == 'x':
@@ -292,8 +293,8 @@ def image_stitching(image1, image2):
     return status, result
 
 if __name__ == "__main__":
-    image1 = cv2.imread('image1_60_left.jpg')
-    image2 = cv2.imread('image1_60_right.jpg')
+    image1 = cv2.imread('streamlit_app/image1_60_left.jpg')
+    image2 = cv2.imread('streamlit_app/image1_60_right.jpg')
     cv2.imshow('image1', image1)
     cv2.imshow('image2', image2)
     cv2.waitKey(0)
