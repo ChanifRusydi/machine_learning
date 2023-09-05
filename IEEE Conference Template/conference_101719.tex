@@ -65,7 +65,12 @@ email address or ORCID}
 \maketitle
 
 \begin{abstract}
-Dashcam is a camera stored in a vehicle. This tool serves to record all events in front of the vehicle. Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. In this study, the development of a simple dashcam built from an edge computer was carried out by combining the number of cameras. Image stitching is applied to combine images that have been collected by each camera. Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8 which is the latest variant of the YOLO series. This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia. The results obtained in testing using the system created exist using the configuration of 78000 datasets, 3332 data validation with 8 epochs, batch size 32, linear learning rate and SGD optimization. Results are best in the morning and afternoon. The program can recognize predefined objects. 
+Dashcam is a camera place on dashboard  in vehicle. This tool serves to record all events in front of the vehicle. 
+Security and safety have become a major concern in various sectors, including transportation and public security. 
+On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. 
+In this study, the development of a simple dashcam built from an edge computer was carried out by combining the number of cameras. Image stitching is applied to combine images that have been collected by each camera.  
+Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8 which is the latest variant of the YOLO series. This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia.
+The results obtained in testing using the system created exist using the configuration of 78,000 datasets, 3332 data validation with 8 epochs, batch size 32, linear learning rate and SGD optimization. Results are best in the morning and afternoon. The program can recognize predefined objects. 
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -73,7 +78,10 @@ object detection, YOLOv8, dashcam
 \end{IEEEkeywords}
 
 \section{Introduction}
-Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. Smart and effective object detection technology is becoming increasingly important for monitoring traffic [1].
+Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. 
+Smart and effective object detection technology is becoming increasingly important for monitoring traffic [1].
+In this paper, we propose a simple solution to prevent accidents amongs vehciles. Our solution is by object detection and single board computer (SBC) as processing unit. Object in front of the camera can be detected by Convolutional Neural Network. 
+
 
 \section{Literature Review}
 
@@ -84,26 +92,30 @@ Object detection has been widely used for face detection, vehicle detection, ped
 Within the past twenty years, object detection have been going through a lot of changes and development. Although it is commonly divided into two periods: "traditional object detection" and "deep learning based". In 2012, Krizhevsky et al. \cite{b3} proposed a deep convolutional network trained on a subset of ImageNet. 
 
 This network, called AlexNet, was the first to demonstrate that convolutional neural networks (CNNs) could be trained effectively on large-scale datasets and used to achieve state-of-the-art object detection results.
-A year later, Girshick et al. proposed a new object detection framework called R-CNN \cite{b4} because it used region proposals combined with CNNs to detect objects in images.
+A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{b4} because it used region proposals combined with CNNs to detect objects in images.
+
 Since then, the field of object detection has been rapidly advancing, with new models, datasets, and techniques emerging in a rapid pace. 
 
 \subsection{You Only Look Once (YOLO)}
 With the born of AlexNet, YOLO \verb|(You Only Look Once)| model was introduced in 2015. Base YOLO model can achieve 45 frame per second. While the sameller version, Fast YOLO can achieve 155 frames per second.
-YOLO outperform DPM and R-CNN on Picasso Dataset and People-Art Dataset \cite{b5}.
+YOLO outperform DPM and R-CNN on Picasso Dataset and People-Art Dataset~\cite{You Only Look Once: Unified, Real-Time Object Detection}.
 
-In the early period of making this paper, YOLOv7 was the latest version of YOLO. However,as January 2023, YOLOv8 was introduced by Ultralytics, the same software company that release YOLOv3 and YOLOv5. 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+In the early period of making this paper, YOLOv7 was the latest version of YOLO\@.
+However,as January 2023, YOLOv8 was introduced by Ultralytics, the same software company that release YOLOv3 and YOLOv5. 
+As of now,YOLOv8 is one of the latest State of The Art (SOTA) open source object detection model. Following its predecessor, YOlov8 offers several model size.
+From the YOLOv8n as the smallest model, YOLOv8l as the medium model, and YOLOv8x as the largest model.
+We choose YOLOv8n as our model because it is the smallest model and can be run on edge computer.
+YOLOv8n have x parameters. With computation cost around 8 GFLOPs.
 
 \section{System Design}
 
 \subsection{COCO Dataset}\label{AA}
 The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset.
-In total, The Microsoft Common Objects in COntext contains 91 common object categories with 82 of them having more than 5,000 labeled instances \cite{b6}.
+In total, The Microsoft Common Objects in COntext contains 91 common object categories with 82 of them having more than 5,000 labeled instances~\cite{COCO Dataset}.
 The first release of COCO Dataset was in 2014. In 2014, COCO Dataset has 83,000 image in train split and 41,000 image in validation split. 
 
 
-\subsection{Dataset Filtering}
-\label{Filtering}
+\subsection{Dataset Filtering}\label{Filtering}
 As mention earlier, COCO dataset contains 80 classes. However, we only need traffic related object classess.
 Therefore, we filtered the dataset to only contain 12 classes. The classes are:
 Car Truck Bus Motorcycle Bicycle Traffic Light Stop Sign Train Hydrant Cat Dog
@@ -136,7 +148,7 @@ Threshold value determines whether the prediction is Positive or Negative. For e
 Both Precision and Recall are relative to the threshold value and usually used in the form of Precision-Recall Curve. We can calculate the area under the curve to get the Average Precision
 To get the value of mAP, we need to calculate Average Precision for each class. Then, we calculate the mean from all Average Precision we calculate earlier.
 \begin{equation}
-AP = \frac{1}{n}\sum_{i=1}^{n}AP_i
+mAP = \frac{1}{n}\sum_{i=1}^{n}AP_i
 \label{mAP}
 \end{equation}
 $\eta$ is the number of classes.
@@ -165,7 +177,7 @@ We also tried using SGD and Adam optimizer.
 
 \subsection{Real World Testing}
 In this section, we will discuss about the real world testing. We bring our system to 
-\begin{figure}[h]]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
     \caption{Front View}
@@ -182,7 +194,12 @@ In this section, we will discuss about the real world testing. We bring our syst
 \section{Conclusion}
 Dashcam has became a popular device for drivers to record the road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as the insurance claim. 
 In this paper, we proposed a dashcam system to detect traffic object. The object detection system is based on the YOLOv8n model. We also proposed a dataset for dashcam traffic object detection. Our dataset created by filtering MS COCO Dataset. The dataset contains 78000 images with 12 traffic objects class.
+By filtering dataset, we can reduce the training time and increase the model performance.
+We also propose a dashcam system that can be used for real world testing. The system is built using Jetson Nano 4GB as the edge computer.
+
+
 Although using jetson nano was sufficient to run the system. Better performance can be achieved by using more powerful edge computer. Such as using newer hardware from Nvidia Jetson Series. Further optimization can be done by making use of full potential of GPU in Nvidia Jetson Series. Rewriting or running inference in C++ might improve the performance of the system.
+
 \section*{Acknowledgment}
 
 This research is supported by Telkom University, Indonesia.
@@ -213,8 +230,8 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b2} https://arxiv.org/pdf/1905.05055.pdf
 \bibitem{b3} Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. https://doi.org/10.1145/3065386
 \bibitem{b4} https://arxiv.org/abs/1311.2524
-\bibitem{b5} https://arxiv.org/abs/1506.02640
-\bibitem{b6} https://arxiv.org/pdf/1405.0312
+\bibitem{You Only Look Once: Unified, Real-Time Object Detection} https://arxiv.org/abs/1506.02640
+\bibitem{COCO Dataset} https://arxiv.org/pdf/1405.0312
 \bibitem{b7} https://link.springer.com/content/pdf/10.1007/s11042-021-11480-0.pdf
 \bibitem{b8} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
 \end{thebibliography}
