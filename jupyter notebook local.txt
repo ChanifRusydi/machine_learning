@@ -29,3 +29,8 @@ yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coc
 
 
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=100 imgsz=640 device=0 batch=32 pretrained=False name=exp100_sgd workers=4 optimizer=SGD
+yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=100 imgsz=640 device=0 batch=32 pretrained=False name=exp100
+
+
+
+https://storage.googleapis.com/coco-traffic/YOLOv8%20model/exp8_COCO_Original.pt
