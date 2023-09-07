@@ -173,25 +173,28 @@ For inference and real world testing, we gather our own data by recording traffi
 
 \subsection{Training}
 Before we begin training process of our YOLOv8n-Traffic model with high number of epoch, we want to find the optimal hyperparamater configuration for our use case. We conducted various training configuration with 8 epoch to save time.
-Although each run iwth 8 epoch still takes about 1 to 2 hours, it is still better than running 100 epoch for each configuration.
+Although each run with 8 epoch still takes about 1 to 2 hours, it is still better than running 100 epoch for each configuration.
 We tried different batch size, learning rate, and optimizer. We use batch size 16 and 32.
 \begin{figure}
 \centering
-\includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg} % TODO ; change file name
-\caption{Training with different batch size}
+\includegraphics[width=0.3\textwidth,keepaspectratio]{mAP_batch_size_comparison.png} % TODO ; change file name
+\caption{Comparison of mAP50-95 between training the model using batch size 16 and 32}
 \label{fig:batch_size}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth,keepaspectratio]{gpu_utilization_comparison.png} 
+\caption{Comparison of GPU Utilization between training the model using batch size 16 and 32}
+\label{fig:gpu_utilization}[h]
+\end{figure}
+% gpu_utilization_comparison.png
 Fig.\ref{fig:batch_size} shows the result of training with different batch size. We can see that batch size 32 is better than batch size 16. Especially in terms of training time, batch size 32 is faster than batch size 16.
-Therefore, we use batch size 32 for our training.
-
-
-We also tried using SGD and Adam optimizer.
-
+Therefore, we use batch size 32 for our training. We also tried using SGD and Adam optimizer.
 
 
 \subsection{Real World Testing}
-In this section, we will discuss about the real world testing. We bring our system to 
+In this section, we will discuss about the real world testing. We bring our system to real world environment scenario, placed our whole system into the dashboard of vehicles.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
