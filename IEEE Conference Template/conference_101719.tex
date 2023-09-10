@@ -116,12 +116,14 @@ YOLOv8n have x parameters. With computation cost around 8 GFLOPs.
 The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset.
 In total, The Microsoft Common Objects in COntext contains 91 common object categories with 82 of them having more than 5,000 labeled instances~\cite{COCO Dataset}.
 The first release of COCO Dataset was in 2014. In 2014, COCO Dataset has 83,000 image in train split and 41,000 image in validation split.
-After taking community feedback, COCO Dataset increase total number of images and changes its split proportion. In 2017 release, train2017 split have 118,000 image files and 5,000 images in val2017 spli.
+After taking community feedback, COCO Dataset increase total number of images and changes its split proportion. In 2017 release, train2017 split have 118,000 image files and 5,000 images in val2017 split.
 Given its size, COCO Dataset widely used by tate of the Art Object Detection Model to train and eveluate the model performance.
 
+Despite its popularity, COCO Dataset has some drawbacks. COCO Dataset contains 80 classes. However, COCO Dataset have imbalance class distribution.
+For example, the number of person class is 64115, while the number of hair drier class is only 100.
 
-\subsection{Dataset Filtering}\label{Filtering}
-As mention earlier, COCO dataset contains 80 classes. However, we only need traffic related object classess.
+\subsection{Filtering Dataset}\label{Filtering}
+As mention earlier, COCO dataset contains 80 classes. However, we only need traffic related object classes.
 Therefore, we filtered the dataset to only contains 12 classes. The classes are:
 Car Truck Bus Motorcycle Bicycle Traffic Light Stop Sign Train Hydrant Cat Dog
 The result is 78,663 images in training split with 12 classes. This amount of data was reduced from 122,125 images in original dataset. By reducing the dataset, our model expected to take less time to train.
@@ -185,20 +187,21 @@ For inference and real world testing, we gather our own data by recording traffi
 
 \subsection{Training}
 Before we begin training process of our YOLOv8n-Traffic model with high number of epoch, we want to find the optimal hyperparamater configuration for our use case. We conducted various training configuration with 8 epoch to save time.
-Although each run with 8 epoch still takes about 1 to 2 hours, it is still better than running 100 epoch for each configuration.
+Although each run for one configuration is only 8 epoch, it's still takes about 1 to 2 hours. However, we can get the result faster than training with 100 epoch for each configuration.
+
 We tried different batch size, learning rate, and optimizer. We use batch size 16 and 32.
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.3\textwidth,keepaspectratio]{mAP_batch_size_comparison.png} % TODO ; change file name
 \caption{Comparison of mAP50-95 between training the model using batch size 16 and 32}
 \label{fig:batch_size}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.3\textwidth,keepaspectratio]{gpu_utilization_comparison.png} 
 \caption{Comparison of GPU Utilization between training the model using batch size 16 and 32}
-\label{fig:gpu_utilization}[h]
+\label{fig:gpu_utilization}
 \end{figure}
 % gpu_utilization_comparison.png
 Fig.\ref{fig:batch_size} shows the result of training with different batch size. We can see that batch size 32 is better than batch size 16. Especially in terms of training time, batch size 32 is faster than batch size 16.
@@ -207,19 +210,23 @@ Therefore, we use batch size 32 for our training. We also tried using SGD and Ad
 
 \subsection{Real World Testing}
 In this section, we will discuss about the real world testing. We bring our system to real world environment scenario, placed our whole system into the dashboard of vehicles.
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
+    \includegraphics[width=0.3\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
     \caption{Front View}
     \label{fig:front_view}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_side_view.jpg}
     \caption{Side View}
     \label{fig:side_view}
 \end{figure}
+
+
+\section{Results and Discussion}
+In this section, we will discuss about the result of our experiment. We will discuss about the result of training and real world testing.
 
 
 
@@ -261,7 +268,7 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
 \bibitem{Object Detection in 20 Years} https://arxiv.org/pdf/1905.05055.pdf
 \bibitem{b3} Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. https://doi.org/10.1145/3065386
-\bibitem{Rich feature hierarchies}  https://arxiv.org/abs/1311.2524
+\bibitem{Rich feature hierarchies} https://arxiv.org/abs/1311.2524
 \bibitem{You Only Look Once} https://arxiv.org/abs/1506.02640
 \bibitem{COCO Dataset} https://arxiv.org/pdf/1405.0312
 \bibitem{YOLO with adaptive frame} https://link.springer.com/content/pdf/10.1007/s11042-021-11480-0.pdf
