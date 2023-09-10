@@ -26,7 +26,7 @@
 \def\Organization{Telkom University, Indonesia}
 \def\CityCountry{Bandung, Indonesia}
 
-\author{\IEEEauthorblockN{Aura Syafa Aprilia Radim}
+\author{\IEEEauthorblockN{Aura Syafa Aprillia Radim}
 \IEEEauthorblockA{\textit{\Affiliation} \\
 \textit{\Organization}\\
 \CityCountry \\
@@ -115,20 +115,32 @@ YOLOv8n have x parameters. With computation cost around 8 GFLOPs.
 \subsection{COCO Dataset}\label{AA}
 The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset.
 In total, The Microsoft Common Objects in COntext contains 91 common object categories with 82 of them having more than 5,000 labeled instances~\cite{COCO Dataset}.
-The first release of COCO Dataset was in 2014. In 2014, COCO Dataset has 83,000 image in train split and 41,000 image in validation split. 
+The first release of COCO Dataset was in 2014. In 2014, COCO Dataset has 83,000 image in train split and 41,000 image in validation split.
+After taking community feedback, COCO Dataset increase total number of images and changes its split proportion. In 2017 release, train2017 split have 118,000 image files and 5,000 images in val2017 spli.
+Given its size, COCO Dataset widely used by tate of the Art Object Detection Model to train and eveluate the model performance.
 
 
 \subsection{Dataset Filtering}\label{Filtering}
 As mention earlier, COCO dataset contains 80 classes. However, we only need traffic related object classess.
-Therefore, we filtered the dataset to only contain 12 classes. The classes are:
+Therefore, we filtered the dataset to only contains 12 classes. The classes are:
 Car Truck Bus Motorcycle Bicycle Traffic Light Stop Sign Train Hydrant Cat Dog
 The result is 78,663 images in training split with 12 classes. This amount of data was reduced from 122,125 images in original dataset. By reducing the dataset, our model expected to take less time to train.
-Fig(1) shows the comparison of training session for 8 epoch between filtered dataset and original dataset.
-\begin{figure}
 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth,keepaspectratio]{gpu_utilization_comparison_original_and_filtered.png}
+\caption{Comparison of GPU Utilization between training the model using filtered dataset and original dataset}
+\label{fig:original_filtered_gpu_utilization}
 \end{figure}
 
-In addition, as shown in Fig1 and Fig2, the filtered dataset has lower GPU Utilization and Memory Utilization. This means that the filtered dataset is more efficient to train.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth,keepaspectratio]{memory_utilization_comparison_original_and_filtered.png}
+\caption{Comparison of GPU Memory Utilization between training the model using filtered dataset and original dataset}
+\label{fig:original_filtered_memory_utilization}
+\end{figure}
+In addition, as shown in Fig. \ref{fig:original_filtered_gpu_utilization} and Fig.\ref{fig:original_filtered_gpu_utilization}, the filtered dataset has lower GPU Utilization and Memory Utilization. This means that the filtered dataset is more efficient to train.
 Thus allowing us to push model training further.
 Metrics wise, the model trained using filtered dataset showed better result.
 
@@ -164,7 +176,7 @@ Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model u
 \subsection{Experimental Setup}
 In this section, we will discuss about the experimental setup. We are using Pytorch as our deep learning framework in Python  3.
 MNodel training was conducted on Geforce RTX 3090, 24 GB VIdeo RAM, 32GB RAM, Intel Core i3-12100 4 Core 8 Thread, running on Windows 10
-Model inference and testing was performed on Macbook Air M1, and Jetson Nano 4GB. The camera used in this experiment  LifeCam Studio by Microsoft.
+Model inference and testing was performed on Macbook Air M1, and Jetson Nano 4GB. The camera used in this experiment is Lifecam Studio by Microsoft.
 
 \subsection{Testing Dataset}
 As mention earlier, we are using COCO dataset. However, we filtered the dataset to only contain 12 classes. The classes are:
@@ -209,6 +221,8 @@ In this section, we will discuss about the real world testing. We bring our syst
     \label{fig:side_view}
 \end{figure}
 
+
+
 \section{Conclusion}
 Dashcam has became a popular device for drivers to record the road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as the insurance claim. 
 In this paper, we proposed a dashcam system to detect traffic object. The object detection system is based on the YOLOv8n model. We also proposed a dataset for dashcam traffic object detection. Our dataset created by filtering MS COCO Dataset. The dataset contains 78000 images with 12 traffic objects class.
@@ -242,15 +256,15 @@ element symbols.
 
 For papers published in translation journals, please give the English 
 citation first, followed by the original foreign-language citation \cite{b6}.
-
+\bibliographystyle{IEEEtran}
 \begin{thebibliography}{00}
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} https://arxiv.org/pdf/1905.05055.pdf
+\bibitem{Object Detection in 20 Years} https://arxiv.org/pdf/1905.05055.pdf
 \bibitem{b3} Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. https://doi.org/10.1145/3065386
-\bibitem{b4} https://arxiv.org/abs/1311.2524
+\bibitem{Rich feature hierarchies}  https://arxiv.org/abs/1311.2524
 \bibitem{You Only Look Once} https://arxiv.org/abs/1506.02640
 \bibitem{COCO Dataset} https://arxiv.org/pdf/1405.0312
-\bibitem{b7} https://link.springer.com/content/pdf/10.1007/s11042-021-11480-0.pdf
+\bibitem{YOLO with adaptive frame} https://link.springer.com/content/pdf/10.1007/s11042-021-11480-0.pdf
 \bibitem{b8} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
 \end{thebibliography}
 \vspace{12pt}
