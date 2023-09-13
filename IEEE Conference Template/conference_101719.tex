@@ -132,26 +132,26 @@ As mention earlier, COCO dataset contains 80 classes. However, we only need traf
 Therefore, we filtered the dataset to only contains 12 classes. The classes are:
 Car Truck Bus Motorcycle Bicycle Traffic Light Stop Sign Train Hydrant Cat Dog
 The result is 78,663 images in training split with 12 classes. This amount of data was reduced from 122,125 images in original dataset. By reducing the dataset, our model expected to take less time to train.
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\textwidth,keepaspectratio]{filtered_coco_class_count.png}
 \caption{Filtered COCO Dataset Class Count}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.3\textwidth,keepaspectratio]{gpu_utilization_comparison_original_and_filtered.png}
 \caption{Comparison of GPU Utilization between training the model using filtered dataset and original dataset}
 \label{fig:original_filtered_gpu_utilization}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.3\textwidth,keepaspectratio]{memory_utilization_comparison_original_and_filtered.png}
 \caption{Comparison of GPU Memory Utilization between training the model using filtered dataset and original dataset}
 \label{fig:original_filtered_memory_utilization}
 \end{figure}
-In addition, as shown in Fig. \ref{fig:original_filtered_gpu_utilization} and Fig.\ref{fig:original_filtered_gpu_utilization}, the filtered dataset has lower GPU Utilization and Memory Utilization. This means that the filtered dataset is more efficient to train.
+In addition, as shown in Fig. \ref{fig:original_filtered_gpu_utilization} and Fig.\ref{fig:original_filtered_memory_utilization}, the filtered dataset has lower GPU Utilization and Memory Utilization. This means that the filtered dataset is more efficient to train.
 Thus allowing us to push model training further.
 Metrics wise, the model trained using filtered dataset showed better result.
 
@@ -167,8 +167,9 @@ Precision = \frac{TP}{TP+FP}
 \label{equation1}
 \end{equation}
 Recall calculated by dividing True Positive by the sum of True Positive and False Negative.
-\[Recall = \frac{True Positive}{TruePositive+FalseNegative}\]
-
+\begin{equation}
+Recall = \frac{True Positive}{TruePositive+FalseNegative}
+\end{equation}
 Threshold value determines whether the prediction is Positive or Negative. For example, if the threshold is 0.5, then the prediction is positive if the IoU is greater than 0.5. Otherwise, the prediction is negative.
 
 Both Precision and Recall are relative to the threshold value and usually used in the form of Precision-Recall Curve. We can calculate the area under the curve to get the Average Precision
@@ -188,7 +189,7 @@ Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model u
 In this section, we will discuss about the experimental setup. We are using Pytorch as our deep learning framework in Python  3.
 MNodel training was conducted on Geforce RTX 3090, 24 GB VIdeo RAM, 32GB RAM, Intel Core i3-12100 4 Core 8 Thread, running on Windows 10
 Model inference and testing was performed on Macbook Air M1, and Jetson Nano 4GB. The camera used in this experiment is Lifecam Studio by Microsoft.
-
+Jetson Nano that we use running on Ubuntu 20.04.2 LTS on top of Jetpack 4.6. We use Jetson Nano 4GB as our edge computer because it is the most affordable edge computer in Nvidia Jetson Series.
 \subsection{Testing Dataset}
 As mention earlier, we are using COCO dataset. However, we filtered the dataset to only contain 12 classes. The classes are:
 Car, Truck, Bus, Motorcycle, Bicycle, Traffic Light, Stop Sign, Train, Hydrant, Cat, Dog. The result is 78000 images with 12 classes.
@@ -238,7 +239,9 @@ In this section, we will discuss about the real world testing. We bring our syst
 
 \section{Results and Discussion}
 In this section, we will discuss about the result of our experiment. We will discuss about the result of training and real world testing.
+\subsection{Training Result}
 
+\subsection{Real World Testing Result}
 
 
 \section{Conclusion}
