@@ -79,14 +79,19 @@ object detection, YOLOv8, dashcam
 \end{IEEEkeywords}
 
 \section{Introduction}
-Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. 
+% bahas dashcam, YOLO 8, sekarang ini banyak yang memakai dashcam, tapi dashcam yang ada sekarang hanya untuk merekam, belum ada yang bisa mendeteksi objek di depannya
+Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious proble
 Smart and effective object detection technology is becoming increasingly important for monitoring traffic [1].
-In this paper, we propose a simple solution to prevent accidents amongs vehciles. Our solution is by object detection and single board computer (SBC) as processing unit. Object in front of the camera can be detected by Convolutional Neural Network. 
+In this paper, we propose a simple solution to prevent accidents amongs vehicles. Our solution is by implementing object detection and single board computer (SBC) as processing unit. Object in front of the camera can be detected by Convolutional Neural Network. 
 
 The content of this paper is organized as follows. Section 2 presents the literature review. Section 3 presents the system design. Section 4 presents our experimentaton in the process of developing the system. Section 5 presents the conclusion and future work.
 
 \section{Literature Review}
+\subsection{Dashcam}
+% Masukin litarasi dashcam, terakhir masukin related work monocular raspbberry pi
 
+Dashcam is a camera placed on the dashboard of a vehicle. This tool usually serves to record all events in front of the vehicle.
+Dashcam is one of the devices that is growing rapidly in the market. Both China and South Korea governments obliges public transportation and commercial vehicles to install dashcam in order to assist the investigation of traffic accidents\cite{Korea Dashcam}.
 \subsection{Object Detection}
 Object Detection is one of the important task in computer vision field, mainly dealing with detecting instances of visual object then categorize them into several classes \cite{b2}.
 With this kind of identification and localization, object detection can be used to count objects in a scene and determine and track their precise locations, all while accurately labeling them.
@@ -98,8 +103,9 @@ A year later, Girshick et al. \@ proposed a new object detection framework calle
 
 Since then, the field of object detection has been rapidly advancing, with new models, datasets, and techniques emerging in a rapid pace. 
 
-\subsection{You Only Look Once (YOLO)}
-With the born of AlexNet, YOLO \verb|(You Only Look Once)| model was introduced in 2015. Original base YOLO model can achieve 45 frame per second.
+\subsection{YOLO}
+%tambahkan gambar atau ilustrasi CNN atau YOLO 
+With the born of AlexNet, YOLO (You Only Look Once) model was introduced in 2015. Original base YOLO model can achieve 45 frame per second.
 While the sameller version, Fast YOLO can achieve 155 frames per second.
 YOLO outperform DPM and R-CNN on Picasso Dataset and People-Art Dataset~\cite{You Only Look Once}.
 
@@ -109,9 +115,6 @@ As of now,YOLOv8 is one of the latest State of The Art (SOTA) open source object
 From the YOLOv8n as the smallest model, YOLOv8l as the medium model, and YOLOv8x as the largest model.
 We choose YOLOv8n as our model because it is the smallest model and can be run on edge computer.
 YOLOv8n have x parameters. With computation cost around 8 GFLOPs.
-
-\section{System Design}
-
 \subsection{COCO Dataset}\label{AA}
 The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset.
 In total, The Microsoft Common Objects in COntext contains 91 common object categories with 82 of them having more than 5,000 labeled instances~\cite{COCO Dataset}.
@@ -155,8 +158,7 @@ In addition, as shown in Fig. \ref{fig:original_filtered_gpu_utilization} and Fi
 Thus allowing us to push model training further.
 Metrics wise, the model trained using filtered dataset showed better result.
 
-
-\subsection{Metrics}
+\subsection{Performance Metrics}
 For training and validation purposes, we focus on mAP (mean Average Precision), Precision, and recall. mAP is the average of AP (Average Precision) over all classes. AP is the area under the precision-recall curve.
 We compare mAP averaged for IoU (Intersection over Union) thresholds from .50 to .95 with .05 increments (MS COCO standard metric, abbreviated as mAP50-95) and mAP50 (PASCAL VOC metric, abbreviated as mAP50) \cite{b7}. 
 Precision and Recall in  this experiment is a relative measure, because it depends on the threshold value.
@@ -179,9 +181,17 @@ mAP = \frac{1}{n}\sum_{i=1}^{n}AP_i
 \label{mAP}
 \end{equation}
 $\eta$ is the number of classes.
-If we recall from \ref{Filtering} section, filtering Dataset would be beneficial in our training process. As we use filtered dataset, the value of $\eta$ in equation \ref{mAP} is 12 instead of 80.
+This is the main reason of filtering Dataset would be beneficial in our training process. As we use filtered dataset, the value of $\eta$ in equation \ref{mAP} is 12 instead of 80.
 Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model using filtered dataset and original dataset. We can see that the filtered dataset has better mAP50 and mAP50-95 than original dataset.
 
+
+
+\section{System Design}
+% Flowchart di sini aja
+% Fig 1 ceritakan lebih detail
+% cerita singkat kita implementasi di jetson nano
+
+Nasution and Dirgantara system
 \section{Experiments}
 
 
@@ -224,7 +234,7 @@ Therefore, we use batch size 32 for our training. We also tried using SGD and Ad
 In this section, we will discuss about the real world testing. We bring our system to real world environment scenario, placed our whole system into the dashboard of vehicles.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.3\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
+    \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
     \caption{Front View}
     \label{fig:front_view}
 \end{figure}
@@ -240,6 +250,16 @@ In this section, we will discuss about the real world testing. We bring our syst
 \section{Results and Discussion}
 In this section, we will discuss about the result of our experiment. We will discuss about the result of training and real world testing.
 \subsection{Training Result}
+In this section, we will discuss about the result of our training. In order to compare the performance of YOLOv8n model, we also train YOLOv7-tiny model.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.3\textwidth,keepaspectratio]{YOLOv7-tinyvsYOLOv8n.png}
+\caption{Comparison of mAP50-95 between YOLOv8n and YOLOv7-tiny}
+\label{fig:mAP_comparison}
+\end{figure}
+
+
 
 \subsection{Real World Testing Result}
 
@@ -280,6 +300,7 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibliographystyle{IEEEtran}
 \begin{thebibliography}{00}
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+\bibitem{Korea Dashcam} Kim, J., Park, S., \& Lee, U. (2020). Dashcam Witness: Video Sharing Motives and Privacy Concerns Across Different Nations. IEEE Access, 8, 110425–110437. doi:10.1109/access.2020.3002079 
 \bibitem{Object Detection in 20 Years} https://arxiv.org/pdf/1905.05055.pdf
 \bibitem{b3} Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. https://doi.org/10.1145/3065386
 \bibitem{Rich feature hierarchies} https://arxiv.org/abs/1311.2524
