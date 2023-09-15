@@ -80,13 +80,14 @@ object detection, YOLOv8, dashcam
 
 \section{Introduction}
 % bahas dashcam, YOLO 8, sekarang ini banyak yang memakai dashcam, tapi dashcam yang ada sekarang hanya untuk merekam, belum ada yang bisa mendeteksi objek di depannya
-Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious proble
+Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problems
 Smart and effective object detection technology is becoming increasingly important for monitoring traffic [1].
 
 Dashcam is a camera placed on the dashboard of a vehicle. This device usually serves to record all events in front of the vehicle.
-Dashcam is one of the devices that the demands is growing rapidly in the market. Currently, dashcam serves as a device to record events in front of the vehicle and then the recording is used as evidence in the event of an accident or proof of insurance claims. However, dashcam could also be used for other purposes, such as being used as one of the components of an Autonomous Driving Assistance System (ADAS). 
-In this paper, we propose a simple solution to prevent accidents amongs vehicles. Our solution is by implementing object detection and single board computer (SBC) as processing unit. Object in front of the camera can be detected by Convolutional Neural Network. 
+Dashcam is one of the devices that the demands is growing rapidly in the market. Currently, dashcam serves as a device to record events in front of the vehicle and then the recording is used as evidence in the event of an accident or proof of insurance claims. 
+However, dashcam could also be used for other purposes, such as being used as one of the components of an Autonomous Driving Assistance System (ADAS). 
 
+In this paper, we propose a simple solution to prevent accidents amongs vehicles. Our solution is by implementing object detection and single board computer (SBC) as processing unit. Object in front of the camera can be detected by Convolutional Neural Network. 
 The content of this paper is organized as follows. Section 2 presents the literature review. Section 3 presents the system design. Section 4 presents our experimentaton in the process of developing the system. Section 5 presents the conclusion and future work.
 
 \section{Literature Review}
@@ -99,9 +100,10 @@ Both China and South Korea governments obliges public transportation and commerc
 Object Detection is one of the important task in computer vision field, mainly dealing with detecting instances of visual object then categorize them into several classes \cite{b2}.
 With this kind of identification and localization, object detection can be used to count objects in a scene and determine and track their precise locations, all while accurately labeling them.
 Object detection has been widely used for face detection, vehicle detection, pedestrian counting, web images, security systems and driverless cars.
-Within the past twenty years, object detection have been going through a lot of changes and development. Although it is commonly divided into two periods: "traditional object detection" and "deep learning based". In 2012, Krizhevsky et al.~\cite{b3} proposed a deep convolutional network trained on a subset of ImageNet. 
+Within the past twenty years, object detection have been going through a lot of changes and development. Although it is commonly divided into two periods: "traditional object detection" and "deep learning based".
+In 2012, Krizhevsky et al.~\cite{b3} proposed a deep convolutional network trained on a subset of ImageNet. 
 
-This network, called AlexNet, was the first to demonstrate that convolutional neural networks (CNNs) could be trained effectively on large-scale datasets and used to achieve state-of-the-art object detection results.
+This network, called AlexNet, was 
 A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{b4} because it used region proposals combined with CNNs to detect objects in images.
 
 Since then, the field of object detection has been rapidly advancing, with new models, datasets, and techniques emerging in a rapid pace. 
@@ -265,7 +267,10 @@ In this section, we will discuss about the result of our training. In order to c
 
 
 \subsection{Real World Testing Result}
-
+Our test result shows that our system can detect traffic object in real world environment. We tested our system in various lighting condition. We tested our system in the morning, afternoon, and night. Our system managed to do the process in 80-100 miliseconds for each frame. If we translate the latency into frame per second, we got 12.5-10 FPS. 
+\begin{equation}
+    Frame Per Second = \frac{1000}{latency}
+\end{equation}
 
 \section{Conclusion}
 Dashcam has became a popular device for drivers to record the road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as the insurance claim. 
@@ -275,7 +280,7 @@ We also propose a dashcam system that can be used for real world testing. The sy
 
 
 Although using jetson nano was sufficient to run the system. Better performance can be achieved by using more powerful edge computer. Such as using newer hardware from Nvidia Jetson Series. Further optimization can be done by making use of full potential of GPU in Nvidia Jetson Series. Rewriting or running inference in C++ might improve the performance of the system.
-
+Further development towards Autonomous Driving Assistance System (ADAS) can be done by adding more camera and sensor.
 \section*{Acknowledgment}
 
 This research is supported by Telkom University, Indonesia.
