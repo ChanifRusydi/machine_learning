@@ -105,10 +105,8 @@ In 2012, Krizhevsky et al.~\cite{b3} proposed a deep convolutional network train
 
 This network, called AlexNet, was 
 A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{b4} because it used region proposals combined with CNNs to detect objects in images.
-
 Since then, the field of object detection has been rapidly advancing, with new models, datasets, and techniques emerging in a rapid pace. 
 
-\subsection{YOLO}
 %tambahkan gambar atau ilustrasi CNN atau YOLO 
 With the born of AlexNet, YOLO (You Only Look Once) model was introduced in 2015. Original base YOLO model can achieve 45 frame per second.
 While the sameller version, Fast YOLO can achieve 155 frames per second.
@@ -188,17 +186,22 @@ mAP = \frac{1}{n}\sum_{i=1}^{n}AP_i
 $\eta$ is the number of classes.
 This is the main reason of filtering Dataset would be beneficial in our training process. As we use filtered dataset, the value of $\eta$ in equation \ref{mAP} is 12 instead of 80.
 Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model using filtered dataset and original dataset. We can see that the filtered dataset has better mAP50 and mAP50-95 than original dataset.
-
-
+\
 
 \section{System Design}
 % Flowchart di sini aja
 % Fig 1 ceritakan lebih detail
-% cerita singkat kita implementasi di jetson nano
+% cerita singkat kita implementasi di jetson nano]
+\subsection{Related Work}
+Nasution et.al [8] proposed a system that can detect vehicles and also street lane. Image feed captured using smartphone, then processed using by ImageAI library with RetinaNet for COCO as object detection model
 
-Nasution and Dirgantara system
-\section{Experiments}
-
+Nasution and Dirgantara(2023) propose pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer.
+\subsection{System Overview}
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth,keepaspectratio]{Proposed Flowchart.png}
+\caption{System Overview}
+\end{figure}
 
 \subsection{Experimental Setup}
 In this section, we will discuss about the experimental setup. We are using Pytorch as our deep learning framework in Python  3.
@@ -335,7 +338,7 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{You Only Look Once} https://arxiv.org/abs/1506.02640
 \bibitem{COCO Dataset} https://arxiv.org/pdf/1405.0312
 \bibitem{YOLO with adaptive frame} https://link.springer.com/content/pdf/10.1007/s11042-021-11480-0.pdf
-\bibitem{b8} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+\bibitem{Road Information Collector} https://online-journals.org/index.php/i-jim/article/view/11530/6449
 \end{thebibliography}
 \vspace{12pt}
 \color{red}
