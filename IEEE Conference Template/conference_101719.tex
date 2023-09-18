@@ -272,6 +272,14 @@ Our test result shows that our system can detect traffic object in real world en
     Frame Per Second = \frac{1000}{latency}
 \end{equation}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth,keepaspectratio]{inference_time_comparison.png}
+\caption{Inference Time Comparison across different Power Consumption, Power Consumption error range is within 1 Watt}
+\label{fig:inference_time_comparison}
+\end{figure}
+
+
 \section{Conclusion}
 Dashcam has became a popular device for drivers to record the road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as the insurance claim. 
 In this paper, we proposed a dashcam system to detect traffic object. The object detection system is based on the YOLOv8n model. We also proposed a dataset for dashcam traffic object detection. Our dataset created by filtering MS COCO Dataset. The dataset contains 78000 images with 12 traffic objects class.
@@ -279,12 +287,15 @@ By filtering dataset, we can reduce the training time and increase the model per
 We also propose a dashcam system that can be used for real world testing. The system is built using Jetson Nano 4GB as the edge computer.
 
 
+Based on the Real World Testing, we can conclude that our system can detect traffic object in real world environment.
+
+
 Although using jetson nano was sufficient to run the system. Better performance can be achieved by using more powerful edge computer. Such as using newer hardware from Nvidia Jetson Series. Further optimization can be done by making use of full potential of GPU in Nvidia Jetson Series. Rewriting or running inference in C++ might improve the performance of the system.
 Further development towards Autonomous Driving Assistance System (ADAS) can be done by adding more camera and sensor.
 \section*{Acknowledgment}
-
 This research is supported by Telkom University, Indonesia.
-
+We would like to personally thank M Rayhan Aryana for his help in this research.
+Especially in the process of gathering the dataset and testing the system in real world environment.
 \section*{References}
 
 Please number citations consecutively within brackets \cite{b1}. The 

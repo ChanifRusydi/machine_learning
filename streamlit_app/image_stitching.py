@@ -293,8 +293,8 @@ def image_stitching(image1, image2):
     return status, result
 
 if __name__ == "__main__":
-    image1 = cv2.imread('streamlit_app/image1_60_left.jpg')
-    image2 = cv2.imread('streamlit_app/image1_60_right.jpg')
+    image1 = cv2.imread('./image1_60_left.jpg')
+    image2 = cv2.imread('./image1_60_right.jpg')
     cv2.imshow('image1', image1)
     cv2.imshow('image2', image2)
     cv2.waitKey(0)
