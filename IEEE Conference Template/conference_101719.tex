@@ -287,7 +287,9 @@ By filtering dataset, we can reduce the training time and increase the model per
 We also propose a dashcam system that can be used for real world testing. The system is built using Jetson Nano 4GB as the edge computer.
 
 
-Based on the Real World Testing, we can conclude that our system can detect traffic object in real world environment.
+Based on the Real World Testing, we can conclude that our system can detect traffic object in real world environment. Inference Time shows different result across different power consumption.
+% Our system power draw is dependendt on the electrical power available in the vehicle. We managed to get the result of inference time in 3 different power consumption, 5,7 and 10 Watt.
+In MAXN mode, our Jetson Nano 4GB consumes 10 Watt of power. With this power consumption, our system can do the inference in under 90 miliseconds for image size 640x480.
 
 
 Although using jetson nano was sufficient to run the system. Better performance can be achieved by using more powerful edge computer. Such as using newer hardware from Nvidia Jetson Series. Further optimization can be done by making use of full potential of GPU in Nvidia Jetson Series. Rewriting or running inference in C++ might improve the performance of the system.
@@ -296,6 +298,9 @@ Further development towards Autonomous Driving Assistance System (ADAS) can be d
 This research is supported by Telkom University, Indonesia.
 We would like to personally thank M Rayhan Aryana for his help in this research.
 Especially in the process of gathering the dataset and testing the system in real world environment.
+We also would like to thank QEngineering for open sourcing their Jetson Nano Ubuntu 20.04 image. With their Operating System image that was preinstalled with OpenCV and Pytorch, compiled with CUDA support, we can save a lot of time in setting up the environment.
+
+
 \section*{References}
 
 Please number citations consecutively within brackets \cite{b1}. The 
