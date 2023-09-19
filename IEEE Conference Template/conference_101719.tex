@@ -133,15 +133,17 @@ For example, the number of person class is 64115, while the number of hair drier
 \caption{COCO Dataset Class Count}
 \end{figure}
 
-\subsection{Filtering Dataset}\label{Filtering}
+
+\subsection{Enhancing the Dataset}\label{Filtering}
 As mention earlier, COCO dataset contains 80 classes. However, we only need traffic related object classes.
 Therefore, we filtered the dataset to only contains 12 classes. The classes are:
 Car Truck Bus Motorcycle Bicycle Traffic Light Stop Sign Train Hydrant Cat Dog
 The result is 78,663 images in training split with 12 classes. This amount of data was reduced from 122,125 images in original dataset. By reducing the dataset, our model expected to take less time to train.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.5\textwidth,keepaspectratio]{filtered_coco_class_count.png}
+\includegraphics[width=0.5\textwidth]{filtered_coco_class_count.png}
 \caption{Filtered COCO Dataset Class Count}
+\label{fig:COCOFiltered}
 \end{figure}
 
 \begin{figure}[h!]
@@ -158,8 +160,13 @@ The result is 78,663 images in training split with 12 classes. This amount of da
 \label{fig:original_filtered_memory_utilization}
 \end{figure}
 In addition, as shown in Fig. \ref{fig:original_filtered_gpu_utilization} and Fig.\ref{fig:original_filtered_memory_utilization}, the filtered dataset has lower GPU Utilization and Memory Utilization. This means that the filtered dataset is more efficient to train.
-Thus allowing us to push model training further.
-Metrics wise, the model trained using filtered dataset showed better result.
+Thus allowing us to push model training further. 
+In terms of metrics result, the model trained using filtered dataset showed better result as indicated by Fig. \ref{fig:mAP_comparison}. Model trained on Filtered Dataset with 8 epochs reach mAP.95 of 0.298. While the one trained with original train2017 split only reach 0.135.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth,keepaspectratio]{comparison_mAP_filtered.png}
+    \caption{Comparison of mAP50-95 between training the model using filtered dataset and original dataset}
+\end{figure}
 
 \subsection{Performance Metrics}
 For training and validation purposes, we focus on mAP (mean Average Precision), Precision, and recall. mAP is the average of AP (Average Precision) over all classes. AP is the area under the precision-recall curve.
@@ -194,7 +201,6 @@ Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model u
 % cerita singkat kita implementasi di jetson nano]
 \subsection{Related Work}
 Nasution et.al\cite{Road Information Collector} proposed a system that can detect vehicles and also street lane. Image feed captured using smartphone, then processed using by ImageAI library with RetinaNet for COCO as object detection model
-
 Nasution and Dirgantara (2023) proposed pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer. The pedestrian detection system is only capable to deliver 0,9 Frame Per Second. 
 
 
@@ -207,7 +213,15 @@ The third component is the display. The display is used to show the result of th
 \centering
 \includegraphics[width=0.5\textwidth,keepaspectratio]{Proposed Flowchart.png}
 \caption{Proposed Flowchart of the system}
+\label{fig:flowchart}
 \end{figure}
+Fig.\ref{fig:flowchart} shows the flowchart of our proposed method of detecting traffic object. First, camera captures image frame by frame, followed by preprocessing the images before feeding it to the YOLO model.
+The YOLO model gives the bounding box and class of the detected object. The bounding box and class is then drawn on the image. The image with bounding box and class is then displayed on the screen.
+
+\subsection{Edge Processing Unit}
+As Nasution and Dirgantara (2023) used Raspberry Pi 4 as their processing unit and only managed to get 0,9 FPS, we decided to find a more powerful edge computer that similar in terms of price. In the time of writing this paper, Raspberry Pi 4 4GB cost around 200 USD. While Jetson Nano 4GB cost around 250 to 300 USD.
+Other factor that we consider is the availability of GPU. As we know, GPU is the main component in deep learning. Therefore, we need to find an edge computer that have GPU.
+Jetson Nano is powered by Quad Core ARM-A57 CPU with 32 cores of Maxwell GPU. This Maxwell GPU is the main selling point of Jetson Nano, because it has CUDA Core, hence allowing us to run acclerated deep learning model.
 
 \subsection{Experimental Setup}
 In this section, we will discuss about the experimental setup. We are using Pytorch as our deep learning framework in Python  3.
@@ -218,6 +232,8 @@ Jetson Nano that we use running on Ubuntu 20.04.2 LTS on top of Jetpack 4.6. We 
 As mention earlier, we are using COCO dataset. However, we filtered the dataset to only contain 12 classes. The classes are:
 Car, Truck, Bus, Motorcycle, Bicycle, Traffic Light, Stop Sign, Train, Hydrant, Cat, Dog. The result is 78000 images with 12 classes.
 For inference and real world testing, we gather our own data by recording traffic condition in Bandung, Indonesia. The data was recorded using camera mentioned earlier.
+Part of the traffic footages that we collected, we also utilize it as addition to our training dataset. This is because Indonesia traffic condition is different from other countries. In Indonesia, motorcycle is more often used than car.
+If we refer to filtered COCO dataset in Fig.\ref{fig:COCOFiltered}, the number of motorcycle class is lower than the number of car class. Therefore, we need to add more motorcycle data to our dataset.
 
 \subsection{Training}
 Before we begin training process of our YOLOv8n-Traffic model with high number of epoch, we want to find the optimal hyperparamater configuration for our use case. We conducted various training configuration with 8 epoch to save time.
@@ -243,7 +259,6 @@ Therefore, we use batch size 32 for our training. We also tried using SGD and Ad
 
 
 
-
 \subsection{Real World Testing}
 In this section, we will discuss about the real world testing. We bring our system to real world environment scenario, placed our whole system into the dashboard of vehicles.
 \begin{figure}[h!]
@@ -265,6 +280,8 @@ We use USB car charger to power our system. We drove around the city of Bandung 
 In this section, we will discuss about the result of our experiment. We will discuss about the result of training and real world testing.
 \subsection{Training Result}
 In this section, we will discuss about the result of our training. In order to compare the performance of YOLOv8n model, we also train YOLOv7-tiny model.
+YOLOv7-tiny is the smallest model in YOLOv7 series. However, it needs more computation power than YOLOv8n. We train both YOLOv7-tiny and YOLOv8n with 80 epochs.
+Fig. indicate that YOLOv7-tiny is slightly better than YOLOv8n in terms of mAP50-95. However, YOLOv8n is better than YOLOv7-tiny in terms of mAP50.
 
 \begin{figure}[h!]
 \centering
