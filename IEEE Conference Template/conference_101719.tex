@@ -67,7 +67,7 @@ email address or ORCID}
 
 \begin{abstract}
 Dashcam is a camera place on dashboard  in vehicle. This tool serves to record all events in front of the vehicle. 
-Security and safety have become a major concern in various sectors, including transportation and public security. 
+Security and safety have become a major concern in various sectors, including transportation and public roads. 
 On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. 
 In this study, the development of a simple dashcam built from an edge computer was carried out by combining the number of cameras. Image stitching is applied to combine images that have been collected by each camera.  
 Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8 which is the latest variant of the YOLO series. This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia.
@@ -163,7 +163,7 @@ Metrics wise, the model trained using filtered dataset showed better result.
 
 \subsection{Performance Metrics}
 For training and validation purposes, we focus on mAP (mean Average Precision), Precision, and recall. mAP is the average of AP (Average Precision) over all classes. AP is the area under the precision-recall curve.
-We compare mAP averaged for IoU (Intersection over Union) thresholds from .50 to .95 with .05 increments (MS COCO standard metric, abbreviated as mAP50-95) and mAP50 (PASCAL VOC metric, abbreviated as mAP50) \cite{b7}. 
+We compare mAP averaged for IoU (Intersection over Union) thresholds from .50 to .95 with .05 increments (MS COCO standard metric, abbreviated as mAP50-95) and mAP50 (PASCAL VOC metric, abbreviated as mAP50) \cite{COCO Dataset}. 
 Precision and Recall in  this experiment is a relative measure, because it depends on the threshold value.
 Precision calculated by dividing True Positive by the sum of True Positive and False Positive. 
 Precision is calculated using \eqref{equation1}.
@@ -193,14 +193,20 @@ Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model u
 % Fig 1 ceritakan lebih detail
 % cerita singkat kita implementasi di jetson nano]
 \subsection{Related Work}
-Nasution et.al [8] proposed a system that can detect vehicles and also street lane. Image feed captured using smartphone, then processed using by ImageAI library with RetinaNet for COCO as object detection model
+Nasution et.al\cite{Road Information Collector} proposed a system that can detect vehicles and also street lane. Image feed captured using smartphone, then processed using by ImageAI library with RetinaNet for COCO as object detection model
 
-Nasution and Dirgantara(2023) propose pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer.
+Nasution and Dirgantara (2023) proposed pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer. The pedestrian detection system is only capable to deliver 0,9 Frame Per Second. 
+
+
 \subsection{System Overview}
+In this section, we will discuss about the system overview. The system consist of 3 main hardware components. 
+The first component is the camera. The camera is used to capture the image.
+The second component is the edge computer. The edge computer is used to process the image. 
+The third component is the display. The display is used to show the result of the image processing.
 \begin{figure}
 \centering
 \includegraphics[width=0.5\textwidth,keepaspectratio]{Proposed Flowchart.png}
-\caption{System Overview}
+\caption{Proposed Flowchart of the system}
 \end{figure}
 
 \subsection{Experimental Setup}
@@ -253,7 +259,7 @@ In this section, we will discuss about the real world testing. We bring our syst
     \caption{Side View}
     \label{fig:side_view}
 \end{figure}
-
+We use USB car charger to power our system. We drove around the city of Bandung to test our system. 
 
 \section{Results and Discussion}
 In this section, we will discuss about the result of our experiment. We will discuss about the result of training and real world testing.
@@ -270,8 +276,12 @@ In this section, we will discuss about the result of our training. In order to c
 
 
 \subsection{Real World Testing Result}
-Our test result shows that our system can detect traffic object in real world environment. We tested our system in various lighting condition. We tested our system in the morning, afternoon, and night. Our system managed to do the process in 80-100 miliseconds for each frame. If we translate the latency into frame per second, we got 12.5-10 FPS. 
-\begin{equation}
+Our test result shows that our system can detect traffic object in real world environment.
+As mentioned earlier, we use car charger to power the system. While the system is running, we also use the other port on the same car cahrger to charge our smartphone. This results in different power available for our system.
+As by doing this we can simulate the real user scenario. In user scenario, the user might use the other port on the car charger to charge their smartphone. As many car only have one port for car charger and no other USB power inside the car.
+As a result, our system can run in 3 different power consumption. 5 Watt, 7 Watt, and 10 Watt.
+
+\begin{equation}\label{FPS}
     Frame Per Second = \frac{1000}{latency}
 \end{equation}
 
@@ -281,7 +291,14 @@ Our test result shows that our system can detect traffic object in real world en
 \caption{Inference Time Comparison across different Power Consumption, Power Consumption error range is within 1 Watt}
 \label{fig:inference_time_comparison}
 \end{figure}
+We also found that Motorcycle along with its rider is the most difficult traffic object to detect. While some random red or green lights can be detected as traffic light.
+On the other hand, our system can detect Car 90\% of the time.
 
+In terms of inference time, we gather the data by running the system in 3 different power consumption. 5 Watt, 7 Watt, and 10 Watt. We record the inference time data in miliseconds.
+Many research use FPS (Frame Per Second) as their inference procss metric. We can convert inference time into FPS by using Eq \eqref{FPS}
+
+Based on Eq \eqref{FPS} and Fig.\ref{fig:inference_time_comparison}, we can conclude that FPS and inference time is inversely proportional. As the inference time increase, the FPS decrease.
+If we want to get smoother video output, we need to increase the FPS. Obviously, we need to reduce the inference time to increase the FPS.
 
 \section{Conclusion}
 Dashcam has became a popular device for drivers to record the road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as the insurance claim. 
