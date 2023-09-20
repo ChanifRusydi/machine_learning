@@ -83,7 +83,7 @@ object detection, YOLOv8, dashcam
 Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problems
 Smart and effective object detection technology is becoming increasingly important for monitoring traffic [1].
 
-Dashcam is a camera placed on the dashboard of a vehicle. This device usually serves to record all events in front of the vehicle.
+Dashboarrd camera (Dashcam) is a camera placed on the dashboard of a vehicle. This device usually serves to record all events in front of the vehicle.
 Dashcam is one of the devices that the demands is growing rapidly in the market. Currently, dashcam serves as a device to record events in front of the vehicle and then the recording is used as evidence in the event of an accident or proof of insurance claims. 
 However, dashcam could also be used for other purposes, such as being used as one of the components of an Autonomous Driving Assistance System (ADAS). 
 
@@ -93,7 +93,10 @@ The content of this paper is organized as follows. Section 2 presents the litera
 \section{Literature Review}
 \subsection{Dashcam}
 % Masukin litarasi dashcam, terakhir masukin related work monocular raspbberry pi
-Both China and South Korea governments obliges public transportation and commercial vehicles to install dashcam in order to assist the investigation of traffic accidents\cite{Korea Dashcam}.
+Dashcm have been widely used by drivers to record traffic on the road. Many believes that dashcam is essential part of the vehicles.
+The importance of dashcam
+
+To such a degree that both China and South Korea governments obliges public transportation and commercial vehicles to install dashcam in order to assist the investigation of traffic accidents\cite{Korea Dashcam}.
 
 
 \subsection{Object Detection}
@@ -103,7 +106,7 @@ Object detection has been widely used for face detection, vehicle detection, ped
 Within the past twenty years, object detection have been going through a lot of changes and development. Although it is commonly divided into two periods: "traditional object detection" and "deep learning based".
 In 2012, Krizhevsky et al.~\cite{b3} proposed a deep convolutional network trained on a subset of ImageNet. 
 
-This network, called AlexNet, was 
+This network, called AlexNet, was the forerunner of YOLO model.
 A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{b4} because it used region proposals combined with CNNs to detect objects in images.
 Since then, the field of object detection has been rapidly advancing, with new models, datasets, and techniques emerging in a rapid pace. 
 
@@ -117,7 +120,7 @@ However,as January 2023, YOLOv8 was introduced by Ultralytics, the same software
 As of now,YOLOv8 is one of the latest State of The Art (SOTA) open source object detection model. Following its predecessor, YOlov8 offers several model size.
 From the YOLOv8n as the smallest model, YOLOv8l as the medium model, and YOLOv8x as the largest model.
 We choose YOLOv8n as our model because it is the smallest model and can be run on edge computer.
-YOLOv8n have x parameters. With computation cost around 8 GFLOPs.
+YOLOv8n using 168 layers with ovber 3 million parameters with computation cost around 8 GFLOPs.
 \subsection{COCO Dataset}\label{AA}
 The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset.
 In total, The Microsoft Common Objects in COntext contains 91 common object categories with 82 of them having more than 5,000 labeled instances~\cite{COCO Dataset}.
@@ -126,7 +129,7 @@ After taking community feedback, COCO Dataset increase total number of images an
 Given its size, COCO Dataset widely used by tate of the Art Object Detection Model to train and eveluate the model performance.
 
 Despite its popularity, COCO Dataset has some drawbacks. COCO Dataset contains 80 classes. However, COCO Dataset have imbalance class distribution.
-For example, the number of person class is 64115, while the number of hair drier class is only 100.
+For example, the number of person class is 64115, while the number of hair drier class is only around 100.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth,keepaspectratio]{coco_class_count.png}
@@ -201,7 +204,7 @@ Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model u
 % cerita singkat kita implementasi di jetson nano]
 \subsection{Related Work}
 Nasution et.al\cite{Road Information Collector} proposed a system that can detect vehicles and also street lane. Image feed captured using smartphone, then processed using by ImageAI library with RetinaNet for COCO as object detection model
-Nasution and Dirgantara (2023) proposed pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer. The pedestrian detection system is only capable to deliver 0,9 Frame Per Second. 
+In 2023, Nasution and Dirgantara, proposed pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer. The pedestrian detection system is only capable to deliver 0,9 Frame Per Second \cite{YOLOv5 ADAS}.
 
 
 \subsection{System Overview}
@@ -209,12 +212,13 @@ In this section, we will discuss about the system overview. The system consist o
 The first component is the camera. The camera is used to capture the image.
 The second component is the edge computer. The edge computer is used to process the image. 
 The third component is the display. The display is used to show the result of the image processing.
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth,keepaspectratio]{Proposed Flowchart.png}
 \caption{Proposed Flowchart of the system}
 \label{fig:flowchart}
 \end{figure}
+\newline
 Fig.\ref{fig:flowchart} shows the flowchart of our proposed method of detecting traffic object. First, camera captures image frame by frame, followed by preprocessing the images before feeding it to the YOLO model.
 The YOLO model gives the bounding box and class of the detected object. The bounding box and class is then drawn on the image. The image with bounding box and class is then displayed on the screen.
 
@@ -284,9 +288,16 @@ We use USB car charger to power our system. We drove around the city of Bandung 
 \section{Results and Discussion}
 In this section, we will discuss about the result of our experiment. We will discuss about the result of training and real world testing.
 \subsection{Training Result}
-In this section, we will discuss about the result of our training. In order to compare the performance of YOLOv8n model, we also train YOLOv7-tiny model.
+In this section, we will discuss about the result of our training. We use the configuration concluded from the previous section. First, train our model with 80 epochs.
+Then in order to compare the performance of YOLOv8n model, we also train YOLOv7-tiny model.
 YOLOv7-tiny is the smallest model in YOLOv7 series. However, it needs more computation power than YOLOv8n. We train both YOLOv7-tiny and YOLOv8n with 80 epochs.
 Fig.\ref{fig:mAP_comparison} indicate that YOLOv7-tiny is slightly better than YOLOv8n in terms of mAP50-95. However, YOLOv8n is better than YOLOv7-tiny.
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth,keepaspectratio]{YOLOv7-tinyvsYOLOv8n_model_aspect.png}    
+\caption{Layers, Parameters, and GFLOPs Comparison between YOLOv7-tiny and YOLOv8n}
+\end{figure}
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth,keepaspectratio]{YOLOv7-tinyvsYOLOv8n.png}
@@ -295,7 +306,8 @@ Fig.\ref{fig:mAP_comparison} indicate that YOLOv7-tiny is slightly better than Y
 \end{figure}
 
 
-As our goal is to run the model on edge computer, we need to consider the inference time. We still lean towards using YOLOv8n. Hence, we train YOLOv8n with higher number of epochs.
+As our goal is to run the model on edge computer, we need to consider the inference time. As mentioned earlier,computation cost of YOLOv8n is 8 GFLOPs while YOLOv7-tiny is 13 GFLOPs.
+Thats why we stil prefer using YOLOv8n. Hence, we train YOLOv8n with higher number of epochs.
 This time we add 20 epochs to our training. We train YOLOv8n with 100 epochs. Fig.\ref{fig:YOLOv7vsYOLOv8,80,100} shows the comparison of result between YOLOv7-tiny, YOLOv8n with 80 epochs, and YOLOv8n with 100 epochs.
 \begin{figure}[h!]
 \centering
@@ -303,7 +315,7 @@ This time we add 20 epochs to our training. We train YOLOv8n with 100 epochs. Fi
 \caption{Comparison of mAP50-95 between YOLOv7-tiny, YOLOv8n with 80 epochs, and YOLOv8n with 100 epochs}
 \label{fig:YOLOv7vsYOLOv8,80,100}
 \end{figure}
-
+Finally, with 100 epochs training, our YOLOv8n model achieve similar metrics resuilt with YOLOv7-tiny, despite being lower in computation cost.
 
 \subsection{Real World Testing Result}
 Our test result shows that our system can detect traffic object in real world environment.
