@@ -276,20 +276,20 @@
 # st.header("You list of animals")
 # st.dataframe(animals)
 
-import cv2
-import os
+# import cv2
+# import os
 
-base_dir = './images/'
+# base_dir = './images/'
 
-video = cv2.VideoCapture('Video1.mp4')
-fps = video.get(cv2.CAP_PROP_FPS)
-print(fps)
-frame_count = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
-print(frame_count)
-durattion = frame_count/fps
-print(durattion)
-image_count = int(frame_count / fps)
-print(image_count)
+# video = cv2.VideoCapture('Video1.mp4')
+# fps = video.get(cv2.CAP_PROP_FPS)
+# print(fps)
+# frame_count = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+# print(frame_count)
+# durattion = frame_count/fps
+# print(durattion)
+# image_count = int(frame_count / fps)
+# print(image_count)
 # for i in range(0,frame_count,int(fps)):
 #     video.set(1,i)
 #     ret, frame = video.read()
@@ -299,15 +299,18 @@ print(image_count)
 #     filename = os.path.join(base_dir + str(i+last_index) + '.jpg')
 #     print(filename)
     # cv2.imwrite(filename=filename, img=frame)
-import time
-dir_name = './images/pagi'
-def extract_integer(filename):
-    return int(filename.split('.')[0].split('_')[1])
-integer = extract_integer('19.jpg')
-print(integer)
+# import time
+# dir_name = './images/pagi'
+# def extract_integer(filename):
+#     return int(filename.split('.')[0].split('_')[1])
+# integer = extract_integer('19.jpg')
+# print(integer)
 # file_list = sorted(os.listdir(dir_name), key=extract_integer)
 # for i in file_list:
 #     time.sleep(0.5)
 #     print(i)
 
 # video.release()
+import cv2
+image = cv2.imread('detect_result.jpg')
+cv2.imshow('datected image',image)
