@@ -1,0 +1,266 @@
+PWD /Users/chanifrusydi/machine_learning/IEEE Conference Template
+INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt
+INPUT /Users/chanifrusydi/machine_learning/IEEE Conference Template/conference_101719.tex
+OUTPUT conference_101719.log
+INPUT ./IEEEtran.cls
+INPUT IEEEtran.cls
+INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1ptm.fd
+INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1ptm.fd
+INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/psnfss/ot1ptm.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi7t.tfm
+INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cite/cite.sty
+INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/cite/cite.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsopn.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amstext.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amstext.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsgen.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsgen.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsbsy.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsbsy.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsopn.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amssymb.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/algorithms/algorithmic.sty
+INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/algorithms/algorithmic.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/textcomp.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/textcomp.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolor.ltx
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolor.ltx
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolor.ltx
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
+INPUT ./conference_101719.aux
+INPUT ./conference_101719.aux
+INPUT conference_101719.aux
+OUTPUT conference_101719.aux
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmrc7t.tfm
+OUTPUT conference_101719.pdf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/times/ptmri7t.vf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/times/ptmbi7t.vf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmbi8r.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/times/ptmrc7t.vf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/times/ptmb7t.vf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT ./coco_class_count.png
+INPUT ./coco_class_count.png
+INPUT ./coco_class_count.png
+INPUT ./coco_class_count.png
+INPUT ./coco_class_count.png
+INPUT ./coco_class_count.png
+INPUT ./coco_class_count.png
+INPUT ./filtered_coco_class_count.png
+INPUT ./filtered_coco_class_count.png
+INPUT ./filtered_coco_class_count.png
+INPUT ./filtered_coco_class_count.png
+INPUT ./filtered_coco_class_count.png
+INPUT ./filtered_coco_class_count.png
+INPUT ./filtered_coco_class_count.png
+INPUT ./gpu_utilization_comparison_original_and_filtered.png
+INPUT ./gpu_utilization_comparison_original_and_filtered.png
+INPUT ./gpu_utilization_comparison_original_and_filtered.png
+INPUT ./gpu_utilization_comparison_original_and_filtered.png
+INPUT ./gpu_utilization_comparison_original_and_filtered.png
+INPUT ./gpu_utilization_comparison_original_and_filtered.png
+INPUT ./gpu_utilization_comparison_original_and_filtered.png
+INPUT ./memory_utilization_comparison_original_and_filtered.png
+INPUT ./memory_utilization_comparison_original_and_filtered.png
+INPUT ./memory_utilization_comparison_original_and_filtered.png
+INPUT ./memory_utilization_comparison_original_and_filtered.png
+INPUT ./memory_utilization_comparison_original_and_filtered.png
+INPUT ./memory_utilization_comparison_original_and_filtered.png
+INPUT ./memory_utilization_comparison_original_and_filtered.png
+INPUT ./comparison_mAP_filtered.png
+INPUT ./comparison_mAP_filtered.png
+INPUT ./comparison_mAP_filtered.png
+INPUT ./comparison_mAP_filtered.png
+INPUT ./comparison_mAP_filtered.png
+INPUT ./comparison_mAP_filtered.png
+INPUT ./comparison_mAP_filtered.png
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT ./Proposed Flowchart.png
+INPUT ./Proposed Flowchart.png
+INPUT ./Proposed Flowchart.png
+INPUT ./Proposed Flowchart.png
+INPUT ./Proposed Flowchart.png
+INPUT ./Proposed Flowchart.png
+INPUT ./Proposed Flowchart.png
+INPUT ./sample_dataset.png
+INPUT ./sample_dataset.png
+INPUT ./sample_dataset.png
+INPUT ./sample_dataset.png
+INPUT ./sample_dataset.png
+INPUT ./sample_dataset.png
+INPUT ./sample_dataset.png
+INPUT ./mAP_batch_size_comparison.png
+INPUT ./mAP_batch_size_comparison.png
+INPUT ./mAP_batch_size_comparison.png
+INPUT ./mAP_batch_size_comparison.png
+INPUT ./mAP_batch_size_comparison.png
+INPUT ./mAP_batch_size_comparison.png
+INPUT ./mAP_batch_size_comparison.png
+INPUT ./gpu_utilization_comparison.png
+INPUT ./gpu_utilization_comparison.png
+INPUT ./gpu_utilization_comparison.png
+INPUT ./gpu_utilization_comparison.png
+INPUT ./gpu_utilization_comparison.png
+INPUT ./gpu_utilization_comparison.png
+INPUT ./gpu_utilization_comparison.png
+INPUT ./mounted_camera_front_view.jpg
+INPUT ./mounted_camera_front_view.jpg
+INPUT ./mounted_camera_front_view.jpg
+INPUT ./mounted_camera_front_view.jpg
+INPUT ./mounted_camera_front_view.jpg
+INPUT ./mounted_camera_front_view.jpg
+INPUT ./mounted_camera_front_view.jpg
+INPUT ./mounted_camera_side_view.jpg
+INPUT ./mounted_camera_side_view.jpg
+INPUT ./mounted_camera_side_view.jpg
+INPUT ./mounted_camera_side_view.jpg
+INPUT ./mounted_camera_side_view.jpg
+INPUT ./mounted_camera_side_view.jpg
+INPUT ./mounted_camera_side_view.jpg
+INPUT ./YOLOv7-tinyvsYOLOv8n_model_aspect.png
+INPUT ./YOLOv7-tinyvsYOLOv8n_model_aspect.png
+INPUT ./YOLOv7-tinyvsYOLOv8n_model_aspect.png
+INPUT ./YOLOv7-tinyvsYOLOv8n_model_aspect.png
+INPUT ./YOLOv7-tinyvsYOLOv8n_model_aspect.png
+INPUT ./YOLOv7-tinyvsYOLOv8n_model_aspect.png
+INPUT ./YOLOv7-tinyvsYOLOv8n_model_aspect.png
+INPUT ./YOLOv7-tinyvsYOLOv8n.png
+INPUT ./YOLOv7-tinyvsYOLOv8n.png
+INPUT ./YOLOv7-tinyvsYOLOv8n.png
+INPUT ./YOLOv7-tinyvsYOLOv8n.png
+INPUT ./YOLOv7-tinyvsYOLOv8n.png
+INPUT ./YOLOv7-tinyvsYOLOv8n.png
+INPUT ./YOLOv7-tinyvsYOLOv8n.png
+INPUT ./YOLOv7vs YOLOv8,80,100.png
+INPUT ./YOLOv7vs YOLOv8,80,100.png
+INPUT ./YOLOv7vs YOLOv8,80,100.png
+INPUT ./YOLOv7vs YOLOv8,80,100.png
+INPUT ./YOLOv7vs YOLOv8,80,100.png
+INPUT ./YOLOv7vs YOLOv8,80,100.png
+INPUT ./YOLOv7vs YOLOv8,80,100.png
+INPUT ./inference_time_comparison.png
+INPUT ./inference_time_comparison.png
+INPUT ./inference_time_comparison.png
+INPUT ./inference_time_comparison.png
+INPUT ./inference_time_comparison.png
+INPUT ./inference_time_comparison.png
+INPUT ./inference_time_comparison.png
+INPUT conference_101719.aux
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmb8a.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmb8a.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmbi8a.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmbi8a.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmr8a.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmr8a.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmri8a.pfb
+INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/type1/urw/times/utmri8a.pfb
