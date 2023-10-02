@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1696219807 "/Users/chanifrusydi/machine_learning/MDPI_template/template.tex" "template.pdf" "template" 1696219812 2
+["pdflatex"] 1696222361 "/Users/chanifrusydi/machine_learning/MDPI_template/template.tex" "template.pdf" "template" 1696222365 2
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/base/8r.enc" 1694346316 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/palatino/pplb7t.tfm" 1136747054 1616 371d1ee60c04b008c8fd760060cd34f1 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136747054 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -242,14 +242,14 @@
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/translations/dicts/translations-basic-dictionary-english.trsl" 1696217499 5588 0c1628daf15f4411ff1f463114c634a3 ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/translations/translations.sty" 1696217499 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "/Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/tex/latex/was/upgreek.sty" 1696217491 5794 9054e31be15d93f1e6bd28cca2b6643f ""
-  "/Users/chanifrusydi/machine_learning/MDPI_template/template.tex" 1683855536 35265 5fb9b1f589465523ab4d2b44f6a9e8c5 ""
+  "/Users/chanifrusydi/machine_learning/MDPI_template/template.tex" 1696222355 35270 b03019efd282b068241ec9840e5fda3c ""
   "Definitions/journalnames.tex" 1688000240 81796 1c73f17ca4559b5d9cf8906d2ffc33b1 ""
   "Definitions/logo-mdpi.eps" 1532216032 736786 8818d4fdfce9a8e859e47bd730481fab ""
   "Definitions/logo-orcid.pdf" 1640000776 12671 39a20ba789123aa897c7efc569fb5270 ""
   "Definitions/mdpi.cls" 1688098358 52062 ccb9be6683cd9a7245212e93fdf5e27b ""
-  "template.aux" 1696219811 5527 3f640f240f13bc6c016a157d9ea48e21 "pdflatex"
-  "template.out" 1696219811 1874 3745fa49c737042759feb16456b2d7c5 "pdflatex"
-  "template.tex" 1683855536 35265 5fb9b1f589465523ab4d2b44f6a9e8c5 ""
+  "template.aux" 1696222364 5527 3f640f240f13bc6c016a157d9ea48e21 "pdflatex"
+  "template.out" 1696222364 1874 3745fa49c737042759feb16456b2d7c5 "pdflatex"
+  "template.tex" 1696222355 35270 b03019efd282b068241ec9840e5fda3c ""
   (generated)
   "template.aux"
   "template.log"

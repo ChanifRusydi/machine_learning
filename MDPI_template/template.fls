@@ -513,11 +513,10 @@ INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/palatin
 INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/vf/adobe/palatino/pplri8t.vf
 INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/palatino/pplri8r.tfm
 INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/palatino/pplr8c.tfm
-INPUT ./Definitions/logo-mdpi.eps
-INPUT ./Definitions/logo-mdpi.eps
-INPUT ./Definitions/logo-mdpi.eps
-INPUT ./Definitions/logo-mdpi.eps
-INPUT ./Definitions/logo-mdpi.eps
+INPUT ./Definitions/logo-orcid.pdf
+INPUT ./Definitions/logo-orcid.pdf
+INPUT ./Definitions/logo-orcid.pdf
+INPUT ./Definitions/logo-orcid.pdf
 INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/palatino/pplr7t.tfm
 INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/adobe/palatino/pplr7t.tfm
 INPUT /Users/chanifrusydi/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/mathpazo/zplmr7m.tfm
