@@ -176,6 +176,7 @@ ENTRY
   {}
   { label.year extra.label sort.year sort.label }
 
+
 INTEGERS { output.state before.all mid.sentence after.sentence after.block }
 
 FUNCTION {init.state.consts}
@@ -206,6 +207,14 @@ FUNCTION {output.nonnull}
     }
   if$
   s
+}
+
+
+FUNCTION {website}
+{ duplicate$ empty$
+    { pop$ "" }
+    { "\url{" swap$ * "}" * }
+  if$
 }
 
 % Use a colon to separate output. Used only for address/publisher
@@ -829,6 +838,19 @@ FUNCTION {format.incoll.inproc.crossref}
   " \citep{" * crossref * "}" *
 }
 
+
+FUNCTION {format.website}
+{ url empty$
+    { "" }
+    { "Available online: " url website *
+     urldate empty$
+    {"there is url but no urldate in " cite$ * warning$}
+    { " (accessed on " * urldate * ")" *}
+    if$
+    }
+  if$
+}
+
 % format.lab.names:
 %
 % determines "short" names for the abbreviated author information.
@@ -1334,6 +1356,20 @@ FUNCTION {unpublished}
   "title" output.check
   new.block
   note "note" output.check
+  fin.entry
+}
+
+FUNCTION {www}
+{ output.bibitem
+  format.authors "author" output.checkwoa
+  new.block
+  format.title "title" output.check
+  new.block
+  format.website "url" output.check
+  format.eprint output
+  new.block
+  note output
+  formatfull.doi output
   fin.entry
 }
 
