@@ -3,7 +3,7 @@
 
 %=================================================================
 \documentclass[journal,article,submit,pdftex,moreauthors]{Definitions/mdpi} 
-
+\usepackage{epstopdf}
 %--------------------
 % Class Options:
 %--------------------
@@ -211,7 +211,7 @@ The text continues here.
 All figures and tables should be cited in the main text as Figure~\ref{fig1}, Table~\ref{tab1}, etc.
 
 \begin{figure}[H]
-\includegraphics[width=10.5 cm]{Definitions/logo-mdpi}
+\includegraphics[width=10.5 cm]{logo-mdpi.png}
 \caption{This is a figure. Schemes follow the same formatting. If there are multiple panels, they should be listed as: (\textbf{a}) Description of what is contained in the first panel. (\textbf{b}) Description of what is contained in the second panel. Figures should be placed in the main text near to the first time they are cited. A caption on a single line should be centered.\label{fig1}}
 \end{figure}   
 \unskip
@@ -236,7 +236,7 @@ The text continues here (Figure~\ref{fig2} and Table~\ref{tab2}).
 \begin{figure}[H]
 \begin{adjustwidth}{-\extralength}{0cm}
 \centering
-\includegraphics[width=15.5cm]{Definitions/logo-mdpi}
+\includegraphics[width=15.5cm]{logo-mdpi.png}
 \end{adjustwidth}
 \caption{This is a wide figure.\label{fig2}}
 \end{figure}  
