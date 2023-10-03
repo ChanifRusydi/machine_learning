@@ -68,7 +68,7 @@
 
 %=================================================================
 % Full title of the paper (Capitalized)
-\Title{Title}
+\Title{Multi Dashcam With Image Stitching Object Detection }
 
 % MDPI internal command: Title for citation in the left column
 \TitleCitation{Title}
@@ -107,10 +107,14 @@ $^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
 %\conference{} % An extended version of a conference paper
 
 % Abstract (Do not insert blank lines, i.e. \\) 
-\abstract{A single paragraph of about 200 words maximum. For research articles, abstracts should give a pertinent overview of the work. We strongly encourage authors to use the following style of structured abstracts, but without headings: (1) Background: place the question addressed in a broad context and highlight the purpose of the study; (2) Methods: describe briefly the main methods or treatments applied; (3) Results: summarize the article's main findings; (4) Conclusions: indicate the main conclusions or interpretations. The abstract should be an objective representation of the article, it must not contain results which are not presented and substantiated in the main text and should not exaggerate the main conclusions.}
+\abstract{Dashcam is a camera stored in a vehicle. This tool serves to record all events in front of the vehicle. Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem.
+In this study, the development of a simple dashcam built from an edge computer was carried out by combining the number of cameras. Image stitching is applied to combine images that have been collected by each camera. Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8 which is the latest variant of the YOLO series. 
+This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia.
+The results obtained in the test used a system made using a configuration of 78000 datasets, 3332 data validation with 8 epochs, batch size 32, linear learning rate, and SGD optimization. The best results with real testing were obtained in the morning with an accuracy of 72.8\% of detectable objects. 
+In addition, further research may involve an in-depth analysis of factors contributing to the accurate results found, such as the impact of lighting variations, camera position, as well as the characteristics of detected objects.}
 
 % Keywords
-\keyword{keyword 1; keyword 2; keyword 3 (List three to ten pertinent keywords specific to the article; yet reasonably common within the subject discipline.)} 
+\keyword{dual camera; image stitching; object detection, YOLOv8 (List three to ten pertinent keywords specific to the article; yet reasonably common within the subject discipline.)} 
 
 % The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
 %\PACS{J0101}
@@ -161,18 +165,30 @@ $^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{section}{-1} %% Remove this when starting to work on the template.
-\section{How to Use this Template}
+% \setcounter{section}{-1} %% Remove this when starting to work on the template.
+% \section{How to Use this Template}
 
-The template details the sections that can be used in a manuscript. Note that the order and names of article sections may differ from the requirements of the journal (e.g., the positioning of the Materials and Methods section). Please check the instructions on the authors' page of the journal to verify the correct order and names. For any questions, please contact the editorial office of the journal or support@mdpi.com. For LaTeX-related questions please contact latex@mdpi.com.%\endnote{This is an endnote.} % To use endnotes, please un-comment \printendnotes below (before References). Only journal Laws uses \footnote.
+% The template details the sections that can be used in a manuscript. Note that the order and names of article sections may differ from the requirements of the journal (e.g., the positioning of the Materials and Methods section). Please check the instructions on the authors' page of the journal to verify the correct order and names. For any questions, please contact the editorial office of the journal or support@mdpi.com. For LaTeX-related questions please contact latex@mdpi.com.%\endnote{This is an endnote.} % To use endnotes, please un-comment \printendnotes below (before References). Only journal Laws uses \footnote.
 
 % The order of the section titles is different for some journals. Please refer to the "Instructions for Authors” on the journal homepage.
 
 \section{Introduction}
+Security and safety have become key issues in a variety of industries, including transportation and public safety. On roads, traffic accidents caused by drivers' lack of awareness of objects around them remain a severe problem. For traffic surveillance, intelligent and effective object detection technology is becoming increasingly important.
+According to the camera's position, if the dashcam camera is on one side, the final capture often only includes that side. By conducting research that identifies things with the aid of two cameras or cameras located at various points in the vehicle, this study seeks to provide a solution to the issue. 
+You can gain various perspectives and more information about the surroundings of the car by using multiple cameras. 
+To create more precise findings that correspond to the actual circumstances in front of the user's vehicle, for instance, the left camera can assist in detecting vehicles on the left and the right camera can assist in detecting vehicles on the right.
 
-The introduction should briefly place the study in a broad context and highlight why it is important. It should define the purpose of the work and its significance. The current state of the research field should be reviewed carefully and key publications cited. Please highlight controversial and diverging hypotheses when necessary. Finally, briefly mention the main aim of the work and highlight the principal conclusions. As far as possible, please keep the introduction comprehensible to scientists outside your particular field of research. Citing a journal paper \cite{ref-journal}. Now citing a book reference \cite{ref-book1,ref-book2} or other reference types \cite{ref-unpublish,ref-communication,ref-proceeding}. Please use the command \citep{ref-thesis,ref-url} for the following MDPI journals, which use author--date citation: Administrative Sciences, Arts, Econometrics, Economies, Genealogy, Humanities, IJFS, Journal of Intelligence, Journalism and Media, JRFM, Languages, Laws, Religions, Risks, Social Sciences, Literature.
+
+As a result, research into the use of dual cameras for object detection is very important and interesting. It is envisaged that by maximizing the usage of dual cameras, this technology will provide an effective solution for boosting driver awareness and road safety. The use of dual cameras for object detection has the potential to minimize the number of accidents, avoid collisions, and increase overall safety for all road users
+Furthermore, the image stitching method is vital in the implementation of this technology. The act of integrating numerous photos from separate cameras into one larger, more comprehensive image is known as image stitching. When it comes to dual cameras for object detection, Image stitching can help create a more comprehensive and detailed view of the vehicle's surroundings.
+
+
+In this research, we used a system that combines image fusion techniques to merge data from several picture sources with YOLO technology for real-time object detection. This allows for a thorough awareness of the traffic conditions and the surrounding surroundings by precisely detecting several things along a route. This research is anticipated to significantly improve traffic efficiency and safety by fusing the speed and accuracy of YOLO detection with the capacity to blend photographs to produce panoramic views. 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Materials and Methods}
+
 
 Materials and Methods should be described with sufficient details to allow others to replicate and build on published results. Please note that publication of your manuscript implicates that you must make all materials, data, computer code, and protocols associated with the publication available to readers. Please disclose at the submission stage any restrictions on the availability of materials or information. New methods and protocols should be described in detail while well-established methods can be briefly described and appropriately cited.
 
