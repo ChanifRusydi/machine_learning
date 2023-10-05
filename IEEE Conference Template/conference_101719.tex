@@ -117,7 +117,7 @@ The smaller version, Fast YOLO can achieve 155 frames per second.
 YOLO outperform DPM and R-CNN on the Picasso Dataset and People-Art Dataset~\cite{You Only Look Once}.
 
 In the early period of making this paper, YOLOv7 was the latest version of YOLO\@.
-However, as of January 2023, YOLOv8 was introduced by Ultralytics, the same software company that released YOLOv3 and YOLOv5. 
+However, as of January 2023, YOLOv8 was introduced by Ultralytics , the same software company that released YOLOv3 and YOLOv5. 
 As of now, YOLOv8 is one of the latest State of The Art (SOTA) open source object detection models. Following its predecessor, YOLOv8 offers several model size.
 From the YOLOv8n as the smallest model, YOLOv8l as the medium model, and YOLOv8x as the largest model.
 YOLOv8n was chosen as the model owing to its small size and compatibility with edge computing devices.
@@ -165,11 +165,12 @@ The result is 78,663 images in training split with 12 classes. This amount of da
 \end{figure}
 In addition, as shown in Fig. \ref{fig:original_filtered_gpu_utilization} and Fig.\ref{fig:original_filtered_memory_utilization}, the filtered dataset has lower GPU Utilization and Memory Utilization. This means that the filtered dataset is more efficient to train.
 Thus allowing us to push model training further.
-In terms of metrics results, the model trained using a filtered dataset showed better result as indicated by Fig.~\ref{fig:mAP_comparison}. The model trained on a filtered dataset with 8 epochs reaced mAP.95 of 0.298. While the one trained with the original train2017 split only reached 0.135.
+In terms of metrics results, the model trained using a filtered dataset showed better result as indicated by Fig.~\ref{fig:training_comparison}. The model trained on a filtered dataset with 8 epochs reaced mAP.95 of 0.298. While the one trained with the original train2017 split only reached 0.135.
 \begin{figure}
-    \centering
-    \includegraphics[width=0.4\textwidth,keepaspectratio]{comparison_mAP_filtered.png}
-    \caption{Comparison of mAP50-95 between training the model using filtered dataset and original dataset}
+\centering
+\includegraphics[width=0.4\textwidth,keepaspectratio]{comparison_mAP_filtered.png}
+\caption{Comparison of mAP50-95 between training the model using filtered dataset and original dataset}
+\label{fig:training_comparison}
 \end{figure}
 
 \subsection{Performance Metrics}
@@ -226,7 +227,7 @@ Fig.\ref{fig:flowchart} shows the flowchart of proposed method of detecting traf
 The YOLO model provide of the bounding point coordinates and probability for each class for all of the detected object. The bounding box and class are then drawn on the image. The image with bounding box and class are then displayed on the screen.
 
 \subsection{Edge Processing Unit}
-As Nasution and Dirgantara (2023) used Raspberry Pi 4 as their processing unit and only managed to get 0,9 FPS, we decided to find a more powerful edge computer that was similar in terms of price. At the time of writing this paper, Raspberry Pi 4 4GB cost around 200 USD. While Jetson Nano 4GB cost around 250 to 300 USD.
+As Nasution and Dirgantara (2023) used Raspberry Pi 4 as their processing unit and only managed to get 0,9 FPS, we decided to find a more powerful edge computer that was similar in terms of price.
 The availability of GPU is another factor that needs to be taken into account. Since GPU is a crucial component in deep learning, an edge computer with a GPU is preferred.
 Jetson Nano is powered by Quad Core ARM-A57 CPU with 32 cores of Maxwell GPU. This Maxwell GPU is the main selling point of Jetson Nano because it has CUDA Core, hence allowing us to run accelerated deep learning model.
 
@@ -234,7 +235,7 @@ Jetson Nano is powered by Quad Core ARM-A57 CPU with 32 cores of Maxwell GPU. Th
 In this section, we will discuss  the experimental setup. We are using Pytorch as the deep learning framework in Python  3.
 Model training was conducted on Geforce RTX 3090, 24 GB Video RAM, 32GB RAM, Intel Core i3-12100 4 Core 8 Thread, running on Windows 10
 Model inference and testing was performed on Jetson Nano 4GB. The camera used in this experiment is Lifecam Studio by Microsoft.
-Ubuntu 20.04.2 LTS on top of Jetpack 4.6 is being run on the Jetson Nano that we use. The Jetson Nano 4GB is chosen as the edge computer of choice due to its affordability. As Jetson Nano is the cheapest edge computer in the Nvidia Jetson Series.
+Ubuntu 20.04.2 LTS on top of Jetpack 4.6 is being run on the Jetson Nano that we use. The Jetson Nano 4GB is chosen as the edge computer of choice due to its affordability as Jetson Nano is the cheapest edge computer in the Nvidia Jetson Series.
 \subsection{Testing Dataset}
 As mentioned earlier, we are using the COCO dataset to train and validate the model, especially train20117 and val2017. However, we filtered the dataset to only contain 12 classes. The classes are
 Car, Truck, Bus, Motorcycle, Bicycle, Traffic Light, Stop Sign, Train, Hydrant, Cat, Dog. The result is 78000 images with 12 classes.
@@ -342,8 +343,7 @@ In terms of inference time, we gather the data by running the system in 3 differ
 Many research use  FPS (Frame Per Second) as their inference process metric. We can convert inference time into FPS by using Eq~\eqref{FPS}
 
 Based on Eq \eqref{FPS} and Fig.\ref{fig:inference_time_comparison}, we can conclude that FPS and inference time are inversely proportional. As the inference time increases, the FPS decrease.
-If we want to get smoother video output, we need to increase the FPS. In other words, we need to reduce the inference time in order to get smoother flowof video output\@.
-
+If we want to get smoother video output, we need to increase the FPS. In other words, we need to reduce the inference time in order to get smoother flow of video output\@.
 
 \section{Conclusion}
 Dashcam has become a popular device for drivers to record road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as insurance claims.
@@ -382,7 +382,7 @@ Further development towards Autonomous Driving Assistance System (ADAS) can be d
 \bibitem[7]{COCO Dataset} T.-Y. Lin et al., “Microsoft Coco: Common Objects in Context,” Computer Vision – ECCV 2014, pp. 740–755, 2014. doi:10.1007/978-3-319-10602-1-48
 \bibitem[8]{YOLO with adaptive frame} J. Lee and K. Hwang, “Yolo with adaptive frame control for real-time object detection applications,” Multimedia Tools and Applications, vol. 81, no. 25, pp. 36375–36396, 2021. doi:10.1007/s11042-021-11480-0
 \bibitem[9]{Road Information Collector} S. M. Nasution, E. Husni, K. Kuspriyanto, R. Yusuf, and R. Mulyawan, “Road information collector using smartphone for measuring road width based on object and Lane Detection,” International Journal of Interactive Mobile Technologies (iJIM), vol. 14, no. 02, p. 42, 2020. doi:10.3991/ijim.v14i02.11530 
-\bibitem[10]{YOLOv5 ADAS}[1] S. M. Nasution and F. M. Dirgantara, “Pedestrian Detection System using Yolov5 for advanced driver assistance system (ADAS),” Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi), vol. 7, no. 3, pp. 715–721, Jun. 2023. doi:10.29207/resti.v7i3.4884 
+\bibitem[10]{YOLOv5 ADAS} S. M. Nasution and F. M. Dirgantara, “Pedestrian Detection System using Yolov5 for advanced driver assistance system (ADAS),” Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi), vol. 7, no. 3, pp. 715–721, Jun. 2023. doi:10.29207/resti.v7i3.4884 
 \end{thebibliography}
 \vspace{12pt}
 \color{red}
