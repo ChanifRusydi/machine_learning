@@ -12,7 +12,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Dashcam for Traffic Object Detection\\ }
+\title{YOLOv8n based Traffic Detection\\ }
 
 \makeatletter
 \newcommand{\linebreakand}{%
@@ -42,7 +42,7 @@ chanifrusydi@student.telkomuniversity.ac.id}
 \IEEEauthorblockA{\textit{\Affiliation} \\
 \textit{\Organization}\\
 \CityCountry \\
-email address or ORCID}
+michrandi@telkomuniversity.ac.id}
 \linebreakand
 % \IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
 % \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
@@ -54,7 +54,7 @@ email address or ORCID}
 \IEEEauthorblockA{\textit{\Affiliation} \\
 \textit{\Organization}\\
 \CityCountry \\
-email address or ORCID}
+setiacasie@telkomuniversity.ac.id}
 % \and
 % \IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
 % \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
@@ -94,11 +94,10 @@ The content of this paper is organized as follows. Section 2 presents the litera
 \subsection{Dashcam}
 % Masukin litarasi dashcam, terakhir masukin related work monocular raspbberry pi
 Dashcam has been widely used by drivers to record traffic on the road. Many believe that dashcam is essential part of the vehicles.
-There are several reasons to install a dashcam, including the insurance corporations' favorable insurance rates for drivers and the collection of material that can be used as evidence in legal procedures. 
+There are several reasons to install a dashcam, including the insurance corporations favorable insurance rates for drivers and the collection of material that can be used as evidence in legal procedures. 
 
 To such a degree that both Chinese and South Korean governments oblige public transportation and commercial vehicles to install dashcam in order to assist in the investigation of traffic accidents\cite{Korea Dashcam}.
-
-
+Despite the importance of dashcam were widely known, there are not many that utilize dashcam for other purposes than recording the road and traffic condition. In thia paper we implement object detection in camera that is placed on the dashboard of a vehicle along with the processing unit and display.
 \subsection{Object Detection}
 Object Detection is one of the important tasks in the computer vision field, mainly dealing with detecting instances of visual object and then categorizing them into several classes \cite{b2}.
 With this kind of identification and localization, object detection can be used to count objects in a scene and determine and track their precise locations, all while accurately labeling them.
@@ -107,7 +106,7 @@ Within the past twenty years, object detection has been going through a lot of c
 In 2012, Krizhevsky et al.~\cite{b3} proposed a deep convolutional network trained on a subset of ImageNet. 
 
 This network, called AlexNet, was the forerunner of the YOLO model.
-A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{b4} because it used region proposals combined with CNNs to detect objects in images.
+A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{b3} because it used region proposals combined with CNNs to detect objects in images.
 Since then, the field of object detection has been rapidly advancing, with new models, datasets, and techniques emerging at a rapid pace. 
 
 %tambahkan gambar atau ilustrasi CNN atau YOLO 
@@ -128,8 +127,7 @@ The first release of the COCO Dataset was in 2014. In 2014, the COCO Dataset had
 After taking community feedback, the COCO Dataset increases the total number of images and changes its split proportion. In the 2017 release, the train2017 split had 118,000 image files and 5,000 images in the val2017 split.
 Given its size, COCO Dataset is widely used by State of the Art Object Detection Model to train and evaluate the model performance.
 
-Despite its popularity,t
-he COCO Dataset has some drawbacks. COCO Dataset contains 80 classes. However,the COCO Dataset has an imbalanced class distribution.
+Despite its popularity,the COCO Dataset has some drawbacks. COCO Dataset contains 80 classes. However,the COCO Dataset has an imbalanced class distribution.
 For example, the number of person class is 64115, while the number of hair drier class is only around 100.
 \begin{figure}[h]
 \centering
@@ -145,14 +143,14 @@ Car Truck Bus Motorcycle Bicycle Traffic Light Stop Sign Train Hydrant Cat Dog
 The result is 78,663 images in training split with 12 classes. This amount of data was reduced from 122,125 images in original dataset. By reducing the dataset, our model is expected to take less time to train.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.5\textwidth]{filtered_coco_class_count.png}
+\includegraphics[width=0.4\textwidth]{filtered_coco_class_count.png}
 \caption{Filtered COCO Dataset Class Count}
 \label{fig:COCOFiltered}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.3\textwidth,keepaspectratio]{gpu_utilization_comparison_original_and_filtered.png}
+\includegraphics[width=0.4\textwidth,keepaspectratio]{gpu_utilization_comparison_original_and_filtered.png}
 \caption{Comparison of GPU Utilization between training the model using filtered dataset and original dataset}
 \label{fig:original_filtered_gpu_utilization}
 \end{figure}
@@ -168,7 +166,7 @@ Thus allowing us to push model training further.
 In terms of metrics results, the model trained using a filtered dataset showed better result as indicated by Fig.~\ref{fig:mAP_comparison}. The model trained on a filtered dataset with 8 epochs reaced mAP.95 of 0.298. While the one trained with the original train2017 split only reached 0.135.
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth,keepaspectratio]{comparison_mAP_filtered.png}
+    \includegraphics[width=0.4\textwidth,keepaspectratio]{comparison_mAP_filtered.png}
     \caption{Comparison of mAP50-95 between training the model using filtered dataset and original dataset}
 \end{figure}
 
@@ -205,9 +203,9 @@ Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model u
 % cerita singkat kita implementasi di jetson nano]
 \subsection{Related Work}
 Nasution et al.\cite{Road Information Collector} proposed a system that can detect vehicles and street lanes.
-
 Image feed captured using a smartphone, then processed using by ImageAI library with RetinaNet for COCO as an object detection model 
-In 2023, Nasution and Dirgantara, proposed pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer. The pedestrian detection system is only capable of delivering 0,9 frames per second [6].
+Nasution \& Dirgantara, 2023, proposed pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer. The pedestrian detection system is only capable of delivering 0,9 frames per second [6].
+
 \subsection{System Overview}
 In this section, we will discuss the system overview. The system consists of 3 main hardware components. 
 The first component is the camera. The camera is used to capture the image.
@@ -219,9 +217,11 @@ The third component is the display. The display is used to show the result of th
 \caption{Proposed Flowchart of the system}
 \label{fig:flowchart}
 \end{figure}
-\newline
+
+
+
 Fig.\ref{fig:flowchart} shows the flowchart of our proposed method of detecting traffic objects. First, the camera captures image frame by frame, followed by preprocessing the images before feeding it to the YOLO model.
-The YOLO model gives the bounding box and class of the detected object. The bounding box and class are then drawn on the image. The image with bounding box and class are then displayed on the screen.
+The YOLO model provide of the bounding point coordinates and probability for each class for all of the detected object. The bounding box and class are then drawn on the image. The image with bounding box and class are then displayed on the screen.
 
 \subsection{Edge Processing Unit}
 As Nasution and Dirgantara (2023) used Raspberry Pi 4 as their processing unit and only managed to get 0,9 FPS, we decided to find a more powerful edge computer that was similar in terms of price. At the time of writing this paper, Raspberry Pi 4 4GB cost around 200 USD. While Jetson Nano 4GB cost around 250 to 300 USD.
@@ -329,7 +329,7 @@ As a result, our system can run in 3 different power consumption. 5 Watt, 7 Watt
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.5\textwidth,keepaspectratio]{inference_time_comparison.png}
+\includegraphics[width=0.4\textwidth,keepaspectratio]{inference_time_comparison.png}
 \caption{Inference Time Comparison across different Power Consumption, Power Consumption error range is within 1 Watt}
 \label{fig:inference_time_comparison}
 \end{figure}
@@ -351,15 +351,15 @@ We also propose a dashcam system that can be used for testing. The system is bui
 
 Based on the Real World Testing, we can conclude that our system can detect traffic object in real-world environment. Inference Time shows different results across different power consumption.
 Our system power draw is  on the electrical power available in the vehicle. We managed to get the result of inference time in 3 different power consumption, 5,7, and 10 Watt.
-10 Watt is the recommended power consumption for Jetson Nano 4GB. According to Nvidia, Jetson Nano 4GB can run in with MAXN mode. 
 With this power consumption, our system can do the inference in under 90 miliseconds for an image size of 640x480.
 While in lower power consumption, 7 Watt, our system can do the inference in around 150 - 220 miliseconds.
 In 5-watt power consumption, our system can do the inference in around 340 - 500 miliseconds.
 If we convert processing time into Frame Per Second, we managed to get 2 to 15 FPS.
+Based on the inference time and FPS results, we can conclude that our system can run in real-time while in 10 Watt power consumption.
 
-
-Although using Jetson Nano was sufficient to run the system. Better performance can be achieved by using a more powerful edge computer. Such as using newer hardware from the Nvidia Jetson Series. Further optimization can be done by making use the of full potential of GPU i the Nvidia Jetson Series. Rewriting or running inference in C++ might improve the performance of the system.
-Further development towards Autonomous Driving Assistance System (ADAS) can be done by adding more cameras and sensors.
+Although using Jetson Nano was sufficient to run the system, if we want to do further image processing and higher image resolution, we need higher performance edge computer.
+Additional performance increase can be expected by using a more powerful edge computer. Such as using newer hardware from the Nvidia Jetson Series. Further optimization can be done by making use the of full potential of GPU in the Nvidia Jetson Series. Another alternative is by rewriting or running inference in C++, instead of using Python as in this experiment, might improve the performance of the system.
+Further development towards Autonomous Driving Assistance System (ADAS) can be done by colaborating more cameras and sensors.
 \section*{Acknowledgment}
 This research is supported by Telkom University, Indonesia.
 We would like to personally thank M Rayhan Aryana for his help in this research.
@@ -371,15 +371,15 @@ We also would like to thank QEngineering for open-sourcing their Jetson Nano Ubu
 \bibliographystyle{IEEEtran}
 \begin{thebibliography}{00}
 \bibitem[1]{b1} A. Soin and M. Chahande, “Moving Vehicle Detection Using Deep Neural Network.” A. Soin and M. Chahande, “Moving Vehicle Detection Using Deep Neural Network.” 
-\bibitem[2]{Korea Dashcam} Kim, J., Park, S., \& Lee, U. (2020). Dashcam Witness: Video Sharing Motives and Privacy Concerns Across Different Nations. IEEE Access, 8, 110425–110437. doi:10.1109/access.2020.3002079 
-\bibitem[3]{Object Detection in 20 Years} https://arxiv.org/pdf/1905.05055.pdf
+\bibitem[2]{Korea Dashcam} Kim, J., Park, S., and Lee, U. (2020). Dashcam Witness: Video Sharing Motives and Privacy Concerns Across Different Nations. IEEE Access, 8, 110425–110437. doi:10.1109/access.2020.3002079 
+\bibitem[3]{Object Detection in 20 Years} Z. Zou, K. Chen, Z. Shi, Y. Guo, and J. Ye, “Object detection in 20 years: A survey,” Proceedings of the IEEE, vol. 111, no. 3, pp. 257–276, 2023. doi:10.1109/jproc.2023.3238524 
 \bibitem[4]{b3} Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. https://doi.org/10.1145/3065386
-\bibitem{Rich feature hierarchies} https://arxiv.org/abs/1311.2524
-\bibitem{You Only Look Once} https://arxiv.org/abs/1506.02640
-\bibitem{COCO Dataset} https://arxiv.org/pdf/1405.0312
-\bibitem{YOLO with adaptive frame} https://link.springer.com/content/pdf/10.1007/s11042-021-11480-0.pdf
-\bibitem{Road Information Collector} https://online-journals.org/index.php/i-jim/article/view/11530/6449
-\bibitem{YOLOv5 ADAS} https://doi.org/10.29207/resti.v7i3.4884
+\bibitem[5]{Rich feature hierarchies}J. Redmon, S. Divvala, R. Girshick and A. Farhadi, "You Only Look Once: Unified, Real-Time Object Detection," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, USA, 2016, pp. 779-788, doi: 10.1109/CVPR.2016.91.
+\bibitem[6]{You Only Look Once}J. Redmon, S. Divvala, R. Girshick and A. Farhadi, "You Only Look Once: Unified, Real-Time Object Detection," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, USA, 2016, pp. 779-788, doi: 10.1109/CVPR.2016.91.
+\bibitem[7]{COCO Dataset} T.-Y. Lin et al., “Microsoft Coco: Common Objects in Context,” Computer Vision – ECCV 2014, pp. 740–755, 2014. doi:10.1007/978-3-319-10602-1-48
+\bibitem[8]{YOLO with adaptive frame} J. Lee and K. Hwang, “Yolo with adaptive frame control for real-time object detection applications,” Multimedia Tools and Applications, vol. 81, no. 25, pp. 36375–36396, 2021. doi:10.1007/s11042-021-11480-0
+\bibitem[9]{Road Information Collector} S. M. Nasution, E. Husni, K. Kuspriyanto, R. Yusuf, and R. Mulyawan, “Road information collector using smartphone for measuring road width based on object and Lane Detection,” International Journal of Interactive Mobile Technologies (iJIM), vol. 14, no. 02, p. 42, 2020. doi:10.3991/ijim.v14i02.11530 
+\bibitem[10]{YOLOv5 ADAS}[1] S. M. Nasution and F. M. Dirgantara, “Pedestrian Detection System using Yolov5 for advanced driver assistance system (ADAS),” Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi), vol. 7, no. 3, pp. 715–721, Jun. 2023. doi:10.29207/resti.v7i3.4884 
 \end{thebibliography}
 \vspace{12pt}
 \color{red}
