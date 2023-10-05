@@ -66,12 +66,14 @@ setiacasie@telkomuniversity.ac.id}
 \maketitle
 
 \begin{abstract}
-Dashcam is a camera place on dashboard  in vehicle. This tool serves to record all events in front of the vehicle. 
+Dashcam is a camera placed on the dashboard of a vehicle. This device function is to capture footage of all events that occur in front of the vehicle.
 Security and safety have become a major concern in various sectors, including transportation and public roads. 
 On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. 
-In this study, the development of a simple dashcam built from an edge computer was carried out by combining the number of cameras. Image stitching is applied to combine images that have been collected by each camera.  
-Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8 which is the latest variant of the YOLO series. This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia.
-The results obtained in testing using the system created exist using the configuration of 78,000 datasets, 3332 data validation with 8 epochs, batch size 32, linear learning rate and SGD optimization. Results are best in the morning and afternoon. The program can recognize predefined objects. 
+In this study, the development of a simple dashcam built from an edge computer was carried out by combining the number of cameras. 
+Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8 which is the latest variant of the YOLO series.
+This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia.
+The results obtainedd by testing the system in real-world environment show that the system can detect traffic objects in real-time.
+Best result of 15 fraae per second in traffic object detection inference process is achieved when the edge computer is using 10 Watt of power.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -88,7 +90,7 @@ Dashcam is one of the devices that the demands is growing rapidly in the market.
 However, dashcams could also be used for other purposes, such as being used as one of the components of an Autonomous Driving Assistance System (ADAS). 
 
 In this paper, we propose a simple solution to prevent accidents among vehicles. Our solution is by implementing object detection and single board computer (SBC) as processing unit. Objects in front of the camera can be detected by Convolutional Neural Network. 
-The content of this paper is organized as follows. Section 2 presents the literature review. Section 3 presents the system design. Section 4 presents our experimentation in the process of developing the system. Section 5 presents the conclusion and future work.
+The content of this paper is organized as follows. Section 2 presents the literature review. Section 3 presents the system design. Section 4 presents experimentation in the process of developing the system. Section 5 presents the conclusion and future work.
 
 \section{Literature Review}
 \subsection{Dashcam}
@@ -118,7 +120,7 @@ In the early period of making this paper, YOLOv7 was the latest version of YOLO\
 However, as of January 2023, YOLOv8 was introduced by Ultralytics, the same software company that released YOLOv3 and YOLOv5. 
 As of now, YOLOv8 is one of the latest State of The Art (SOTA) open source object detection models. Following its predecessor, YOLOv8 offers several model size.
 From the YOLOv8n as the smallest model, YOLOv8l as the medium model, and YOLOv8x as the largest model.
-We chose YOLOv8n as our model because it is the smallest model and can be run on an edge computer.
+YOLOv8n was chosen as the model owing to its small size and compatibility with edge computing devices.
 YOLOv8n used 168 layers with over 3 million parameters with computation cost of around 8 GFLOPs.
 \subsection{COCO Dataset}\label{AA}
 The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset.
@@ -137,10 +139,10 @@ For example, the number of person class is 64115, while the number of hair drier
 
 
 \subsection{Enhancing the Dataset}\label{Filtering}
-As mentioned earlier, COCO dataset contains 80 classes. However, we only need traffic-related object classes.
+As mentioned earlier, COCO dataset contains 80 classes. Traffic-related object classes are all that is needed in this research.
 Therefore, we filtered the dataset to only contain 12 classes. The classes are:
 Car Truck Bus Motorcycle Bicycle Traffic Light Stop Sign Train Hydrant Cat Dog
-The result is 78,663 images in training split with 12 classes. This amount of data was reduced from 122,125 images in original dataset. By reducing the dataset, our model is expected to take less time to train.
+The result is 78,663 images in training split with 12 classes. This amount of data was reduced from 122,125 images in original dataset. The training time of our model is expected to be reduced by decreasing the size of the dataset.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.4\textwidth]{filtered_coco_class_count.png}
@@ -193,7 +195,7 @@ mAP = \frac{1}{n}\sum_{i=1}^{n}AP_i
 \label{mAP}
 \end{equation}
 $\eta$ is the number of classes.
-This is the main reason of filtering Dataset would be beneficial in our training process. As we use a filtered dataset, the value of $\eta$ in equation \ref{mAP} is 12 instead of 80.
+This is the main reason of filtering Dataset would be beneficial in the training process. As we use a filtered dataset, the value of $\eta$ in equation ~\ref{mAP} is 12 instead of 80.
 Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model using the filtered dataset and  the original dataset. We can see that the filtered dataset has better mAP50 and mAP50-95 than the original dataset.
 \
 
@@ -220,36 +222,36 @@ The third component is the display. The display is used to show the result of th
 
 
 
-Fig.\ref{fig:flowchart} shows the flowchart of our proposed method of detecting traffic objects. First, the camera captures image frame by frame, followed by preprocessing the images before feeding it to the YOLO model.
+Fig.\ref{fig:flowchart} shows the flowchart of proposed method of detecting traffic objects. First, the camera captures image frame by frame, followed by preprocessing the images before feeding it to the YOLO model.
 The YOLO model provide of the bounding point coordinates and probability for each class for all of the detected object. The bounding box and class are then drawn on the image. The image with bounding box and class are then displayed on the screen.
 
 \subsection{Edge Processing Unit}
 As Nasution and Dirgantara (2023) used Raspberry Pi 4 as their processing unit and only managed to get 0,9 FPS, we decided to find a more powerful edge computer that was similar in terms of price. At the time of writing this paper, Raspberry Pi 4 4GB cost around 200 USD. While Jetson Nano 4GB cost around 250 to 300 USD.
-Another factor that we consider is the availability of GPU. As we know, GPU is the main component in deep learning. Therefore, we need to find an edge computer that has a GPU.
+The availability of GPU is another factor that needs to be taken into account. Since GPU is a crucial component in deep learning, an edge computer with a GPU is preferred.
 Jetson Nano is powered by Quad Core ARM-A57 CPU with 32 cores of Maxwell GPU. This Maxwell GPU is the main selling point of Jetson Nano because it has CUDA Core, hence allowing us to run accelerated deep learning model.
 
 \subsection{Experimental Setup}
-In this section, we will discuss  the experimental setup. We are using Pytorch as our deep learning framework in Python  3.
+In this section, we will discuss  the experimental setup. We are using Pytorch as the deep learning framework in Python  3.
 Model training was conducted on Geforce RTX 3090, 24 GB Video RAM, 32GB RAM, Intel Core i3-12100 4 Core 8 Thread, running on Windows 10
-Model inference and testing was performed on Macbook Air M1 and Jetson Nano 4GB. The camera used in this experiment is Lifecam Studio by Microsoft.
-Jetson Nano that we use running on Ubuntu 20.04.2 LTS on top of Jetpack 4.6. We use Jetson Nano 4GB as our edge computer because it is the most affordable edge computer in the Nvidia Jetson Series.
+Model inference and testing was performed on Jetson Nano 4GB. The camera used in this experiment is Lifecam Studio by Microsoft.
+Ubuntu 20.04.2 LTS on top of Jetpack 4.6 is being run on the Jetson Nano that we use. The Jetson Nano 4GB is chosen as the edge computer of choice due to its affordability. As Jetson Nano is the cheapest edge computer in the Nvidia Jetson Series.
 \subsection{Testing Dataset}
-As mentioned earlier, we are using the COCO dataset to train and validate our model, especially train20117 and val2017. However, we filtered the dataset to only contain 12 classes. The classes are
+As mentioned earlier, we are using the COCO dataset to train and validate the model, especially train20117 and val2017. However, we filtered the dataset to only contain 12 classes. The classes are
 Car, Truck, Bus, Motorcycle, Bicycle, Traffic Light, Stop Sign, Train, Hydrant, Cat, Dog. The result is 78000 images with 12 classes.
 For inference and real-world testing, we gather our own data by recording traffic conditions in Bandung, Indonesia. The data was recorded using the camera mentioned earlier.
-As some part of the traffic footage that we collected, we also utilized it as an addition to our training dataset. This is because Indonesia's traffic condition is different from other countries. In Indonesia, a motorcycle is more often used than a car.
-If we refer to the filtered COCO dataset in Fig.\ref{fig:COCOFiltered}, the number of motorcycle is lower than the number of car class. Therefore, we need to add more motorcycle data to our dataset.
+As some part of the traffic footage that we collected, we also utilized it as an addition to the training dataset. This is because Indonesia's traffic condition is different from other countries. In Indonesia, a motorcycle is more often used than a car.
+If we refer to the filtered COCO dataset in Fig.\ref{fig:COCOFiltered}, the number of motorcycle is lower than the number of car class. Therefore, we need to add more motorcycle data to the dataset.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth,keepaspectratio]{sample_dataset.png}
-\caption{Sample of our annotated image from footage that we collected}
+\caption{Sample of annotated image from footage that we collected}
 \end{figure}
 
 \subsection{Training}
 Before we begin the training process of our YOLOv8n-Traffic model with high a number of epochs, we want to find the optimal hyperparameter configuration for our use case. We conducted various training configuratios with 8 epochs to save time.
-Although each run for one configuration is only 8 epoch, it still takes about 1 to 2 hours. However, we can get the result faster than training with 100 epochs for each configuration.
+Although each run for one configuration is only 8 epoch, it still takes about 1 to 2 hours. The result can be obtained faster than training with 100 epochs for each configuration.
 
-We tried different batch size, learning rate, and optimizers. We use batch size 16 and 32.
+Different batch sizes, learning rates, and optimizers were used. Batch sizes 16 and 32 were chosen.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth,keepaspectratio]{mAP_batch_size_comparison.png} % TODO ; change file name
@@ -264,12 +266,12 @@ We tried different batch size, learning rate, and optimizers. We use batch size 
 \label{fig:gpu_utilization}
 \end{figure}
 % gpu_utilization_comparison.png
-Fig.\ref{fig:batch_size} shows the result of training with different batch size. We can see that batch size 32 is better than batch size 16. Especially in terms of training time, batch size 32 is faster than batch size 16.
-Therefore, we use batch size 32 for our training. We also tried using SGD and Adam optimizer. YOLOv8 implements optimizer switching depending on the number of iterations.
+Fig.\ref{fig:batch_size} shows the result of training with different batch size. It can be observed that batch size 32 performs better than batch size 16. Especially in terms of training time, batch size 32 is faster than batch size 16.
+Batch size 32 is employed for training purposes. Attempts were made to utilize both SGD and Adam optimizers. YOLOv8 implements optimizer switching depending on the number of iterations.
 
 
 \subsection{Real World Testing}
-In this section, we will discuss real-world testing. We bring our system to real-world environment scenario, placed our whole system into the dashboard of vehicles.
+In this section, we will discuss real-world testing. We bring the system to real-world environment scenario, placed our whole system into the dashboard of vehicles.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
@@ -278,17 +280,17 @@ In this section, we will discuss real-world testing. We bring our system to real
 \end{figure}
 
 \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_side_view.jpg}
-    \caption{Side View}
-    \label{fig:side_view}
+\centering
+\includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_side_view.jpg}
+\caption{Side View}
+\label{fig:side_view}
 \end{figure}
-We use USB car charger to power our system. We drove around the city of Bandung to test our system. 
+We use USB car charger to power the whole system. We drove around the city of Bandung to test the system. 
 
 \section{Results and Discussion}
-In this section, we will discuss  the result of our experiment. We will discuss  the result of training and real-world testing.
+In this section, we will discuss the result of our experiment. We will discuss  the result of training and real-world testing.
 \subsection{Training Result}
-In this section, we will discuss the result of our object detection model training. We use the configuration concluded from the previous section. First, train our model with 80 epochs.
+In this section, we will discuss the result of our object detection model training. We use the configuration concluded from the previous section. First, train the model with 80 epochs.
 Then in order to compare the performance of YOLOv8n model, we also train YOLOv7-tiny model.
 YOLOv7-tiny is the smallest modelin theYOLOv7 series. However, it needs more computation power than YOLOv8n. We train both YOLOv7-tiny and YOLOv8n with 80 epochs.
 Fig.\ref{fig:mAP_comparison} indicates that YOLOv7-tiny is slightly better than YOLOv8n in terms of mAP50-95. However, YOLOv8n is better than YOLOv7-tiny.
@@ -306,22 +308,22 @@ Fig.\ref{fig:mAP_comparison} indicates that YOLOv7-tiny is slightly better than 
 \end{figure}
 
 
-As our goal is to run the model on an edge computer, we need to consider the inference time. As mentioned earlier, the computational cost of YOLOv8n is 8 GFLOPs while YOLOv7-tiny is 13 GFLOPs.
-That's why we prefer using YOLOv8n. Hence, in order to achieve the performance of YOLOv7-tiny, we try to YOLOv8n with higher number of epochs.
-This time we add 20 epochs to our training. We train YOLOv8n with 100 epochs. Fig.\ref{fig:YOLOv7vsYOLOv8,80,100} shows the comparison of result between YOLOv7-tiny, YOLOv8n with 80 epochs, and YOLOv8n with 100 epochs.
+As our goal is to run the model on an edge computer in real-time, we need to consider the inference time. As mentioned earlier, the computational cost of YOLOv8n is 8 GFLOPs while YOLOv7-tiny is 13 GFLOPs.
+YOLOv8n is preferred due to its lower computational cost. Therefore, to attain the performance level of YOLOv7-tiny, an attempt is made to train YOLOv8n for a greater number of epochs.
+Twenty epochs were then added to the training process. YOLOv8n is trained for 100 epochs this time. Fig.\ref{fig:YOLOv7vsYOLOv8,80,100} shows the comparison of result between YOLOv7-tiny, YOLOv8n with 80 epochs, and YOLOv8n with 100 epochs.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.4\textwidth,keepaspectratio]{YOLOv7vs YOLOv8,80,100.png}
 \caption{Comparison of mAP50-95 between YOLOv7-tiny, YOLOv8n with 80 epochs, and YOLOv8n with 100 epochs}
 \label{fig:YOLOv7vsYOLOv8,80,100}
 \end{figure}
-Finally, with 100 epochs training, our YOLOv8n model achieves similar metrics results with YOLOv7-tiny, despite being lower in computation cost.
+Finally, with 100 epochs training, the YOLOv8n model achieves similar metrics results with YOLOv7-tiny, despite being lower in computation cost.
 
 \subsection{Real-World Testing Result}
-Our test result shows that our system can detect traffic object in real-world  environment.
-As mentioned earlier, we use a car charger to power the system. While the system is running, we also use the other port on the same car charger to charge our smartphone. This results in different power available for our system.
-By doing this we can simulate the real user scenario. In a user scenario, the user might use the other port on the car charger to charge their smartphone. many cars only have one port for a car charger and no other USB power inside the car.
-As a result, our system can run in 3 different power consumption. 5 Watt, 7 Watt, and 10 Watt.
+Test result shows that the system can detect traffic object in real-world  environment.
+Earlier, it was mentioned that a car charger is used to power the system. While the system is running, the other port on the same car charger is utilized for charging a smartphone. This results in different power available for the system.
+By doing this, it simulates real user scenario. In a user scenario, the user might use the other port on the car charger to charge their smartphone. many cars only have one port for a car charger and no other USB power inside the car.
+As a result, system can run in 3 different power consumption. 5 Watt, 7 Watt, and 10 Watt.
 
 \begin{equation}\label{FPS}
     Frame Per Second = \frac{1000}{latency}
@@ -333,38 +335,39 @@ As a result, our system can run in 3 different power consumption. 5 Watt, 7 Watt
 \caption{Inference Time Comparison across different Power Consumption, Power Consumption error range is within 1 Watt}
 \label{fig:inference_time_comparison}
 \end{figure}
-We also found that the Motorcycle along with its rider is the most difficult traffic object to detect. While some random red or green lights can be detected as traffic lights.
-On the other hand, our system can detect Car 90\% of the time.
+It was found that the Motorcycle, along with its rider, is the most difficult traffic object to detect. While some random red or green lights can be detected as traffic lights.
+On the other hand, the system can detect Car 90\% of the time.
 
 In terms of inference time, we gather the data by running the system in 3 different power consumption. 5 Watt, 7 Watt, and 10 Watt. We record the inference time data in miliseconds.
-Many research use  FPS (Frame Per Second) as their inference process metric. We can convert inference time into FPS by using Eq \eqref{FPS}
+Many research use  FPS (Frame Per Second) as their inference process metric. We can convert inference time into FPS by using Eq~\eqref{FPS}
 
 Based on Eq \eqref{FPS} and Fig.\ref{fig:inference_time_comparison}, we can conclude that FPS and inference time are inversely proportional. As the inference time increases, the FPS decrease.
-If we want to get smoother video output, we need to increase the FPS. Obviously, we need to reduce the inference time to increase the FPS.
+If we want to get smoother video output, we need to increase the FPS. In other words, we need to reduce the inference time in order to get smoother flowof video output\@.
+
 
 \section{Conclusion}
 Dashcam has become a popular device for drivers to record road condition. However, the dashcam video is not only used for recording the road condition, but also used for other purposes, such as insurance claims.
-In this paper, we proposed a dashcam system to detect traffic objects. The object detection system is based on the YOLOv8n model. We also proposed a dataset for dashcam traffic object detection. Our dataset was created by filtering the MS COCO Dataset and adding our own annotated images. The dataset contains 78000 images with 12 traffic objects class.
-By filtering dataset, we can reduce the training time and increase the model performance.
+In this paper, we proposed a dashcam system to detect traffic objects. The object detection system is based on the YOLOv8n model. We also proposed a dataset for dashcam traffic object detection. The dataset was created by filtering the MS COCO Dataset and adding our own annotated images. The dataset contains 78000 images with 12 traffic objects class.
+The training time can be reduced and the model performance is increased by filtering the dataset.
 We also propose a dashcam system that can be used for testing. The system is built using Jetson Nano 4GB as the edge computer.
 
 
-Based on the Real World Testing, we can conclude that our system can detect traffic object in real-world environment. Inference Time shows different results across different power consumption.
-Our system power draw is  on the electrical power available in the vehicle. We managed to get the result of inference time in 3 different power consumption, 5,7, and 10 Watt.
-With this power consumption, our system can do the inference in under 90 miliseconds for an image size of 640x480.
-While in lower power consumption, 7 Watt, our system can do the inference in around 150 - 220 miliseconds.
-In 5-watt power consumption, our system can do the inference in around 340 - 500 miliseconds.
-If we convert processing time into Frame Per Second, we managed to get 2 to 15 FPS.
-Based on the inference time and FPS results, we can conclude that our system can run in real-time while in 10 Watt power consumption.
+It can be concluded that system can detect traffic objects in a real-world environment based on the results of the Real World Testing. Inference Time shows different results across different power consumption.
+The power draw of the system is dependent on the electrical power available in the vehicle. The result of inference time was obtained in 3 different power consumptions, namely 5, 7, and 10 Watt.
+With this power consumption, system can do the inference in under 90 miliseconds for an image size of 640 by 480.
+While in lower power consumption, 7 Watt, system can do the inference in around 150--220 miliseconds.
+In 5-watt power consumption, the system can do the inference in around 340--500 milliseconds.
+If processing time were converted into Frames Per Second, it would result in a range of 2 to 15 FPS.
+Based on the inference time and FPS results, we can conclude that the system can run in real-time while in 10 Watt power consumption.
 
 Although using Jetson Nano was sufficient to run the system, if we want to do further image processing and higher image resolution, we need higher performance edge computer.
 Additional performance increase can be expected by using a more powerful edge computer. Such as using newer hardware from the Nvidia Jetson Series. Further optimization can be done by making use the of full potential of GPU in the Nvidia Jetson Series. Another alternative is by rewriting or running inference in C++, instead of using Python as in this experiment, might improve the performance of the system.
 Further development towards Autonomous Driving Assistance System (ADAS) can be done by colaborating more cameras and sensors.
-\section*{Acknowledgment}
-This research is supported by Telkom University, Indonesia.
-We would like to personally thank M Rayhan Aryana for his help in this research.
-Especially in the process of gathering the dataset and testing the system in   environment.
-We also would like to thank QEngineering for open-sourcing their Jetson Nano Ubuntu 20.04 image. With their Operating System image that was preinstalled with OpenCV and Pytorch, compiled with CUDA support, we can save a lot of time in setting up the environment.
+% \section*{Acknowledgment}
+% This research is supported by Telkom University, Indonesia.
+% We would like to personally thank M Rayhan Aryana for his help in this research.
+% Especially in the process of gathering the dataset and testing the system in   environment.
+% We also would like to thank QEngineering for open-sourcing their Jetson Nano Ubuntu 20.04 image. With their Operating System image that was preinstalled with OpenCV and Pytorch, compiled with CUDA support, we can save a lot of time in setting up the environment.
 
 
 
