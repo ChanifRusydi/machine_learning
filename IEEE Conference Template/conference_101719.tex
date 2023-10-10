@@ -73,11 +73,11 @@ In this study, the development of a simple dashcam built from an edge computer w
 Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8 which is the latest variant of the YOLO series.
 This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia.
 The results obtainedd by testing the system in real-world environment show that the system can detect traffic objects in real-time.
-Best result of 15 fraae per second in traffic object detection inference process is achieved when the edge computer is using 10 Watt of power.
+Best result of 15 frame per second in traffic object detection inference process is achieved when the edge computer is using 10 Watt of power.
 \end{abstract}
 
 \begin{IEEEkeywords}
-object detection, YOLOv8, dashcam
+object detection,You Only Look Once, YOLOv8, dashcam, ADAS
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -90,6 +90,8 @@ Dashcam is one of the devices that the demands is growing rapidly in the market.
 However, dashcams could also be used for other purposes, such as being used as one of the components of an Autonomous Driving Assistance System (ADAS). 
 
 In this paper, we propose a simple solution to prevent accidents among vehicles. Our solution is by implementing object detection and single board computer (SBC) as processing unit. Objects in front of the camera can be detected by Convolutional Neural Network. 
+
+%  carikan paper mengenai penembangan dashcam
 The content of this paper is organized as follows. Section 2 presents the literature review. Section 3 presents the system design. Section 4 presents experimentation in the process of developing the system. Section 5 presents the conclusion and future work.
 
 \section{Literature Review}
@@ -129,11 +131,12 @@ The first release of the COCO Dataset was in 2014. In 2014, the COCO Dataset had
 After taking community feedback, the COCO Dataset increases the total number of images and changes its split proportion. In the 2017 release, the train2017 split had 118,000 image files and 5,000 images in the val2017 split.
 Given its size, COCO Dataset is widely used by State of the Art Object Detection Model to train and evaluate the model performance.
 
-Despite its popularity,the COCO Dataset has some drawbacks. COCO Dataset contains 80 classes. However,the COCO Dataset has an imbalanced class distribution.
-For example, the number of person class is 64115, while the number of hair drier class is only around 100.
-\begin{figure}[h]
+Despite its popularity,the COCO Dataset has some drawbacks. Although COCO Dataset contains quite large number of image classes. However,the COCO Dataset has an imbalanced class distribution. 
+For example, as shown in Fig.\ref{fig:original_coco_classes_count} the number of person class is 64115, while the number of hair drier class is only around 100. Also, for this research, the model doesnt need to detect anything other than objet that relate to traffic
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\textwidth,keepaspectratio]{coco_class_count.png}
+\label{fig:original_coco_classes_count}
 \caption{COCO Dataset Class Count}
 \end{figure}
 
@@ -206,7 +209,9 @@ Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model u
 % cerita singkat kita implementasi di jetson nano]
 \subsection{Related Work}
 Nasution et al.\cite{Road Information Collector} proposed a system that can detect vehicles and street lanes.
-Image feed captured using a smartphone, then processed using by ImageAI library with RetinaNet for COCO as an object detection model 
+Image feed captured using a smartphone, then processed using by ImageAI library with RetinaNet for COCO as an object detection model
+
+
 Nasution \& Dirgantara, 2023, proposed pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer. The pedestrian detection system is only capable of delivering 0,9 frames per second [6].
 
 \subsection{System Overview}
@@ -274,10 +279,10 @@ Batch size 32 is employed for training purposes. Attempts were made to utilize b
 \subsection{Real World Testing}
 In this section, we will discuss real-world testing. We bring the system to real-world environment scenario, placed our whole system into the dashboard of vehicles.
 \begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
-    \caption{Front View}
-    \label{fig:front_view}
+\centering
+\includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
+\caption{Front View}
+\label{fig:front_view}
 \end{figure}
 
 \begin{figure}[h!]
