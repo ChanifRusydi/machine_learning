@@ -29,7 +29,7 @@
 \author{\IEEEauthorblockN{Aura Syafa Aprillia Radim}
 \IEEEauthorblockA{\textit{\Affiliation} \\
 \textit{\Organization}\\
-\CityCountry \\
+\CityCountry\\
 syafaaura@student.telkomuniversity.ac.id }
 \and
 \IEEEauthorblockN{Muchammad 'Irfan Chanif Rusydi}
@@ -53,7 +53,7 @@ michrandi@telkomuniversity.ac.id}
 \IEEEauthorblockN{Casi Setianingsih}
 \IEEEauthorblockA{\textit{\Affiliation} \\
 \textit{\Organization}\\
-\CityCountry \\
+\CityCountry\\
 setiacasie@telkomuniversity.ac.id}
 % \and
 % \IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
@@ -66,14 +66,14 @@ setiacasie@telkomuniversity.ac.id}
 \maketitle
 
 \begin{abstract}
-Dashcam is a camera placed on the dashboard of a vehicle. This device function is to capture footage of all events that occur in front of the vehicle.
-Security and safety have become a major concern in various sectors, including transportation and public roads. 
-On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problem. 
-In this study, the development of a simple dashcam built from an edge computer was carried out by combining the number of cameras. 
-Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8 which is the latest variant of the YOLO series.
+Dashcam is a camera placed on the dashboard of a vehicle. This device function is to capture footage of all events in front of the vehicle.
+Security and safety have become a significant concern in various sectors, including transportation and public roads. 
+Traffic accidents caused by drivers' ignorance of objects around the vehicle are still a severe problem on the highway
+In this study, a simple dashcam built from an edge computer was developed by combining a camera placed on the center of the vehicle dashboard and object detection algorithms.   
+Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8, which is the latest variant of the YOLO series.
 This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia.
-The results obtainedd by testing the system in real-world environment show that the system can detect traffic objects in real-time.
-Best result of 15 frame per second in traffic object detection inference process is achieved when the edge computer is using 10 Watt of power.
+The results obtained by testing the system in a real-world environment show that the system can detect traffic objects in real time.
+The best result of 15 frames per second in the traffic object detection inference process is achieved when the edge computer uses 10 watts of power.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -82,14 +82,14 @@ object detection,You Only Look Once, YOLOv8, dashcam, ADAS
 
 \section{Introduction}
 % bahas dashcam, YOLO 8, sekarang ini banyak yang memakai dashcam, tapi dashcam yang ada sekarang hanya untuk merekam, belum ada yang bisa mendeteksi objek di depannya
-Security and safety have become a major concern in various sectors, including transportation and public security. On the highway, traffic accidents caused by the driver's ignorance of objects around the vehicle are still a serious problems.
-Smart and effective object detection technology is becoming increasingly important to monitor ahead and approaching traffic\cite{b1}.
+Security and safety have become a significant concern in various sectors, including transportation and public security. 
+On the highway, traffic accidents caused by drivers' ignorance of objects around the vehicle are still serious problems. Intelligent and effective object detection technology is becoming increasingly important in monitoring ahead and approaching traffic\cite{b1}.
 
-A dashboarrd camera (Dashcam) is a camera placed on the dashboard of a vehicle. This device usually serves to record all events in front of the vehicle.
-Dashcam is one of the devices that the demands is growing rapidly in the market. Currently, a dashcam serves as a device to record events in front of the vehicle and then the recording is used as evidence in the event of an accident or proof of insurance claims. 
-However, dashcams could also be used for other purposes, such as being used as one of the components of an Autonomous Driving Assistance System (ADAS). 
+A dashboard camera (Dashcam) is placed on a vehicle's dashboard. This device usually serves to record all events in front of the vehicle. Dashcam is one of the devices that the demand proliferates in the market. Currently, a dashcam serves as a device to record events in front of the vehicle, and then the recording is used as evidence of an accident or proof of insurance claims. However, dashcams could also be used for other purposes, such as one of the components of an Autonomous Driving Assistance System (ADAS). 
 
-In this paper, we propose a simple solution to prevent accidents among vehicles. Our solution is by implementing object detection and single board computer (SBC) as processing unit. Objects in front of the camera can be detected by Convolutional Neural Network. 
+In this paper, we propose a simple solution to prevent accidents among vehicles. 
+Our solution is by implementing object detection and Single Board Computer (SBC) as processing unit. 
+Objects in front of the camera can be detected by Convolutional Neural Network. 
 
 %  carikan paper mengenai penembangan dashcam
 The content of this paper is organized as follows. Section 2 presents the literature review. Section 3 presents the system design. Section 4 presents experimentation in the process of developing the system. Section 5 presents the conclusion and future work.
@@ -100,10 +100,10 @@ The content of this paper is organized as follows. Section 2 presents the litera
 Dashcam has been widely used by drivers to record traffic on the road. Many believe that dashcam is essential part of the vehicles.
 There are several reasons to install a dashcam, including the insurance corporations favorable insurance rates for drivers and the collection of material that can be used as evidence in legal procedures. 
 
-To such a degree that both Chinese and South Korean governments oblige public transportation and commercial vehicles to install dashcam in order to assist in the investigation of traffic accidents\cite{Korea Dashcam}.
-Despite the importance of dashcam were widely known, there are not many that utilize dashcam for other purposes than recording the road and traffic condition. In thia paper we implement object detection in camera that is placed on the dashboard of a vehicle along with the processing unit and display.
+To such a degree that both Chinese and South Korean governments oblige public transportation and commercial vehicles to install a dashcam to assist in investigating traffic accidents\cite{Korea Dashcam}.
+Despite the importance of being widely known, only some utilize dashcams for purposes other than recording the road and traffic conditions. In this paper, we implement object detection in a camera placed on a vehicle's dashboard along with the processing unit and display.
 \subsection{Object Detection}
-Object Detection is one of the important tasks in the computer vision field, mainly dealing with detecting instances of visual object and then categorizing them into several classes \cite{b2}.
+Object Detection is one of the important tasks in the computer vision field, mainly dealing with detecting instances of visual objects and then categorizing them into several classes \cite{b2}.
 With this kind of identification and localization, object detection can be used to count objects in a scene and determine and track their precise locations, all while accurately labeling them.
 Object detection has been widely used for face detection, vehicle detection, pedestrian counting, web images, security systems, and driverless cars.
 Within the past twenty years, object detection has been going through a lot of changes and development. Although it is commonly divided into two periods: "traditional object detection" and "deep learning based".
@@ -114,29 +114,29 @@ A year later, Girshick et al. \@ proposed a new object detection framework calle
 Since then, the field of object detection has been rapidly advancing, with new models, datasets, and techniques emerging at a rapid pace. 
 
 %tambahkan gambar atau ilustrasi CNN atau YOLO 
-With the born of AlexNet, the YOLO (You Only Look Once) model was introduced in 2015. The original base YOLO model can achieve 45 frames per second.
-The smaller version, Fast YOLO can achieve 155 frames per second.
-YOLO outperform DPM and R-CNN on the Picasso Dataset and People-Art Dataset~\cite{You Only Look Once}.
+With the birth of AlexNet, the YOLO (You Only Look Once) model was introduced in 2015. 
+The original base YOLO model can achieve 45 frames per second. The smaller version, Fast YOLO, can achieve 155 frames per second. YOLO outperforms DPM and R-CNN on the Picasso Dataset and People-Art Dataset~\cite{You Only Look Once}.
 
-In the early period of making this paper, YOLOv7 was the latest version of YOLO\@.
-However, as of January 2023, YOLOv8 was introduced by Ultralytics , the same software company that released YOLOv3 and YOLOv5. 
-As of now, YOLOv8 is one of the latest State of The Art (SOTA) open source object detection models. Following its predecessor, YOLOv8 offers several model size.
-From the YOLOv8n as the smallest model, YOLOv8l as the medium model, and YOLOv8x as the largest model.
-YOLOv8n was chosen as the model owing to its small size and compatibility with edge computing devices.
-YOLOv8n used 168 layers with over 3 million parameters with computation cost of around 8 GFLOPs.
+In the early period of making this paper, YOLOv7 was the latest version of YOLO. 
+However, as of January 2023, YOLOv8 was introduced by Ultralytics, the same software company that released YOLOv3 and YOLOv5. In the early period of making this paper, YOLOv7 was the latest version of YOLO. 
+However, as of January 2023, YOLOv8 was introduced by Ultralytics, the same software company that released YOLOv3 and YOLOv5. 
+As of now, YOLOv8 is one of the latest State of The Art (SOTA) open-source object detection models. 
+Following its predecessor, YOLOv8 offers several model sizes. 
+From the YOLOv8n as the smallest model, YOLOv8l as the medium model, and YOLOv8x as the largest model. 
+YOLOv8n was chosen as the model due to its small size and compatibility with edge computing devices. YOLOv8n used 168 layers with over 3 million parameters with a computation cost of around 8 GFLOPs
+
 \subsection{COCO Dataset}\label{AA}
-The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset.
-In total, The Microsoft Common Objects in COntext contains 91 common object categories with 82 of them have more than 5,000 labeled instances~\cite{COCO Dataset}.
+The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset. In total, The Microsoft Common Objects in COntext contains 91 common object categories, with 82 of them having more than 5,000 labeled instances~\cite{COCO Dataset}.
 The first release of the COCO Dataset was in 2014. In 2014, the COCO Dataset had 83,000 images in the  train split, and 41,000 images in the validation split.
 After taking community feedback, the COCO Dataset increases the total number of images and changes its split proportion. In the 2017 release, the train2017 split had 118,000 image files and 5,000 images in the val2017 split.
 Given its size, COCO Dataset is widely used by State of the Art Object Detection Model to train and evaluate the model performance.
 
-Despite its popularity,the COCO Dataset has some drawbacks. Although COCO Dataset contains quite large number of image classes. However,the COCO Dataset has an imbalanced class distribution. 
-For example, as shown in Fig.\ref{fig:original_coco_classes_count} the number of person class is 64115, while the number of hair drier class is only around 100. Also, for this research, the model doesnt need to detect anything other than objet that relate to traffic
+Despite its popularity, the COCO Dataset has some drawbacks. 
+Although the COCO Dataset contains quite a large number of image classes, it has an imbalanced class distribution 
+For example, as shown in Fig.\ref{fig:original_coco_classes_count} the total number of annotated objects for person class is 64115, while the hair dryer class is only around 100. Additionally, for this research, the model doesnt need to detect anything other than objects that relate to traffic.
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.5\textwidth,keepaspectratio]{coco_class_count.png}
-\label{fig:original_coco_classes_count}
+\includegraphics[width=0.5\textwidth,keepaspectratio]{coco_class_count.png}\label{fig:original_coco_classes_count}
 \caption{COCO Dataset Class Count}
 \end{figure}
 
@@ -168,7 +168,7 @@ The result is 78,663 images in training split with 12 classes. This amount of da
 \end{figure}
 In addition, as shown in Fig. \ref{fig:original_filtered_gpu_utilization} and Fig.\ref{fig:original_filtered_memory_utilization}, the filtered dataset has lower GPU Utilization and Memory Utilization. This means that the filtered dataset is more efficient to train.
 Thus allowing us to push model training further.
-In terms of metrics results, the model trained using a filtered dataset showed better result as indicated by Fig.~\ref{fig:training_comparison}. The model trained on a filtered dataset with 8 epochs reaced mAP.95 of 0.298. While the one trained with the original train2017 split only reached 0.135.
+In terms of metrics results, the model trained using a filtered dataset showed a better result, Fig.~\ref{fig:training_comparison}. The model trained on a filtered dataset with eight epochs reached mAP.95 of 0.298. While the one trained with the original train2017 split only reached 0.135.
 \begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth,keepaspectratio]{comparison_mAP_filtered.png}
@@ -199,9 +199,8 @@ mAP = \frac{1}{n}\sum_{i=1}^{n}AP_i
 \label{mAP}
 \end{equation}
 $\eta$ is the number of classes.
-This is the main reason of filtering Dataset would be beneficial in the training process. As we use a filtered dataset, the value of $\eta$ in equation ~\ref{mAP} is 12 instead of 80.
-Figure 3 shows the comparison of mAP50 and mAP50-95 between training the model using the filtered dataset and  the original dataset. We can see that the filtered dataset has better mAP50 and mAP50-95 than the original dataset.
-\
+This is the main reason why filtering Dataset would be beneficial in the training process. As we use a filtered dataset, the value of $\eta$ in equation ~\ref{mAP} is 12 instead of 80.
+
 
 \section{System Design}
 % Flowchart di sini aja
@@ -219,13 +218,12 @@ In this section, we will discuss the system overview. The system consists of 3 m
 The first component is the camera. The camera is used to capture the image.
 The second component is the edge computer. The edge computer is used to process the image. 
 The third component is the display. The display is used to show the result of the image processing.
-\begin{figure}[h]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=0.4\textwidth,keepaspectratio]{Proposed Flowchart.png}
 \caption{Proposed Flowchart of the system}
 \label{fig:flowchart}
 \end{figure}
-
 
 
 Fig.\ref{fig:flowchart} shows the flowchart of proposed method of detecting traffic objects. First, the camera captures image frame by frame, followed by preprocessing the images before feeding it to the YOLO model.
@@ -234,6 +232,8 @@ The YOLO model provide of the bounding point coordinates and probability for eac
 \subsection{Edge Processing Unit}
 As Nasution and Dirgantara (2023) used Raspberry Pi 4 as their processing unit and only managed to get 0,9 FPS, we decided to find a more powerful edge computer that was similar in terms of price.
 The availability of GPU is another factor that needs to be taken into account. Since GPU is a crucial component in deep learning, an edge computer with a GPU is preferred.
+
+
 Jetson Nano is powered by Quad Core ARM-A57 CPU with 32 cores of Maxwell GPU. This Maxwell GPU is the main selling point of Jetson Nano because it has CUDA Core, hence allowing us to run accelerated deep learning model.
 
 \subsection{Experimental Setup}
@@ -291,16 +291,17 @@ In this section, we will discuss real-world testing. We bring the system to real
 \caption{Side View}
 \label{fig:side_view}
 \end{figure}
-We use USB car charger to power the whole system. We drove around the city of Bandung to test the system. 
+We use a USB car charger to power the whole system. We drove around the city of Bandung to test the system. 
 
 \section{Results and Discussion}
-In this section, we will discuss the result of our experiment. We will discuss  the result of training and real-world testing.
+In this section, we will discuss the result of our experiment. We will discuss the results of training and real-world testing.
 \subsection{Training Result}
 In this section, we will discuss the result of our object detection model training. We use the configuration concluded from the previous section. First, train the model with 80 epochs.
-Then in order to compare the performance of YOLOv8n model, we also train YOLOv7-tiny model.
-YOLOv7-tiny is the smallest modelin theYOLOv7 series. However, it needs more computation power than YOLOv8n. We train both YOLOv7-tiny and YOLOv8n with 80 epochs.
+Then, in order to compare the performance of YOLOv8n model, we also train YOLOv7-tiny model.
+Similar to YOLOv8n being the smallest model in the YOLOv8 series, YOLOv7-tiny is also the smallest model in the YOLOv7 series However, it needs more computation power than YOLOv8n. We train both YOLOv7-tiny and YOLOv8n with 80 epochs.
 Fig.\ref{fig:mAP_comparison} indicates that YOLOv7-tiny is slightly better than YOLOv8n in terms of mAP50-95. However, YOLOv8n is better than YOLOv7-tiny.
 \begin{figure}
+
 \centering
 \includegraphics[width=0.4\textwidth,keepaspectratio]{YOLOv7-tinyvsYOLOv8n_model_aspect.png}    
 \caption{Layers, Parameters, and GFLOPs Comparison between YOLOv7-tiny and YOLOv8n}
@@ -316,7 +317,7 @@ Fig.\ref{fig:mAP_comparison} indicates that YOLOv7-tiny is slightly better than 
 
 As our goal is to run the model on an edge computer in real-time, we need to consider the inference time. As mentioned earlier, the computational cost of YOLOv8n is 8 GFLOPs while YOLOv7-tiny is 13 GFLOPs.
 YOLOv8n is preferred due to its lower computational cost. Therefore, to attain the performance level of YOLOv7-tiny, an attempt is made to train YOLOv8n for a greater number of epochs.
-Twenty epochs were then added to the training process. YOLOv8n is trained for 100 epochs this time. Fig.\ref{fig:YOLOv7vsYOLOv8,80,100} shows the comparison of result between YOLOv7-tiny, YOLOv8n with 80 epochs, and YOLOv8n with 100 epochs.
+Twenty epochs were then added to the training process. YOLOv8n is trained for 100 epochs this time. Fig.\ref{fig:YOLOv7vsYOLOv8,80,100} shows the comparison of results between YOLOv7-tiny, YOLOv8n with 80 epochs, and YOLOv8n with 100 epochs.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.4\textwidth,keepaspectratio]{YOLOv7vs YOLOv8,80,100.png}
@@ -366,8 +367,7 @@ If processing time were converted into Frames Per Second, it would result in a r
 Based on the inference time and FPS results, we can conclude that the system can run in real-time while in 10 Watt power consumption.
 
 Although using Jetson Nano was sufficient to run the system, if we want to do further image processing and higher image resolution, we need higher performance edge computer.
-Additional performance increase can be expected by using a more powerful edge computer. Such as using newer hardware from the Nvidia Jetson Series. Further optimization can be done by making use the of full potential of GPU in the Nvidia Jetson Series. Another alternative is by rewriting or running inference in C++, instead of using Python as in this experiment, might improve the performance of the system.
-Further development towards Autonomous Driving Assistance System (ADAS) can be done by colaborating more cameras and sensors.
+Additional performance increase can be expected by using a more powerful edge computer. Such as using newer hardware from the Nvidia Jetson Series. Further optimization can be done by making use of the full potential of GPU in the Nvidia Jetson Series. Another alternative is rewriting or running inference in C++ instead of using Python, as in this experiment, which might improve the performance of the system. Further development towards Autonomous Driving Assistance Systems (ADAS) can be done by collaborating more cameras and sensors.
 % \section*{Acknowledgment}
 % This research is supported by Telkom University, Indonesia.
 % We would like to personally thank M Rayhan Aryana for his help in this research.
