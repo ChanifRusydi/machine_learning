@@ -83,7 +83,7 @@ object detection,You Only Look Once, YOLOv8, dashcam, ADAS
 \section{Introduction}
 % bahas dashcam, YOLO 8, sekarang ini banyak yang memakai dashcam, tapi dashcam yang ada sekarang hanya untuk merekam, belum ada yang bisa mendeteksi objek di depannya
 Security and safety have become a significant concern in various sectors, including transportation and public security. 
-On the highway, traffic accidents caused by drivers' ignorance of objects around the vehicle are still serious problems. Intelligent and effective object detection technology is becoming increasingly important in monitoring ahead and approaching traffic\cite{b1}.
+On the highway, traffic accidents caused by drivers' ignorance of objects around the vehicle are still serious problems. Intelligent and effective object detection technology is becoming increasingly important in monitoring ahead and approaching traffic\cite{Girshick2014}.
 
 A dashboard camera (Dashcam) is placed on a vehicle's dashboard. This device usually serves to record all events in front of the vehicle. Dashcam is one of the devices that the demand proliferates in the market. Currently, a dashcam serves as a device to record events in front of the vehicle, and then the recording is used as evidence of an accident or proof of insurance claims. However, dashcams could also be used for other purposes, such as one of the components of an Autonomous Driving Assistance System (ADAS). 
 
@@ -100,17 +100,17 @@ The content of this paper is organized as follows. Section 2 presents the litera
 Dashcam has been widely used by drivers to record traffic on the road. Many believe that dashcam is essential part of the vehicles.
 There are several reasons to install a dashcam, including the insurance corporations favorable insurance rates for drivers and the collection of material that can be used as evidence in legal procedures. 
 
-To such a degree that both Chinese and South Korean governments oblige public transportation and commercial vehicles to install a dashcam to assist in investigating traffic accidents\cite{Korea Dashcam}.
+To such a degree that both Chinese and South Korean governments oblige public transportation and commercial vehicles to install a dashcam to assist in investigating traffic accidents\cite{adamova2020dashcam}.
 Despite the importance of being widely known, only some utilize dashcams for purposes other than recording the road and traffic conditions. In this paper, we implement object detection in a camera placed on a vehicle's dashboard along with the processing unit and display.
 \subsection{Object Detection}
-Object Detection is one of the essential tasks in the computer vision field, mainly dealing with detecting instances of visual objects and then categorizing them into several classes\cite{b2}.
+Object Detection is one of the essential tasks in the computer vision field, mainly dealing with detecting instances of visual objects and then categorizing them into several classes\cite{Zou2023}.
 With this kind of identification and localization, object detection can be used to count objects in a scene and determine and track their precise locations, all while accurately labeling them.
 Object detection has been widely used for face detection, vehicle detection, pedestrian counting, web images, security systems, and driverless cars.
 Object detection has undergone many changes and developments in the past twenty years. Although it is commonly divided into two periods: "traditional object detection" and "deep learning based".
 In 2012, Krizhevsky et al.~\cite{b3} proposed a deep convolutional network trained on a subset of ImageNet. 
 
 This network, called AlexNet, was the forerunner of the YOLO model.
-A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{b3} because it combined region proposals with CNNs to detect objects in images.
+A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{Krizhevsky2017} because it combined region proposals with CNNs to detect objects in images.
 Since then, the object detection research and development field has been rapidly advancing, with new models, datasets, and techniques emerging rapidly. 
 
 %tambahkan gambar atau ilustrasi CNN atau YOLO 
@@ -143,9 +143,13 @@ For example, as shown in Fig.\ref{fig:original_coco_classes_count} the total num
 
 \subsection{Enhancing the Dataset}\label{Filtering}
 As mentioned earlier, COCO dataset contains 80 classes. Traffic-related object classes are all that is needed in this research.
-Therefore, we filtered the dataset to only contain 12 classes. The classes are:
-Car Truck Bus Motorcycle Bicycle Traffic Light Stop Sign Train Hydrant Cat Dog
-The result is 78,663 images in training split with 12 classes. This amount of data was reduced from 122,125 images in original dataset. The training time of our model is expected to be reduced by decreasing the size of the dataset.
+Therefore, we filtered the dataset to only contain 12 classes. The classes are
+Car, Truck, Bus, Motorcycle, Bicycle, Traffic Light, Stop Sign, Train, Hydrant, Cat, and Dog
+
+Fig.\ref{fig:COCOFiltered} presents the distribution of image classes after filtering the original train20117 split of the COCO Dataset.
+The result is 78,663 images in training split with 12 classes.
+This amount of data was reduced from 122,125 images in original dataset. 
+The training time of our model is expected to be reduced by decreasing the size of the dataset.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.4\textwidth]{filtered_coco_class_count.png}
@@ -199,7 +203,7 @@ mAP = \frac{1}{n}\sum_{i=1}^{n}AP_i
 \label{mAP}
 \end{equation}
 $\eta$ is the number of classes.
-This is the main reason filtering Dataset would be beneficial in the training process. As we use a filtered dataset, the value of $\eta$ in equation ~\ref{mAP} is 12 instead of 80.
+This is the main reason filtering Dataset would be beneficial in the training process. As we use a filtered dataset, the value of $\eta$ in equation ~\ref{mAP} is 12 instead of 80 when we use the unfiltered COCO Dataset.
 
 
 \section{System Design}
@@ -207,10 +211,10 @@ This is the main reason filtering Dataset would be beneficial in the training pr
 % Fig 1 ceritakan lebih detail
 % cerita singkat kita implementasi di jetson nano]
 \subsection{Related Work}
-Nasution et al.\cite{Road Information Collector} proposed a system that can detect vehicles and street lanes. The image feed was captured using a smartphone and then processed using the ImageAI library with RetinaNet for COCO as an object detection modelproposed a system that can detect vehicles and street lanes. The image feed was captured using a smartphone and then processed using the ImageAI library with RetinaNet for COCO as an object detection model
+Nasution et al.\cite{nasution2020road} proposed a system that can detect vehicles and street lanes. The image feed was captured using a smartphone and then processed using the ImageAI library with RetinaNet for COCO as an object detection model.
 
 
-Nasution \& Dirgantara, 2023, proposed pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer. The pedestrian detection system is only capable of delivering 0,9 frames per second [6].
+Nasution \& Dirgantara, 2023, proposed pedestrian detections for Autonomous Driving Assistance System (ADAS) using YOLOv5 and Raspberry Pi 4 as the edge computer. The pedestrian detection system is only capable of delivering 0,9 frames per second\cite{nasution2023pedestrian}.
 
 \subsection{System Overview}
 In this section, we will discuss the system overview. The system consists of 3 main hardware components. 
@@ -268,8 +272,8 @@ Fig.\ref{fig:batch_size} shows the result of training with different batch size.
 Batch size 32 is employed for training purposes. Attempts were made to utilize both SGD and Adam optimizers. YOLOv8 implements optimizer switching depending on the number of iterations.
 
 
-\subsection{Real World Testing}
-In this section, we will discuss real-world testing. We bring the system to real-world environment scenario, placed our whole system into the dashboard of vehicles.
+\subsection{Implementation Testing}
+In this section, we will discuss the implementation of our system. We bring the system to real-world environment scenario, placed our whole system into the dashboard of vehicles.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.4\textwidth,keepaspectratio]{mounted_camera_front_view.jpg}
@@ -283,6 +287,10 @@ In this section, we will discuss real-world testing. We bring the system to real
 \caption{Side View}
 \label{fig:side_view}
 \end{figure}
+Fig.\ref{fig:front_view} and Fig.\ref{fig:side_view} shows the system mounted on the dashboard of a vehicle. 
+The camera is placed on the center of the dashboard. The camera is connected to the Jetson Nano 4GB. 
+The Jetson Nano 4GB is placed on the dashboard and mounted to the back of the screen using a double-sided tape.
+Display output signal from Jetson Nano is connected to the screen using HDMI cable.
 We use a USB car charger to power the whole system. We drove around the city of Bandung to test the system. 
 
 \section{Results and Discussion}
@@ -358,21 +366,23 @@ Further development towards Autonomous Driving Assistance Systems (ADAS) can be 
 % Especially in the process of gathering the dataset and testing the system in   environment.
 % We also would like to thank QEngineering for open-sourcing their Jetson Nano Ubuntu 20.04 image. With their Operating System image that was preinstalled with OpenCV and Pytorch, compiled with CUDA support, we can save a lot of time in setting up the environment.
 
-
-
+\bibliography{export}
 \bibliographystyle{IEEEtran}
-\begin{thebibliography}{00}
-\bibitem[1]{b1} A. Soin and M. Chahande, “Moving Vehicle Detection Using Deep Neural Network.” A. Soin and M. Chahande, “Moving Vehicle Detection Using Deep Neural Network.” 
-\bibitem[2]{Korea Dashcam} Kim, J., Park, S., and Lee, U. (2020). Dashcam Witness: Video Sharing Motives and Privacy Concerns Across Different Nations. IEEE Access, 8, 110425–110437. doi:10.1109/access.2020.3002079 
-\bibitem[3]{Object Detection in 20 Years} Z. Zou, K. Chen, Z. Shi, Y. Guo, and J. Ye, “Object detection in 20 years: A survey,” Proceedings of the IEEE, vol. 111, no. 3, pp. 257–276, 2023. doi:10.1109/jproc.2023.3238524 
-\bibitem[4]{b3} Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. https://doi.org/10.1145/3065386
-\bibitem[5]{Rich feature hierarchies}J. Redmon, S. Divvala, R. Girshick and A. Farhadi, "You Only Look Once: Unified, Real-Time Object Detection," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, USA, 2016, pp. 779-788, doi: 10.1109/CVPR.2016.91.
-\bibitem[6]{You Only Look Once}J. Redmon, S. Divvala, R. Girshick and A. Farhadi, "You Only Look Once: Unified, Real-Time Object Detection," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, USA, 2016, pp. 779-788, doi: 10.1109/CVPR.2016.91.
-\bibitem[7]{COCO Dataset} T.-Y. Lin et al., “Microsoft Coco: Common Objects in Context,” Computer Vision – ECCV 2014, pp. 740–755, 2014. doi:10.1007/978-3-319-10602-1-48
-\bibitem[8]{YOLO with adaptive frame} J. Lee and K. Hwang, “Yolo with adaptive frame control for real-time object detection applications,” Multimedia Tools and Applications, vol. 81, no. 25, pp. 36375–36396, 2021. doi:10.1007/s11042-021-11480-0
-\bibitem[9]{Road Information Collector} S. M. Nasution, E. Husni, K. Kuspriyanto, R. Yusuf, and R. Mulyawan, “Road information collector using smartphone for measuring road width based on object and Lane Detection,” International Journal of Interactive Mobile Technologies (iJIM), vol. 14, no. 02, p. 42, 2020. doi:10.3991/ijim.v14i02.11530 
-\bibitem[10]{YOLOv5 ADAS} S. M. Nasution and F. M. Dirgantara, “Pedestrian Detection System using Yolov5 for advanced driver assistance system (ADAS),” Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi), vol. 7, no. 3, pp. 715–721, Jun. 2023. doi:10.29207/resti.v7i3.4884 
-\end{thebibliography}
+
+
+% \bibliographystyle{IEEEtran}
+% \begin{thebibliography}{00}
+% \bibitem[1]{b1} A. Soin and M. Chahande, “Moving Vehicle Detection Using Deep Neural Network.” A. Soin and M. Chahande, “Moving Vehicle Detection Using Deep Neural Network.” 
+% \bibitem[2]{Korea Dashcam} Kim, J., Park, S., and Lee, U. (2020). Dashcam Witness: Video Sharing Motives and Privacy Concerns Across Different Nations. IEEE Access, 8, 110425–110437. doi:10.1109/access.2020.3002079 
+% \bibitem[3]{Object Detection in 20 Years} Z. Zou, K. Chen, Z. Shi, Y. Guo, and J. Ye, “Object detection in 20 years: A survey,” Proceedings of the IEEE, vol. 111, no. 3, pp. 257–276, 2023. doi:10.1109/jproc.2023.3238524 
+% \bibitem[4]{b3} Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. https://doi.org/10.1145/3065386
+% \bibitem[5]{Rich feature hierarchies}J. Redmon, S. Divvala, R. Girshick and A. Farhadi, "You Only Look Once: Unified, Real-Time Object Detection," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, USA, 2016, pp. 779-788, doi: 10.1109/CVPR.2016.91.
+% \bibitem[6]{You Only Look Once}J. Redmon, S. Divvala, R. Girshick and A. Farhadi, "You Only Look Once: Unified, Real-Time Object Detection," 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Las Vegas, NV, USA, 2016, pp. 779-788, doi: 10.1109/CVPR.2016.91.
+% \bibitem[7]{COCO Dataset} T.-Y. Lin et al., “Microsoft Coco: Common Objects in Context,” Computer Vision – ECCV 2014, pp. 740–755, 2014. doi:10.1007/978-3-319-10602-1-48
+% \bibitem[8]{YOLO with adaptive frame} J. Lee and K. Hwang, “Yolo with adaptive frame control for real-time object detection applications,” Multimedia Tools and Applications, vol. 81, no. 25, pp. 36375–36396, 2021. doi:10.1007/s11042-021-11480-0
+% \bibitem[9]{Road Information Collector} S. M. Nasution, E. Husni, K. Kuspriyanto, R. Yusuf, and R. Mulyawan, “Road information collector using smartphone for measuring road width based on object and Lane Detection,” International Journal of Interactive Mobile Technologies (iJIM), vol. 14, no. 02, p. 42, 2020. doi:10.3991/ijim.v14i02.11530 
+% \bibitem[10]{YOLOv5 ADAS} S. M. Nasution and F. M. Dirgantara, “Pedestrian Detection System using Yolov5 for advanced driver assistance system (ADAS),” Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi), vol. 7, no. 3, pp. 715–721, Jun. 2023. doi:10.29207/resti.v7i3.4884 
+% \end{thebibliography}
 \vspace{12pt}
 \color{red}
 
