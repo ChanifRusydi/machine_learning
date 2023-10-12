@@ -71,9 +71,11 @@ Security and safety have become a significant concern in various sectors, includ
 Traffic accidents caused by drivers' ignorance of objects around the vehicle are still a severe problem on the highway
 In this study, a simple dashcam built from an edge computer was developed by combining a camera placed on the center of the vehicle dashboard and object detection algorithms.   
 Next, object detection is carried out on the images that have been collected. The object detection system approach is carried out using YOLOv8, which is the latest variant of the YOLO series.
-This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia.
+The YOLOv8 model is trained using the train2017 split that has been filtered to only contain 12 classes of traffic objects.
+The YOLOv8n model is trained by 100 epochs resulting in 75\% precision and 0.0.65 in mAP50. 
 The results obtained by testing the system in a real-world environment show that the system can detect traffic objects in real time.
 The best result of 15 frames per second in the traffic object detection inference process is achieved when the edge computer uses 10 watts of power.
+This research is expected to be one step in the development of an Intelligent Transportation System that is in accordance with traffic conditions in Indonesia.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -83,7 +85,7 @@ object detection,You Only Look Once, YOLOv8, dashcam, ADAS
 \section{Introduction}
 % bahas dashcam, YOLO 8, sekarang ini banyak yang memakai dashcam, tapi dashcam yang ada sekarang hanya untuk merekam, belum ada yang bisa mendeteksi objek di depannya
 Security and safety have become a significant concern in various sectors, including transportation and public security. 
-On the highway, traffic accidents caused by drivers' ignorance of objects around the vehicle are still serious problems. Intelligent and effective object detection technology is becoming increasingly important in monitoring ahead and approaching traffic\cite{Girshick2014}.
+On the highway, traffic accidents caused by drivers' ignorance of objects around the vehicle are still serious problems. Intelligent and effective object detection technology is becoming increasingly important in monitoring ahead and approaching traffic\cite{soin2017moving}.
 
 A dashboard camera (Dashcam) is placed on a vehicle's dashboard. This device usually serves to record all events in front of the vehicle. Dashcam is one of the devices that the demand proliferates in the market. Currently, a dashcam serves as a device to record events in front of the vehicle, and then the recording is used as evidence of an accident or proof of insurance claims. However, dashcams could also be used for other purposes, such as one of the components of an Autonomous Driving Assistance System (ADAS). 
 
@@ -100,22 +102,22 @@ The content of this paper is organized as follows. Section 2 presents the litera
 Dashcam has been widely used by drivers to record traffic on the road. Many believe that dashcam is essential part of the vehicles.
 There are several reasons to install a dashcam, including the insurance corporations favorable insurance rates for drivers and the collection of material that can be used as evidence in legal procedures. 
 
-To such a degree that both Chinese and South Korean governments oblige public transportation and commercial vehicles to install a dashcam to assist in investigating traffic accidents\cite{adamova2020dashcam}.
+To such a degree that both Chinese and South Korean governments oblige public transportation and commercial vehicles to install a dashcam to assist in investigating traffic accidents\cite{kim2020dashcam}.
 Despite the importance of being widely known, only some utilize dashcams for purposes other than recording the road and traffic conditions. In this paper, we implement object detection in a camera placed on a vehicle's dashboard along with the processing unit and display.
 \subsection{Object Detection}
-Object Detection is one of the essential tasks in the computer vision field, mainly dealing with detecting instances of visual objects and then categorizing them into several classes\cite{Zou2023}.
+Object Detection is one of the essential tasks in the computer vision field, mainly dealing with detecting instances of visual objects and then categorizing them into several classes\cite{zou2023object}.
 With this kind of identification and localization, object detection can be used to count objects in a scene and determine and track their precise locations, all while accurately labeling them.
 Object detection has been widely used for face detection, vehicle detection, pedestrian counting, web images, security systems, and driverless cars.
 Object detection has undergone many changes and developments in the past twenty years. Although it is commonly divided into two periods: "traditional object detection" and "deep learning based".
-In 2012, Krizhevsky et al.~\cite{b3} proposed a deep convolutional network trained on a subset of ImageNet. 
+In 2012, Krizhevsky et al.~\cite{krizhevsky2012imagenet} proposed a deep convolutional network trained on a subset of ImageNet. 
 
 This network, called AlexNet, was the forerunner of the YOLO model.
-A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{Krizhevsky2017} because it combined region proposals with CNNs to detect objects in images.
+A year later, Girshick et al. \@ proposed a new object detection framework called R-CNN~\cite{girshick2014rich} because it combined region proposals with CNNs to detect objects in images.
 Since then, the object detection research and development field has been rapidly advancing, with new models, datasets, and techniques emerging rapidly. 
 
 %tambahkan gambar atau ilustrasi CNN atau YOLO 
 With the birth of AlexNet, the YOLO (You Only Look Once) model was introduced in 2015. 
-The original base YOLO model can achieve 45 frames per second. The smaller version, Fast YOLO, can achieve 155 frames per second. YOLO outperforms DPM and R-CNN on the Picasso Dataset and People-Art Dataset~\cite{You Only Look Once}.
+The original base YOLO model can achieve 45 frames per second. The smaller version, Fast YOLO, can achieve 155 frames per second. YOLO outperforms DPM and R-CNN on the Picasso Dataset and People-Art Dataset~\cite{redmon2016you}.
 
 In the early period of making this paper, YOLOv7 was the latest version of YOLO. 
 However, as of January 2023, YOLOv8 was introduced by Ultralytics, the same software company that released YOLOv3 and YOLOv5. In the early period of making this paper, YOLOv7 was the latest version of YOLO. 
@@ -126,7 +128,7 @@ From the YOLOv8n as the smallest model, YOLOv8l as the medium model, and YOLOv8x
 YOLOv8n was chosen as the model due to its small size and compatibility with edge computing devices. YOLOv8n used 168 layers with over 3 million parameters with a computation cost of around 8 GFLOPs
 
 \subsection{COCO Dataset}\label{AA}
-The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset. In total, The Microsoft Common Objects in COntext contains 91 common object categories, with 82 of them having more than 5,000 labeled instances~\cite{COCO Dataset}.
+The COCO dataset is a large-scale object detection, segmentation, and keypoint dataset. In total, The Microsoft Common Objects in COntext contains 91 common object categories, with 82 of them having more than 5,000 labeled instances~\cite{lin2014microsoft}.
 The first release of the COCO Dataset was in 2014. In 2014, the COCO Dataset had 83,000 images in the  train split, and 41,000 images in the validation split.
 After taking community feedback, the COCO Dataset increases the total number of images and changes its split proportion. In the 2017 release, the train2017 split had 118,000 image files and 5,000 images in the val2017 split.
 Given its size, COCO Dataset is widely used by State of the Art Object Detection Model to train and evaluate the model performance.
@@ -182,7 +184,7 @@ In terms of metrics results, the model trained using a filtered dataset showed a
 
 \subsection{Performance Metrics}
 For training and validation purposes, we focus on mAP (mean Average Precision), Precision, and recall. mAP is the average of AP (Average Precision) over all classes. AP is the area under the precision-recall curve.
-We compare mAP averaged for IoU (Intersection over Union) thresholds from .50 to .95 with .05 increments (MS COCO standard metric, abbreviated as mAP50-95) and mAP50 (PASCAL VOC metric, abbreviated as mAP50) \cite{COCO Dataset}. 
+We compare mAP averaged for IoU (Intersection over Union) thresholds from .50 to .95 with .05 increments (MS COCO standard metric, abbreviated as mAP50-95) and mAP50 (PASCAL VOC metric, abbreviated as mAP50) \cite{lin2014microsoft}. 
 Precision and Recall in  this experiment is a relative measure because it depends on the threshold value.
 Precision is calculated by dividing the True Positive by the sum of True Positive and False Positive. 
 Precision is calculated using \eqref{equation1}.
