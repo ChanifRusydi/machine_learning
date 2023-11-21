@@ -23,6 +23,9 @@ yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coc
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 batch=32 pretrained=False name=exp8_sgd optimizer=SGD
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 batch=32 pretrained=False name=exp8_adam optimizer=Adam
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 batch=16 pretrained=False name=exp8_batch_size_16_adam optimizer=Adam
+yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 pretrained=False name=exp8_auto
+yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 batch=32 pretrained=False name=exp8_auto_batch_size_32
+
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco.yaml' model=yolov8n.yaml epochs=8 imgsz=640 device=0 batch=32 pretrained=False name=exp8_COCO_original
 
 yolo detect train data='C:\Users\User\Documents\machine_learning\yolov7\data\coco_traffic.yaml' model=yolov8n.yaml epochs=1 imgsz=640 device=0 batch=32 pretrained=False name=exptest_sgd workers=4 optimizer=SGD

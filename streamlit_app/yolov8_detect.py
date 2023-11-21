@@ -7,6 +7,7 @@ def detect(image):
     result = results[0]
     status = 0
     box = []
+    #TODO make multi thread for each deteted object 
     if len(result.boxes) > 0:
         for i in range(len(result.boxes)):
             box.append(result.boxes[i])
