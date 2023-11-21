@@ -2,9 +2,14 @@ yolov7
 coco
 UWH-6
 runs
+wandb
 test2017.zip
 train2017.zip
 val2017.zip
 coco2017labels-segments.zip
 coco2017labels.zip
 train2017
+Video1.mp4
+Video2.mp4
+node_modules
+build

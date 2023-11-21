@@ -1,0 +1,420 @@
+09-Jul-23 17:22:01 - Start PYthon GUI App
+01-Aug-23 21:16:57 - Start Python Streamlit App
+01-Aug-23 21:17:00 - Start Python Streamlit App
+01-Aug-23 21:17:55 - Start Python Streamlit App
+01-Aug-23 21:17:57 - Start Python Streamlit App
+01-Aug-23 21:18:01 - Start Python Streamlit App
+01-Aug-23 21:18:09 - Start Python Streamlit App
+01-Aug-23 21:45:36 - Start Python Streamlit App
+01-Aug-23 21:45:38 - Start Python Streamlit App
+01-Aug-23 21:45:40 - Start Python Streamlit App
+01-Aug-23 21:46:18 - Start Python Streamlit App
+01-Aug-23 21:46:22 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+01-Aug-23 21:46:22 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+01-Aug-23 21:46:22 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+01-Aug-23 21:46:22 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+01-Aug-23 21:46:22 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+01-Aug-23 21:46:22 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+01-Aug-23 21:46:22 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+01-Aug-23 21:46:31 - Start Python Streamlit App
+04-Aug-23 06:32:17 - Start Python Streamlit App
+04-Aug-23 06:32:21 - Start Python Streamlit App
+04-Aug-23 06:32:22 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 06:32:22 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 06:36:43 - Start Python Streamlit App
+04-Aug-23 06:36:45 - Start Python Streamlit App
+04-Aug-23 06:36:46 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 06:36:46 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 06:37:54 - Starting new HTTPS connection (1): www.google-analytics.com:443
+04-Aug-23 06:37:54 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+04-Aug-23 06:39:03 - Enter Video Page
+04-Aug-23 06:39:03 - Uploaded Video Not Found
+04-Aug-23 06:40:56 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:40:56 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:40:56 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:40:56 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:40:56 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:40:56 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 06:40:56 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:41:40 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:41:40 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:41:40 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:41:40 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:41:40 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 06:41:40 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 06:41:40 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:10:13 - Start Python Streamlit App
+04-Aug-23 07:17:56 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:17:56 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:17:56 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:17:56 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:17:56 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:17:56 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 07:17:56 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:17:57 - Start Python Streamlit App
+04-Aug-23 07:18:44 - Start Python Streamlit App
+04-Aug-23 07:19:20 - Start Python Streamlit App
+04-Aug-23 07:22:26 - Start Python Streamlit App
+04-Aug-23 07:22:31 - Start Python Streamlit App
+04-Aug-23 07:22:32 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 07:22:32 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 07:22:57 - Start Python Streamlit App
+04-Aug-23 07:23:16 - Popen(['git', 'version'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:23:16 - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:23:16 - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:23:16 - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:23:16 - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:23:16 - Popen(['git', 'cat-file', '--batch-check'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=<valid stream>)
+04-Aug-23 07:23:16 - Popen(['git', 'rev-list', 'origin/model_development..model_development', '--'], cwd=/Users/chanifrusydi/machine_learning, universal_newlines=False, shell=None, istream=None)
+04-Aug-23 07:23:17 - Start Python Streamlit App
+04-Aug-23 07:23:29 - Start Python Streamlit App
+04-Aug-23 07:23:30 - Start Python Streamlit App
+04-Aug-23 07:23:31 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 07:23:31 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 07:34:42 - Start Python Streamlit App
+04-Aug-23 07:34:44 - Start Python Streamlit App
+04-Aug-23 07:34:45 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 07:34:45 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 07:45:17 - Start Python Streamlit App
+04-Aug-23 07:45:18 - Start Python Streamlit App
+04-Aug-23 07:45:19 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 07:45:19 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 07:45:54 - Start Python Streamlit App
+04-Aug-23 07:47:09 - Start Python Streamlit App
+04-Aug-23 07:47:10 - Start Python Streamlit App
+04-Aug-23 07:47:11 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 07:47:11 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 07:48:26 - Start Python Streamlit App
+04-Aug-23 07:48:27 - Start Python Streamlit App
+04-Aug-23 07:48:28 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+04-Aug-23 07:48:28 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+04-Aug-23 08:19:22 - Start Python Streamlit App
+04-Aug-23 08:20:05 - Start Python Streamlit App
+04-Aug-23 08:23:01 - Start Python Streamlit App
+04-Aug-23 08:23:52 - Start Python Streamlit App
+04-Aug-23 10:49:32 - Start Python Streamlit App
+04-Aug-23 10:49:42 - Start Python Streamlit App
+04-Aug-23 10:53:38 - Start Python Streamlit App
+04-Aug-23 10:55:46 - Start Python Streamlit App
+06-Aug-23 16:40:15 - Start Python Streamlit App
+06-Aug-23 16:40:33 - Start Python Streamlit App
+06-Aug-23 16:40:34 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+06-Aug-23 16:40:34 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+06-Aug-23 17:43:32 - Start Python Streamlit App
+06-Aug-23 17:43:54 - Start Python Streamlit App
+06-Aug-23 17:43:55 - CACHEDIR=/Users/chanifrusydi/.matplotlib
+06-Aug-23 17:43:55 - Using fontManager instance from /Users/chanifrusydi/.matplotlib/fontlist-v330.json
+06-Aug-23 17:44:15 - Starting new HTTPS connection (1): www.google-analytics.com:443
+06-Aug-23 17:44:18 - https://www.google-analytics.com:443 "POST /mp/collect?measurement_id=G-X8NCJYTQXM&api_secret=QLQrATrNSwGRFRLE-cbHJw HTTP/1.1" 204 0
+15-Aug-23 10:57:03 - Time of the day: pagi
+15-Aug-23 10:57:03 - Uploaded Video Not Found
+15-Aug-23 10:57:27 - Time of the day: pagi
+15-Aug-23 10:57:27 - FPS 1: 60.0
+15-Aug-23 10:57:27 - Frame Count 1: 429
+15-Aug-23 10:57:27 - Image Count: 7
+15-Aug-23 10:57:35 - Time of the day: pagi
+15-Aug-23 10:58:34 - Time of the day: pagi
+15-Aug-23 10:58:49 - Time of the day: pagi
+15-Aug-23 10:58:49 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 10:58:49 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 10:58:49 - Image Count: 7
+15-Aug-23 10:58:55 - Time of the day: pagi
+15-Aug-23 10:58:55 - Uploaded Video Not Found
+15-Aug-23 10:58:55 - FPS 2: 60.0
+15-Aug-23 10:58:55 - Frame Count 2: 12388
+15-Aug-23 10:58:55 - Image Count: 206
+15-Aug-23 10:58:57 - Time of the day: pagi
+15-Aug-23 10:58:57 - Uploaded Video Not Found
+15-Aug-23 10:59:02 - Time of the day: pagi
+15-Aug-23 10:59:02 - FPS 1: 60.0
+15-Aug-23 10:59:02 - Frame Count 1: 1951
+15-Aug-23 10:59:02 - Image Count: 32
+15-Aug-23 10:59:07 - Time of the day: pagi
+15-Aug-23 10:59:07 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 10:59:07 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 10:59:07 - Image Count: 32
+15-Aug-23 10:59:29 - Time of the day: pagi
+15-Aug-23 10:59:29 - FPS 1: 60.0
+15-Aug-23 10:59:29 - Frame Count 1: 1951
+15-Aug-23 10:59:29 - Image Count: 32
+15-Aug-23 10:59:35 - Time of the day: pagi
+15-Aug-23 10:59:35 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 10:59:35 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 10:59:35 - Image Count: 32
+15-Aug-23 10:59:50 - Time of the day: pagi
+15-Aug-23 10:59:50 - FPS 1: 60.0
+15-Aug-23 10:59:50 - Frame Count 1: 1951
+15-Aug-23 10:59:50 - Image Count: 32
+15-Aug-23 10:59:52 - Time of the day: pagi
+15-Aug-23 10:59:52 - Uploaded Video Not Found
+15-Aug-23 12:39:36 - Time of the day: pagi
+15-Aug-23 12:39:36 - Uploaded Video Not Found
+15-Aug-23 12:40:49 - Time of the day: pagi
+15-Aug-23 12:40:49 - FPS 1: 60.0
+15-Aug-23 12:40:49 - Frame Count 1: 14595
+15-Aug-23 12:40:49 - Image Count: 243
+15-Aug-23 12:41:07 - Time of the day: pagi
+15-Aug-23 12:41:07 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 12:41:07 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 12:41:07 - Image Count: 240
+15-Aug-23 12:42:29 - Time of the day: pagi
+15-Aug-23 12:42:29 - Uploaded Video Not Found
+15-Aug-23 12:42:29 - FPS 2: 60.0
+15-Aug-23 12:42:29 - Frame Count 2: 14432
+15-Aug-23 12:42:29 - Image Count: 240
+15-Aug-23 12:42:30 - Time of the day: pagi
+15-Aug-23 12:42:30 - Uploaded Video Not Found
+15-Aug-23 12:44:01 - Time of the day: pagi
+15-Aug-23 12:44:01 - Uploaded Video Not Found
+15-Aug-23 12:44:03 - Time of the day: pagi
+15-Aug-23 12:44:03 - Uploaded Video Not Found
+15-Aug-23 12:44:08 - Time of the day: pagi
+15-Aug-23 12:44:08 - FPS 1: 60.0
+15-Aug-23 12:44:08 - Frame Count 1: 12198
+15-Aug-23 12:44:08 - Image Count: 203
+15-Aug-23 12:44:15 - Time of the day: pagi
+15-Aug-23 12:44:16 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 12:44:16 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 12:44:16 - Image Count: 203
+15-Aug-23 18:58:48 - Time of the day: pagi
+15-Aug-23 18:58:48 - Uploaded Video Not Found
+15-Aug-23 19:00:16 - Time of the day: pagi
+15-Aug-23 19:00:16 - FPS 1: 60.0
+15-Aug-23 19:00:16 - Frame Count 1: 14595
+15-Aug-23 19:00:16 - Image Count: 243
+15-Aug-23 19:00:28 - Time of the day: pagi
+15-Aug-23 19:00:28 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:00:28 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:00:28 - Image Count: 20
+15-Aug-23 19:00:55 - Time of the day: pagi
+15-Aug-23 19:00:56 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:00:56 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:00:56 - Image Count: 20
+15-Aug-23 19:03:38 - Time of the day: pagi
+15-Aug-23 19:03:39 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:03:39 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:03:39 - Image Count: 20
+15-Aug-23 19:04:20 - Time of the day: pagi
+15-Aug-23 19:04:21 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:04:21 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:04:21 - Image Count: 20
+15-Aug-23 19:09:36 - Time of the day: pagi
+15-Aug-23 19:09:37 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:09:37 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:09:37 - Image Count: 20
+15-Aug-23 19:09:47 - Time of the day: pagi
+15-Aug-23 19:09:47 - Uploaded Video Not Found
+15-Aug-23 19:09:56 - Time of the day: pagi
+15-Aug-23 19:09:56 - FPS 1: 60.0
+15-Aug-23 19:09:56 - Frame Count 1: 14595
+15-Aug-23 19:09:56 - Image Count: 243
+15-Aug-23 19:10:20 - Time of the day: pagi
+15-Aug-23 19:10:21 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:10:21 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:10:21 - Image Count: 20
+15-Aug-23 19:20:25 - Time of the day: pagi
+15-Aug-23 19:20:25 - Uploaded Video Not Found
+15-Aug-23 19:20:55 - Time of the day: pagi
+15-Aug-23 19:20:55 - FPS 1: 60.0
+15-Aug-23 19:20:55 - Frame Count 1: 14595
+15-Aug-23 19:20:55 - Image Count: 243
+15-Aug-23 19:21:14 - Time of the day: pagi
+15-Aug-23 19:21:15 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:21:15 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:21:15 - Image Count: 20
+15-Aug-23 19:21:49 - Time of the day: pagi
+15-Aug-23 19:21:50 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:21:50 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:21:50 - Image Count: 20
+15-Aug-23 19:22:21 - Time of the day: pagi
+15-Aug-23 19:22:21 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:22:21 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:22:21 - Image Count: 20
+15-Aug-23 19:22:57 - Time of the day: pagi
+15-Aug-23 19:22:58 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:22:58 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:22:58 - Image Count: 20
+15-Aug-23 19:23:24 - Time of the day: pagi
+15-Aug-23 19:23:25 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:23:25 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:23:25 - Image Count: 20
+15-Aug-23 19:23:42 - Time of the day: pagi
+15-Aug-23 19:23:43 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:23:43 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:23:43 - Image Count: 20
+15-Aug-23 19:25:59 - Time of the day: pagi
+15-Aug-23 19:25:59 - Uploaded Video Not Found
+15-Aug-23 19:26:10 - Time of the day: pagi
+15-Aug-23 19:26:10 - FPS 1: 60.0
+15-Aug-23 19:26:10 - Frame Count 1: 14595
+15-Aug-23 19:26:10 - Image Count: 243
+15-Aug-23 19:26:17 - Time of the day: pagi
+15-Aug-23 19:26:17 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:26:17 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:26:17 - Image Count: 20
+15-Aug-23 19:26:26 - Time of the day: pagi
+15-Aug-23 19:26:27 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:26:27 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:26:27 - Image Count: 20
+15-Aug-23 19:26:29 - Time of the day: pagi
+15-Aug-23 19:26:30 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:26:30 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:26:30 - Image Count: 20
+15-Aug-23 19:30:17 - Time of the day: pagi
+15-Aug-23 19:30:18 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:30:18 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:30:18 - Image Count: 20
+15-Aug-23 19:30:22 - Time of the day: pagi
+15-Aug-23 19:30:23 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:30:23 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:30:23 - Image Count: 20
+15-Aug-23 19:43:23 - Time of the day: pagi
+15-Aug-23 19:43:23 - Uploaded Video Not Found
+15-Aug-23 19:43:31 - Time of the day: pagi
+15-Aug-23 19:43:32 - FPS 1: 60.0
+15-Aug-23 19:43:32 - Frame Count 1: 14595
+15-Aug-23 19:43:32 - Image Count: 243
+15-Aug-23 19:43:36 - Time of the day: pagi
+15-Aug-23 19:43:37 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:43:37 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:43:37 - Image Count: 20
+15-Aug-23 19:43:47 - Time of the day: pagi
+15-Aug-23 19:43:48 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:43:48 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:43:48 - Image Count: 20
+15-Aug-23 19:43:51 - Time of the day: pagi
+15-Aug-23 19:43:52 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:43:52 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:43:52 - Image Count: 20
+15-Aug-23 19:44:47 - Time of the day: pagi
+15-Aug-23 19:44:47 - Uploaded Video Not Found
+15-Aug-23 19:44:58 - Time of the day: pagi
+15-Aug-23 19:44:58 - FPS 1: 60.0
+15-Aug-23 19:44:58 - Frame Count 1: 14595
+15-Aug-23 19:44:58 - Image Count: 243
+15-Aug-23 19:45:03 - Time of the day: pagi
+15-Aug-23 19:45:03 - FPS 1: 60.0
+15-Aug-23 19:45:03 - Frame Count 1: 14595
+15-Aug-23 19:45:03 - Image Count: 243
+15-Aug-23 19:45:06 - Time of the day: pagi
+15-Aug-23 19:45:06 - FPS 1: 60.0
+15-Aug-23 19:45:06 - Frame Count 1: 14595
+15-Aug-23 19:45:06 - Image Count: 243
+15-Aug-23 19:46:47 - Time of the day: pagi
+15-Aug-23 19:46:48 - FPS 1: 60.0
+15-Aug-23 19:46:48 - Frame Count 1: 14595
+15-Aug-23 19:46:48 - Image Count: 243
+15-Aug-23 19:46:52 - Time of the day: pagi
+15-Aug-23 19:46:52 - FPS 1: 60.0
+15-Aug-23 19:46:52 - Frame Count 1: 14595
+15-Aug-23 19:46:52 - Image Count: 243
+15-Aug-23 19:47:33 - Time of the day: pagi
+15-Aug-23 19:47:33 - FPS 1: 60.0
+15-Aug-23 19:47:33 - Frame Count 1: 14595
+15-Aug-23 19:47:33 - Image Count: 243
+15-Aug-23 19:47:52 - Time of the day: pagi
+15-Aug-23 19:47:52 - Uploaded Video Not Found
+15-Aug-23 19:47:59 - Time of the day: pagi
+15-Aug-23 19:48:00 - FPS 1: 60.0
+15-Aug-23 19:48:00 - Frame Count 1: 14595
+15-Aug-23 19:48:00 - Image Count: 243
+15-Aug-23 19:48:27 - Time of the day: pagi
+15-Aug-23 19:48:27 - FPS 1: 60.0
+15-Aug-23 19:48:27 - Frame Count 1: 14595
+15-Aug-23 19:48:27 - Image Count: 243
+15-Aug-23 19:48:33 - Time of the day: pagi
+15-Aug-23 19:48:33 - FPS 1: 60.0
+15-Aug-23 19:48:33 - Frame Count 1: 14595
+15-Aug-23 19:48:33 - Image Count: 243
+15-Aug-23 19:48:35 - Time of the day: pagi
+15-Aug-23 19:48:35 - FPS 1: 60.0
+15-Aug-23 19:48:35 - Frame Count 1: 14595
+15-Aug-23 19:48:35 - Image Count: 243
+15-Aug-23 19:49:53 - Time of the day: pagi
+15-Aug-23 19:49:53 - FPS 1: 60.0
+15-Aug-23 19:49:53 - Frame Count 1: 14595
+15-Aug-23 19:49:53 - Image Count: 243
+15-Aug-23 19:50:03 - Time of the day: pagi
+15-Aug-23 19:50:03 - Uploaded Video Not Found
+15-Aug-23 19:50:13 - Time of the day: pagi
+15-Aug-23 19:50:14 - FPS 1: 60.0
+15-Aug-23 19:50:14 - Frame Count 1: 14595
+15-Aug-23 19:50:14 - Image Count: 243
+15-Aug-23 19:50:21 - Time of the day: pagi
+15-Aug-23 19:50:22 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:50:22 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:50:22 - Image Count: 20
+15-Aug-23 19:50:39 - Time of the day: pagi
+15-Aug-23 19:50:39 - Time of the day: pagi
+15-Aug-23 19:50:40 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:50:40 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:50:40 - Image Count: 20
+15-Aug-23 19:50:55 - Time of the day: pagi
+15-Aug-23 19:50:55 - Uploaded Video Not Found
+15-Aug-23 19:50:56 - FPS 2: 60.0
+15-Aug-23 19:50:56 - Frame Count 2: 14432
+15-Aug-23 19:50:56 - Image Count: 240
+15-Aug-23 19:50:56 - Time of the day: pagi
+15-Aug-23 19:50:56 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:50:56 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:50:56 - Image Count: 20
+15-Aug-23 19:51:05 - Time of the day: pagi
+15-Aug-23 19:51:05 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:51:05 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:51:05 - Image Count: 20
+15-Aug-23 19:52:40 - Time of the day: pagi
+15-Aug-23 19:52:40 - Uploaded Video Not Found
+15-Aug-23 19:52:54 - Time of the day: siang
+15-Aug-23 19:52:54 - Uploaded Video Not Found
+15-Aug-23 19:54:52 - Time of the day: siang
+15-Aug-23 19:54:52 - FPS 1: 60.0
+15-Aug-23 19:54:52 - Frame Count 1: 12198
+15-Aug-23 19:54:52 - Image Count: 203
+15-Aug-23 19:54:59 - Time of the day: siang
+15-Aug-23 19:54:59 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:54:59 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:54:59 - Image Count: 20
+15-Aug-23 19:56:36 - Time of the day: siang
+15-Aug-23 19:56:37 - Uploaded Video Not Found
+15-Aug-23 19:56:37 - FPS 2: 60.0
+15-Aug-23 19:56:37 - Frame Count 2: 12388
+15-Aug-23 19:56:37 - Image Count: 206
+15-Aug-23 19:56:38 - Time of the day: siang
+15-Aug-23 19:56:38 - Uploaded Video Not Found
+15-Aug-23 19:56:40 - Time of the day: sore
+15-Aug-23 19:56:40 - Uploaded Video Not Found
+15-Aug-23 19:58:20 - Time of the day: sore
+15-Aug-23 19:58:21 - FPS 1: 60.0
+15-Aug-23 19:58:21 - Frame Count 1: 7085
+15-Aug-23 19:58:21 - Image Count: 118
+15-Aug-23 19:58:30 - Time of the day: sore
+15-Aug-23 19:58:31 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 19:58:31 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 19:58:31 - Image Count: 20
+15-Aug-23 19:59:40 - Time of the day: sore
+15-Aug-23 19:59:40 - Uploaded Video Not Found
+15-Aug-23 19:59:40 - FPS 2: 60.0
+15-Aug-23 19:59:40 - Frame Count 2: 6566
+15-Aug-23 19:59:40 - Image Count: 109
+15-Aug-23 19:59:41 - Time of the day: sore
+15-Aug-23 19:59:41 - Uploaded Video Not Found
+15-Aug-23 19:59:43 - Time of the day: malam
+15-Aug-23 19:59:43 - Uploaded Video Not Found
+15-Aug-23 19:59:50 - Time of the day: malam
+15-Aug-23 19:59:50 - Uploaded Video Not Found
+15-Aug-23 20:06:06 - Time of the day: malam
+15-Aug-23 20:06:06 - FPS 1: 60.0
+15-Aug-23 20:06:06 - Frame Count 1: 7671
+15-Aug-23 20:06:06 - Image Count: 127
+15-Aug-23 20:06:21 - Time of the day: malam
+15-Aug-23 20:06:21 - 'FPS 1: {}'.format(fps1), 'FPS 2: {}'.format(fps2)
+15-Aug-23 20:06:21 - 'Frame Count 1: {}'.format(frame_count1), 'Frame Count 2: {}'.format(frame_count2)
+15-Aug-23 20:06:21 - Image Count: 20
+__main__ - INFO - images/image1_60_right.jpg
+__main__ - INFO - images/image1_60_left.jpg
+__main__ - ERROR - Images are not stitched
+__main__ - INFO - Time taken to stitch images: 0.5470802783966064
+__main__ - INFO - images/image1_60_left.jpg
+__main__ - INFO - images/image1_60_right.jpg
+__main__ - ERROR - Images are not stitched
+__main__ - INFO - Time taken to stitch images: 0.5035381317138672

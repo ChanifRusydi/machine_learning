@@ -1,0 +1,2 @@
+08-Aug-23 04:50:40 - Camera parameters adjusting failed.
+08-Aug-23 04:51:56 - Image stitched
