@@ -1,8 +1,9 @@
 from ultralytics import YOLO
 import cv2
 import time
+import random
 # start webcam
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
 
@@ -16,8 +17,9 @@ def detect(image):
     time_start = time.process_time()
     results = model.predict(image)
     delta_time = time.process_time() - time_start
+    fps = 1/delta_time
     result = results[0]
-    cv2.putText(image, str(delta_time), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+    cv2.putText(image, str(fps), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
     status = 0
     box = []
     #TODO make multi thread for each deteted object 
@@ -31,11 +33,16 @@ def detect(image):
             class_name = result.names[class_id]
             image = cv2.rectangle(image, (x1, y1), (x2, y2),color=color, thickness=2)
             image = cv2.putText(image, class_name, (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 1, color=color, thickness=2)
-
+            status = 1
+    else:
+        status = -1
+    return status, image
 while True:
     success, img = cap.read()
     status, image = detect(img)
     cv2.imshow("Detect", image)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
-cap.release()
-cv2.destroyAllWindows()
+# cap.release()
+# cv2.destroyAllWindows()
