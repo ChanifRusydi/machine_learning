@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import cv2
 import time
 # start webcam
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(2)
 cap.set(3, 640)
 cap.set(4, 480)
 
@@ -16,7 +16,7 @@ classNames =['person','bicycle','car','motorcycle','bus','train','truck','traffi
 while True:
     success, img = cap.read()
     start_time= time.process_time()
-    results = model(img, stream=True)
+    results = model(img, stream=False)
     delta_time = time.process_time() - start_time
     cv2.putText(img, str(delta_time), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
     # coordinates
