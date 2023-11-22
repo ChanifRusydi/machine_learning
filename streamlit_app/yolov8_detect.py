@@ -3,8 +3,11 @@ import random
 import cv2
 def detect(image):
     model = YOLO("best_yolov8.pt")
+    time_start = time.process_time()
     results = model.predict(image)
+    delta_time = time.process_time() - time_start
     result = results[0]
+    cv2.putText(image, str(delta_time), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
     status = 0
     box = []
     #TODO make multi thread for each deteted object 
