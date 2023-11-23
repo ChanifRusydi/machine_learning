@@ -14,10 +14,11 @@ model = YOLO("yolov8n.pt")
 classNames =['person','bicycle','car','motorcycle','bus','train','truck','traffic light','fire hydrant','stop sign','cat','dog']
 
 def detect(image):
-    time_start = time.process_time()
+    time_start = time.time_ns()
     results = model.predict(image)
-    delta_time = time.process_time() - time_start
-    fps = 1/delta_time
+    time_stop = time.time_ns()
+    delta_time = (start_time - stop_time) / 1000
+    fps = 1000/delta_time
     result = results[0]
     cv2.putText(image, str(fps), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
     status = 0
@@ -38,8 +39,8 @@ def detect(image):
         status = -1
     return status, image
 while True:
-    success, img = cap.read()
-    status, image = detect(img)
+    success, image = cap.read()
+    status, image = detect(image)
     cv2.imshow("Detect", image)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
