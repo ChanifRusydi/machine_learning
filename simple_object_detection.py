@@ -17,7 +17,7 @@ def detect(image):
     time_start = time.time_ns()
     results = model.predict(image)
     time_stop = time.time_ns()
-    delta_time = (start_time - stop_time) / 1000
+    delta_time = (time_start - time_stop) / 1000
     fps = 1000/delta_time
     result = results[0]
     cv2.putText(image, str(fps), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
